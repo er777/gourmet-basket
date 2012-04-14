@@ -1,0 +1,341 @@
+[05-Oct-2011 10:55:50] PHP Warning:  include(cake/bootstrap.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 76
+[05-Oct-2011 10:55:50] PHP Warning:  include(cake/bootstrap.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 76
+[05-Oct-2011 10:55:50] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'cake/bootstrap.php' for inclusion (include_path='/home2/erdigi5/public_html/gourmetbasket/test:/home2/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 76
+[05-Oct-2011 10:55:50] PHP Fatal error:  CakePHP core could not be found.  Check the value of CAKE_CORE_INCLUDE_PATH in APP/webroot/index.php.  It should point to the directory containing your /cake core directory and your /vendors root directory. in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 77
+[05-Oct-2011 10:55:56] PHP Warning:  include(cake/bootstrap.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 76
+[05-Oct-2011 10:55:56] PHP Warning:  include(cake/bootstrap.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 76
+[05-Oct-2011 10:55:56] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'cake/bootstrap.php' for inclusion (include_path='/home2/erdigi5/public_html/gourmetbasket/test:/home2/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 76
+[05-Oct-2011 10:55:56] PHP Fatal error:  CakePHP core could not be found.  Check the value of CAKE_CORE_INCLUDE_PATH in APP/webroot/index.php.  It should point to the directory containing your /cake core directory and your /vendors root directory. in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 77
+[05-Oct-2011 10:56:15] PHP Warning:  include(cake/bootstrap.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 76
+[05-Oct-2011 10:56:15] PHP Warning:  include(cake/bootstrap.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 76
+[05-Oct-2011 10:56:15] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'cake/bootstrap.php' for inclusion (include_path='/home2/erdigi5/public_html/gourmetbasket/test:/home2/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 76
+[05-Oct-2011 10:56:15] PHP Fatal error:  CakePHP core could not be found.  Check the value of CAKE_CORE_INCLUDE_PATH in APP/webroot/index.php.  It should point to the directory containing your /cake core directory and your /vendors root directory. in /home2/erdigi5/public_html/gourmetbasket/test/app/webroot/index.php on line 77
+[05-Oct-2011 10:56:59] PHP Fatal error:  Class 'AppController' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/error.php on line 32
+[05-Oct-2011 10:56:59] PHP Fatal error:  Class 'AppController' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/error.php on line 32
+[05-Oct-2011 15:22:35] PHP Parse error:  syntax error, unexpected ';' in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 19
+[05-Oct-2011 15:22:39] PHP Parse error:  syntax error, unexpected ';' in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 19
+[05-Oct-2011 15:22:56] PHP Parse error:  syntax error, unexpected ';' in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 19
+[05-Oct-2011 15:22:58] PHP Parse error:  syntax error, unexpected ';' in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 19
+[06-Oct-2011 08:46:58] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 5
+[06-Oct-2011 15:46:59] PHP Fatal error:  Call to a member function link() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 10
+[06-Oct-2011 16:21:44] PHP Fatal error:  Call to a member function validateLogin() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 11
+[06-Oct-2011 16:22:05] PHP Fatal error:  Class 'Member' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/class_registry.php on line 142
+[06-Oct-2011 16:22:08] PHP Fatal error:  Class 'Member' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/class_registry.php on line 142
+[07-Oct-2011 09:32:44] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 09:34:20] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 10
+[07-Oct-2011 09:35:04] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 10
+[07-Oct-2011 09:35:14] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 10
+[07-Oct-2011 09:38:09] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 12
+[07-Oct-2011 09:40:08] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 12
+[07-Oct-2011 09:42:14] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[07-Oct-2011 09:48:30] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[07-Oct-2011 09:48:43] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[07-Oct-2011 09:49:26] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[07-Oct-2011 09:51:21] PHP Fatal error:  Call to a member function read() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 8
+[07-Oct-2011 09:51:25] PHP Fatal error:  Call to a member function read() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 8
+[07-Oct-2011 09:51:56] PHP Fatal error:  Call to a member function read() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 8
+[07-Oct-2011 09:52:00] PHP Fatal error:  Call to a member function read() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 8
+[07-Oct-2011 09:52:16] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 09:52:26] PHP Fatal error:  Call to a member function read() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 8
+[07-Oct-2011 09:53:25] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[07-Oct-2011 09:53:27] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[07-Oct-2011 09:54:06] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[07-Oct-2011 09:54:27] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[07-Oct-2011 09:54:29] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[07-Oct-2011 09:56:37] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[07-Oct-2011 09:57:24] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[07-Oct-2011 09:58:33] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 11
+[07-Oct-2011 10:00:51] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 12
+[07-Oct-2011 10:02:02] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 13
+[07-Oct-2011 10:03:25] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 10:03:51] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 10:04:02] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:04:22] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 10:11:40] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 10:12:35] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 10:21:33] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 10:22:00] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 10:22:02] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 10:23:49] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:26:43] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:27:33] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:28:47] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 10:28:54] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 10:29:22] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:29:41] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:29:45] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:30:40] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 8
+[07-Oct-2011 10:31:12] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:31:27] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:31:50] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:36:50] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:38:01] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:50:52] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 12
+[07-Oct-2011 10:51:42] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 12
+[07-Oct-2011 10:51:43] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 12
+[07-Oct-2011 10:56:15] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:56:30] PHP Fatal error:  Call to a member function numbers() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 32
+[07-Oct-2011 10:59:19] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 12
+[07-Oct-2011 11:09:17] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 10
+[09-Oct-2011 13:53:34] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 4
+[09-Oct-2011 13:53:36] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 4
+[09-Oct-2011 13:53:38] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 4
+[10-Oct-2011 08:44:55] PHP Fatal error:  Call to a member function read() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/models/product.php on line 6
+[10-Oct-2011 08:52:37] PHP Fatal error:  Call to a member function read() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/models/product.php on line 6
+[10-Oct-2011 08:59:54] PHP Fatal error:  Call to undefined method SessionComponent::count() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 22
+[10-Oct-2011 09:16:51] PHP Parse error:  syntax error, unexpected '[' in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 25
+[10-Oct-2011 09:16:54] PHP Parse error:  syntax error, unexpected '[' in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 25
+[10-Oct-2011 10:39:31] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 22
+[10-Oct-2011 10:50:48] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 22
+[12-Oct-2011 14:47:25] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 7
+[12-Oct-2011 14:47:31] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 7
+[12-Oct-2011 14:47:41] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 7
+[12-Oct-2011 14:48:28] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 14:50:18] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 14:53:26] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 14:58:12] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 14:58:55] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 14:59:00] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 15:06:04] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 15:06:06] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 15:06:07] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 15:06:08] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 15:06:09] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 15:06:09] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 15:06:13] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 15:06:14] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 15:06:14] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 41
+[12-Oct-2011 15:07:50] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 43
+[12-Oct-2011 15:13:02] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 43
+[12-Oct-2011 15:13:05] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 43
+[12-Oct-2011 15:13:07] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 43
+[12-Oct-2011 15:25:08] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 45
+[12-Oct-2011 15:25:13] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 45
+[12-Oct-2011 15:25:51] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 45
+[12-Oct-2011 15:26:22] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 43
+[12-Oct-2011 15:28:49] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 48
+[12-Oct-2011 15:32:54] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 47
+[12-Oct-2011 15:36:43] PHP Fatal error:  Call to undefined method App::uses() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 38
+[12-Oct-2011 15:37:52] PHP Fatal error:  Call to undefined method App::uses() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 38
+[12-Oct-2011 15:37:54] PHP Fatal error:  Call to undefined method App::uses() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 38
+[12-Oct-2011 15:39:25] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 3
+[12-Oct-2011 15:39:38] PHP Fatal error:  Class 'CakeEmail' not found in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 39
+[12-Oct-2011 15:39:53] PHP Fatal error:  Class 'CakeEmail' not found in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 39
+[12-Oct-2011 15:39:56] PHP Fatal error:  Class 'CakeEmail' not found in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 39
+[12-Oct-2011 15:39:57] PHP Fatal error:  Class 'CakeEmail' not found in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 39
+[12-Oct-2011 15:40:51] PHP Fatal error:  Class 'CakeEmail' not found in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 39
+[12-Oct-2011 15:44:33] PHP Fatal error:  Call to a member function read() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 47
+[13-Oct-2011 07:07:59] PHP Fatal error:  Call to a member function from() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 39
+[13-Oct-2011 07:09:36] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 42
+[13-Oct-2011 08:10:41] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 42
+[13-Oct-2011 08:15:50] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 42
+[13-Oct-2011 08:16:08] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 42
+[13-Oct-2011 08:19:27] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 51
+[13-Oct-2011 08:25:08] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 46
+[13-Oct-2011 08:25:52] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 46
+[13-Oct-2011 08:26:51] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 47
+[13-Oct-2011 08:27:25] PHP Fatal error:  Call to undefined function  vendor() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/components/email.php on line 68
+[13-Oct-2011 08:32:13] PHP Fatal error:  Class 'PHPMailer' not found in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/components/email.php on line 71
+[13-Oct-2011 08:32:17] PHP Fatal error:  Class 'PHPMailer' not found in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/components/email.php on line 71
+[13-Oct-2011 08:32:49] PHP Fatal error:  Class 'phpmailer' not found in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/components/email.php on line 71
+[13-Oct-2011 08:39:13] PHP Fatal error:  require() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../../vendors/phpmailer/class.phpmailer.php' (include_path='/home2/erdigi5/public_html/gourmetbasket/test:/home2/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/components/email.php on line 2
+[13-Oct-2011 08:40:11] PHP Fatal error:  require() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required 'class.phpmailer.php' (include_path='/home2/erdigi5/public_html/gourmetbasket/test:/home2/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/components/email.php on line 2
+[13-Oct-2011 08:40:49] PHP Fatal error:  require() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required 'class.phpmailer.php' (include_path='/home2/erdigi5/public_html/gourmetbasket/test:/home2/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/components/email.php on line 2
+[13-Oct-2011 08:41:13] PHP Fatal error:  require() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../../vendors/phpmailer/class.phpmailer.php' (include_path='/home2/erdigi5/public_html/gourmetbasket/test:/home2/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/components/email.php on line 2
+[13-Oct-2011 08:56:35] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 48
+[13-Oct-2011 08:56:38] PHP Fatal error:  Call to undefined method stdClass::send() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 48
+[13-Oct-2011 09:02:44] PHP Fatal error:  require() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required 'class.phpmailer.php' (include_path='/home2/erdigi5/public_html/gourmetbasket/test:/home2/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 2
+[13-Oct-2011 09:44:13] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 33
+[13-Oct-2011 10:02:55] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 7
+[13-Oct-2011 10:06:07] PHP Fatal error:  Class 'Checkout' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/class_registry.php on line 142
+[13-Oct-2011 10:07:02] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 6
+[13-Oct-2011 10:07:04] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 6
+[13-Oct-2011 10:07:17] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 7
+[13-Oct-2011 10:08:36] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 5
+[13-Oct-2011 10:13:11] PHP Fatal error:  Class 'Checkout' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/class_registry.php on line 142
+[13-Oct-2011 10:13:29] PHP Fatal error:  Class 'Checkout' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/class_registry.php on line 142
+[13-Oct-2011 10:13:51] PHP Fatal error:  Class 'Checkout' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/class_registry.php on line 142
+[13-Oct-2011 10:13:58] PHP Fatal error:  Class 'Checkout' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/class_registry.php on line 142
+[13-Oct-2011 10:13:59] PHP Fatal error:  Class 'Checkout' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/class_registry.php on line 142
+[13-Oct-2011 10:14:25] PHP Fatal error:  Class 'Checkout' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/class_registry.php on line 142
+[13-Oct-2011 10:15:20] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 7
+[13-Oct-2011 10:15:56] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 8
+[13-Oct-2011 10:40:36] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 7
+[13-Oct-2011 10:41:13] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 7
+[13-Oct-2011 12:14:03] PHP Fatal error:  Call to a member function read() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/checkout/index.ctp on line 6
+[13-Oct-2011 12:25:08] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 31
+[13-Oct-2011 12:25:45] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 31
+[13-Oct-2011 12:31:11] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 31
+[13-Oct-2011 12:38:18] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 31
+[13-Oct-2011 12:40:50] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 31
+[13-Oct-2011 12:41:28] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 31
+[13-Oct-2011 12:41:33] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 35
+[13-Oct-2011 14:34:32] PHP Fatal error:  Call to undefined method MembersController::Member() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 46
+[13-Oct-2011 14:36:44] PHP Fatal error:  Call to undefined method MembersController::Member() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 46
+[13-Oct-2011 14:42:11] PHP Fatal error:  Call to undefined method MembersController::Member() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 46
+[14-Oct-2011 08:12:37] PHP Fatal error:  Call to a member function save() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 30
+[14-Oct-2011 08:13:11] PHP Fatal error:  Call to a member function save() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 30
+[14-Oct-2011 08:13:35] PHP Fatal error:  Call to a member function save() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 30
+[14-Oct-2011 08:14:17] PHP Fatal error:  Call to a member function save() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 30
+[14-Oct-2011 08:16:16] PHP Fatal error:  Call to a member function save() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 30
+[14-Oct-2011 08:32:22] PHP Fatal error:  Call to undefined method MembersController::query() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 29
+[14-Oct-2011 08:46:07] PHP Parse error:  syntax error, unexpected T_ELSE in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 33
+[14-Oct-2011 08:47:08] PHP Parse error:  syntax error, unexpected T_ELSE in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 33
+[14-Oct-2011 10:28:01] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 90
+[14-Oct-2011 10:45:28] PHP Parse error:  syntax error, unexpected T_VAR in /home2/erdigi5/public_html/gourmetbasket/test/app/models/member.php on line 20
+[14-Oct-2011 10:45:34] PHP Parse error:  syntax error, unexpected T_VAR in /home2/erdigi5/public_html/gourmetbasket/test/app/models/member.php on line 20
+[14-Oct-2011 11:07:10] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 63
+[14-Oct-2011 11:07:14] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 63
+[14-Oct-2011 11:09:17] PHP Fatal error:  Function name must be a string in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 64
+[14-Oct-2011 11:09:21] PHP Fatal error:  Function name must be a string in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 64
+[14-Oct-2011 11:09:24] PHP Fatal error:  Function name must be a string in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 64
+[14-Oct-2011 11:10:04] PHP Fatal error:  Function name must be a string in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 64
+[14-Oct-2011 11:11:32] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 64
+[14-Oct-2011 11:12:03] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 64
+[14-Oct-2011 11:12:22] PHP Fatal error:  Function name must be a string in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 64
+[14-Oct-2011 12:24:38] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/debugger.php on line 485
+[14-Oct-2011 12:25:33] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/debugger.php on line 263
+[14-Oct-2011 12:26:32] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 64
+[14-Oct-2011 12:34:37] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 64
+[14-Oct-2011 12:35:14] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/register.ctp on line 64
+[17-Oct-2011 10:25:10] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home2/erdigi5/public_html/gourmetbasket/test/app/models/member.php on line 37
+[17-Oct-2011 10:25:12] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home2/erdigi5/public_html/gourmetbasket/test/app/models/member.php on line 37
+[19-Oct-2011 13:03:15] PHP Fatal error:  Call to a member function getMember() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 8
+[19-Oct-2011 13:59:59] PHP Fatal error:  Call to a member function country() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 29
+[19-Oct-2011 14:00:31] PHP Fatal error:  Call to a member function state() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/checkout_controller.php on line 31
+[19-Oct-2011 15:17:51] PHP Parse error:  syntax error, unexpected ';' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/checkout/index.ctp on line 7
+[19-Oct-2011 15:17:53] PHP Parse error:  syntax error, unexpected ';' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/checkout/index.ctp on line 7
+[24-Oct-2011 12:52:57] PHP Fatal error:  Call to a member function find() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/vendors_controller.php on line 15
+[24-Oct-2011 13:34:12] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/vendors_controller.php on line 15
+[24-Oct-2011 14:42:54] PHP Fatal error:  Call to a member function getVendors() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/vendorrs_controller.php on line 17
+[24-Oct-2011 16:02:26] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 66
+[24-Oct-2011 16:02:29] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 66
+[24-Oct-2011 16:03:28] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_VARIABLE in /home2/erdigi5/public_html/gourmetbasket/test/app/models/product.php on line 24
+[24-Oct-2011 16:03:34] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_VARIABLE in /home2/erdigi5/public_html/gourmetbasket/test/app/models/product.php on line 24
+[24-Oct-2011 16:07:02] PHP Fatal error:  Call to undefined function  getimagesshop() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 32
+[24-Oct-2011 16:07:07] PHP Fatal error:  Call to undefined function  getimagesshop() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 32
+[24-Oct-2011 16:08:47] PHP Fatal error:  Call to undefined method ProductsController::getImagesShop() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 32
+[24-Oct-2011 19:16:13] PHP Fatal error:  Call to undefined function  error() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 38
+[24-Oct-2011 19:35:24] PHP Fatal error:  Call to undefined function  check() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 37
+[24-Oct-2011 19:35:50] PHP Fatal error:  Call to undefined method ProductsController::check() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 37
+[24-Oct-2011 19:41:08] PHP Fatal error:  Call to a member function flash() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 37
+[24-Oct-2011 19:42:57] PHP Fatal error:  Call to a member function flash() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 39
+[25-Oct-2011 13:25:51] PHP Fatal error:  Cannot use string offset as an array in /home2/erdigi5/public_html/gourmetbasket/test/app/views/vendors/index.ctp on line 6
+[25-Oct-2011 13:25:56] PHP Fatal error:  Cannot use string offset as an array in /home2/erdigi5/public_html/gourmetbasket/test/app/views/vendors/index.ctp on line 6
+[26-Oct-2011 12:51:55] PHP Fatal error:  Call to a member function url() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/models/vendor.php on line 15
+[27-Oct-2011 08:32:13] PHP Fatal error:  Call to a member function getVendors() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/register_controller.php on line 17
+[27-Oct-2011 12:00:22] PHP Fatal error:  Call to a member function save() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/register_controller.php on line 30
+[27-Oct-2011 14:27:40] PHP Parse error:  syntax error, unexpected ';' in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/register_controller.php on line 28
+[27-Oct-2011 19:51:42] PHP Fatal error:  Call to a member function link() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/views/layouts/register.ctp on line 10
+[27-Oct-2011 23:34:58] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 149
+[27-Oct-2011 23:35:06] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 149
+[27-Oct-2011 23:36:15] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 149
+[27-Oct-2011 23:37:24] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 149
+[28-Oct-2011 07:30:44] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 149
+[28-Oct-2011 07:30:47] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 149
+[28-Oct-2011 07:30:50] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 149
+[28-Oct-2011 07:32:11] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 149
+[30-Oct-2011 01:19:20] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 163
+[30-Oct-2011 01:20:09] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 163
+[30-Oct-2011 01:21:22] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 163
+[30-Oct-2011 01:25:15] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 163
+[30-Oct-2011 01:25:26] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/register.php on line 163
+[03-Nov-2011 12:42:05] PHP Fatal error:  Call to undefined function  getstate() in /home2/erdigi5/public_html/gourmetbasket/test/app/views/payment/index.ctp on line 105
+[03-Nov-2011 14:09:06] PHP Parse error:  syntax error, unexpected ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/payment/index.ctp on line 5
+[04-Nov-2011 16:11:59] PHP Parse error:  syntax error, unexpected $end, expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 55
+[08-Nov-2011 08:06:19] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 15
+[08-Nov-2011 08:06:22] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/products/index.ctp on line 15
+[09-Nov-2011 10:04:57] PHP Fatal error:  Call to undefined method SessionComponent::del() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/payment_controller.php on line 25
+[09-Nov-2011 11:11:35] PHP Fatal error:  Call to undefined method SessionComponent::del() in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/payment_controller.php on line 25
+[09-Nov-2011 11:35:30] PHP Parse error:  syntax error, unexpected '}' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/cart/index.ctp on line 109
+[09-Nov-2011 11:35:33] PHP Parse error:  syntax error, unexpected '}' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/cart/index.ctp on line 109
+[09-Nov-2011 15:15:30] PHP Fatal error:  Class 'Editor' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/class_registry.php on line 142
+[09-Nov-2011 15:15:40] PHP Fatal error:  Class 'Editor' not found in /home2/erdigi5/public_html/gourmetbasket/test/cake/libs/class_registry.php on line 142
+[16-Nov-2011 15:28:33] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../elements/menu_top.ctp' (include_path='/home2/erdigi5/public_html/gourmetbasket/test:/home2/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home2/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 183
+[17-Nov-2011 07:19:50] PHP Fatal error:  Class 'DB' not found in /home2/erdigi5/public_html/gourmetbasket/test/app/models/payment.php on line 201
+[06-Dec-2011 09:36:24] PHP Fatal error:  Call to a member function getMemberAddress() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 95
+[06-Dec-2011 13:22:07] PHP Fatal error:  Call to a member function getSlideData() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/pages_controller.php on line 84
+[06-Dec-2011 13:23:07] PHP Fatal error:  Call to a member function getSlideData() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/pages_controller.php on line 84
+[06-Dec-2011 13:26:51] PHP Fatal error:  Call to a member function getSlideData() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/pages_controller.php on line 84
+[21-Dec-2011 14:36:08] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/account.ctp on line 8
+[21-Dec-2011 14:36:11] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/account.ctp on line 8
+[21-Dec-2011 14:36:46] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/account.ctp on line 8
+[22-Dec-2011 15:02:41] PHP Fatal error:  Call to a member function obtainHistory_ofEvents() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 88
+[22-Dec-2011 15:07:51] PHP Fatal error:  Call to a member function obtainHistory_ofEvents() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 88
+[23-Dec-2011 06:08:21] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/member.php on line 138
+[23-Dec-2011 08:04:56] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/member.php on line 138
+[23-Dec-2011 08:05:00] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/member.php on line 138
+[23-Dec-2011 08:05:03] PHP Parse error:  syntax error, unexpected ';', expecting T_FUNCTION in /home2/erdigi5/public_html/gourmetbasket/test/app/models/member.php on line 138
+[23-Dec-2011 09:53:30] PHP Parse error:  syntax error, unexpected T_FOREACH in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 116
+[23-Dec-2011 09:53:32] PHP Parse error:  syntax error, unexpected T_FOREACH in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 116
+[23-Dec-2011 09:53:34] PHP Parse error:  syntax error, unexpected T_FOREACH in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 116
+[23-Dec-2011 09:53:40] PHP Parse error:  syntax error, unexpected T_FOREACH in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 116
+[27-Dec-2011 15:02:50] PHP Fatal error:  Call to a member function obtainHistory_ofEvents() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 87
+[27-Dec-2011 15:05:09] PHP Fatal error:  Call to a member function obtainHistory_ofEvents() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 87
+[27-Dec-2011 15:05:11] PHP Fatal error:  Call to a member function obtainHistory_ofEvents() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 87
+[27-Dec-2011 15:05:12] PHP Fatal error:  Call to a member function obtainHistory_ofEvents() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 87
+[27-Dec-2011 15:05:13] PHP Fatal error:  Call to a member function obtainHistory_ofEvents() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 87
+[27-Dec-2011 15:06:41] PHP Fatal error:  Call to a member function obtainHistory_ofEvents() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 87
+[27-Dec-2011 15:06:43] PHP Fatal error:  Call to a member function obtainHistory_ofEvents() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 87
+[27-Dec-2011 15:09:23] PHP Fatal error:  Call to undefined function  print_() in /home2/erdigi5/public_html/gourmetbasket/test/app/models/member.php on line 119
+[28-Dec-2011 09:55:55] PHP Parse error:  syntax error, unexpected $end, expecting '(' in /home2/erdigi5/public_html/gourmetbasket/test/app/models/member.php on line 55
+[29-Dec-2011 08:09:22] PHP Parse error:  syntax error, unexpected ';' in /home2/erdigi5/public_html/gourmetbasket/test/app/models/member.php on line 197
+[29-Dec-2011 12:21:08] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:23:05] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:30:01] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:30:40] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:33:00] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:33:15] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:33:25] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:33:26] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:33:27] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:35:29] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:36:01] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:38:28] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:39:39] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[29-Dec-2011 12:43:36] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /home2/erdigi5/public_html/gourmetbasket/test/app/views/members/products_history.ctp on line 34
+[30-Dec-2011 09:32:01] PHP Fatal error:  Call to a member function getAddressbyMember() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 116
+[30-Dec-2011 09:32:08] PHP Fatal error:  Call to a member function getAddressbyMember() on a non-object in /home2/erdigi5/public_html/gourmetbasket/test/app/controllers/members_controller.php on line 116
+[12-Jan-2012 09:53:39] PHP Fatal error:  Call to undefined method CartController::getTax() in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 47
+[12-Jan-2012 09:57:40] PHP Fatal error:  Unsupported operand types in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 84
+[17-Jan-2012 16:16:07] PHP Parse error:  syntax error, unexpected ';' in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/vendor.ctp on line 71
+[10-Feb-2012 18:27:21] PHP Parse error:  syntax error, unexpected $end in /home/erdigi5/public_html/gourmetbasket/test/app/views/products/detail.ctp on line 237
+[12-Feb-2012 08:20:03] PHP Fatal error:  Cannot access empty property in /home/erdigi5/public_html/gourmetbasket/test/app/views/elements/menu_top.ctp on line 39
+[12-Feb-2012 08:20:13] PHP Fatal error:  Cannot access empty property in /home/erdigi5/public_html/gourmetbasket/test/app/views/elements/menu_top.ctp on line 39
+[12-Feb-2012 08:20:13] PHP Fatal error:  Cannot access empty property in /home/erdigi5/public_html/gourmetbasket/test/app/views/elements/menu_top.ctp on line 39
+[12-Feb-2012 08:49:39] PHP Fatal error:  Call to a member function getCategories() on a non-object in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 21
+[12-Feb-2012 08:50:18] PHP Fatal error:  Call to a member function getCategories() on a non-object in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 21
+[12-Feb-2012 09:10:31] PHP Fatal error:  Call to a member function getVendors() on a non-object in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 20
+[12-Feb-2012 14:56:08] PHP Fatal error:  Call to undefined method View::loadModel() in /home/erdigi5/public_html/gourmetbasket/test/app/views/elements/menu_top.ctp on line 2
+[12-Feb-2012 14:56:10] PHP Fatal error:  Call to undefined method View::loadModel() in /home/erdigi5/public_html/gourmetbasket/test/app/views/elements/menu_top.ctp on line 2
+[12-Feb-2012 14:56:13] PHP Fatal error:  Call to undefined method View::loadModel() in /home/erdigi5/public_html/gourmetbasket/test/app/views/elements/menu_top.ctp on line 2
+[12-Feb-2012 17:45:10] PHP Fatal error:  Call to undefined method CartController::getRequest() in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 14
+[12-Feb-2012 17:46:57] PHP Fatal error:  Call to undefined method CartController::getRequest() in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 14
+[12-Feb-2012 17:46:59] PHP Fatal error:  Call to undefined method CartController::getRequest() in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 14
+[12-Feb-2012 18:03:58] PHP Fatal error:  Call to a member function isPost() on a non-object in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 9
+[12-Feb-2012 19:16:44] PHP Fatal error:  Call to a member function create() on a non-object in /home/erdigi5/public_html/gourmetbasket/test/app/views/products/detail.ctp on line 77
+[12-Feb-2012 19:33:47] PHP Parse error:  syntax error, unexpected $end in /home/erdigi5/public_html/gourmetbasket/test/app/views/products/detail.ctp on line 59
+[12-Feb-2012 19:33:49] PHP Parse error:  syntax error, unexpected $end in /home/erdigi5/public_html/gourmetbasket/test/app/views/products/detail.ctp on line 59
+[12-Feb-2012 19:33:51] PHP Parse error:  syntax error, unexpected $end in /home/erdigi5/public_html/gourmetbasket/test/app/views/products/detail.ctp on line 59
+[15-Feb-2012 20:15:02] PHP Fatal error:  Call to undefined method SessionComponent::unset() in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_controller.php on line 15
+[16-Feb-2012 07:55:07] PHP Fatal error:  Call to undefined method CartItemsController::setUser() in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_items_controller.php on line 9
+[16-Feb-2012 07:55:19] PHP Fatal error:  Call to undefined method CartItemsController::setUser() in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/cart_items_controller.php on line 9
+[16-Feb-2012 08:00:50] PHP Fatal error:  Call to a member function user() on a non-object in /home/erdigi5/public_html/gourmetbasket/test/cake/libs/controller/app_controller.php on line 51
+[16-Feb-2012 09:39:39] PHP Fatal error:  Call to undefined method ProductsController::getCategories() in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/products_controller.php on line 34
+[20-Feb-2012 11:55:28] PHP Parse error:  syntax error, unexpected $end in /home/erdigi5/public_html/gourmetbasket/test/app/views/checkout/index.ctp on line 86
+[23-Feb-2012 19:29:01] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_FUNCTION in /home/erdigi5/public_html/gourmetbasket/test/app/models/vendor.php on line 48
+[13-Mar-2012 15:07:53] PHP Fatal error:  Call to a member function getVendors() on a non-object in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/recipes_controller.php on line 11
+[27-Mar-2012 22:47:43] PHP Fatal error:  Call to a member function getVendors() on a non-object in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/markets_controller.php on line 13
+[27-Mar-2012 23:04:06] PHP Parse error:  syntax error, unexpected $end in /home/erdigi5/public_html/gourmetbasket/test/app/views/products/category.ctp on line 96
+[28-Mar-2012 20:26:29] PHP Fatal error:  Call to a member function getVendors() on a non-object in /home/erdigi5/public_html/gourmetbasket/test/app/controllers/categories_controller.php on line 12
+[11-Apr-2012 21:33:49] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../includes/doc-header.php' (include_path='/home/erdigi5/public_html/gourmetbasket/test:/home/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 21
+[11-Apr-2012 21:34:01] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../includes/doc-header.php' (include_path='/home/erdigi5/public_html/gourmetbasket/test:/home/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 21
+[11-Apr-2012 21:34:01] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../includes/doc-header.php' (include_path='/home/erdigi5/public_html/gourmetbasket/test:/home/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 21
+[11-Apr-2012 21:34:01] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../includes/doc-header.php' (include_path='/home/erdigi5/public_html/gourmetbasket/test:/home/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 21
+[11-Apr-2012 21:35:25] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../includes/doc-header.php' (include_path='/home/erdigi5/public_html/gourmetbasket/test:/home/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 21
+[11-Apr-2012 21:35:30] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../includes/doc-header.php' (include_path='/home/erdigi5/public_html/gourmetbasket/test:/home/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 21
+[11-Apr-2012 21:35:47] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../includes/doc-header.php' (include_path='/home/erdigi5/public_html/gourmetbasket/test:/home/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 21
+[11-Apr-2012 21:36:33] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../app/views/includes/doc-header.php' (include_path='/home/erdigi5/public_html/gourmetbasket/test:/home/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 21
+[11-Apr-2012 21:36:51] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../app/views/includes/doc-header.php' (include_path='/home/erdigi5/public_html/gourmetbasket/test:/home/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 21
+[11-Apr-2012 21:37:36] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../app/views/includes/doc-header.php' (include_path='/home/erdigi5/public_html/gourmetbasket/test:/home/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 21
+[11-Apr-2012 21:39:18] PHP Fatal error:  require_once() [<a href='http://php.net/function.require'>function.require</a>]: Failed opening required '../app/views/includes/doc-header.php' (include_path='/home/erdigi5/public_html/gourmetbasket/test:/home/erdigi5/public_html/gourmetbasket/test/app/:.:/usr/lib/php:/usr/local/lib/php') in /home/erdigi5/public_html/gourmetbasket/test/app/views/layouts/default.ctp on line 21

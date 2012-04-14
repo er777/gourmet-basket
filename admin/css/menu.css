@@ -1,0 +1,236 @@
+/*shop - product*/
+#content_vendor {
+    float: right;
+    position: relative;
+    width: 860px;
+    margin-left: 0px;
+}
+#content_vendor .content_product {
+    background: #EDEEF0;
+    float: left;
+   
+    margin-bottom: 15px;
+    margin-left: 15px;
+    padding-left: 0px;
+    padding-top: 10px;
+	width: 100px;
+	height: 100px;
+    
+}
+.shop_logo{
+    width:85px;
+    height:35px;
+}
+#content_vendor a{
+    text-decoration:none;
+}
+
+
+/******* tabs */
+.uiproduct label{
+    display: block;
+}
+
+#tabs a{
+	font-size:11px;
+}
+
+#tabs{
+    margin: 0 auto;
+    overflow: hidden;
+    width: auto;
+}
+#tabs .items-tab{
+    width: 630px;
+}
+#tabs .items-tab ul{
+    list-style: none outside none;
+    padding: 0;
+    margin-bottom: 6px;
+}
+#tabs .items-tab li{
+    background-color: #DDDDDD;
+    border: 1px solid #747A7D;
+    border-radius: 5px 5px 0 0;
+    display: inline;
+    padding: 4px;
+    text-decoration: none;
+}
+#tabs .items-tab li, span{
+    padding: 6px;
+}
+.tab_container{
+    background: none repeat scroll 0 0 #EFEFEF;
+    border: 1px solid #747A7D;
+    border-radius: 0 0 5px 5px; 
+}
+#tab1{ padding: 15px;}
+#tab2{ padding: 15px;}
+#tab3{ padding: 15px;}
+#tab4{ padding: 15px;}
+
+.checkbox1{
+    background-color: #FAFAFA; 
+    border: 1px solid #AFAFAF;
+    font-size: 11px;
+}
+/*end tab*/
+#a, #b, #c{
+    border: 1px solid gray;
+    display: block;
+    padding: 10px;
+}
+
+.label_del{
+    color: red;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 19px;
+}
+}
+
+/*end shop - product*/
+
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+.tabledata {
+    cursor:pointer; 
+    font-size:8pt; 
+    color:black;
+}
+#imgAPPROVAL,.er_pass{
+    display: block;
+    float: right;
+    color: red;
+    
+}
+#sendinfo{
+    cursor: pointer;
+}
+a.add{
+    text-decoration:none;
+    color:Gray;
+}
+.nop{
+    display: block;
+    float: right;
+    height: 27px;
+    text-align: right;
+    width: 70px;
+}
+.no{
+    background: url("../images/yesno.jpg") no-repeat scroll 0 -28px transparent;
+    display: block;
+    float: right;
+    height: 27px;
+    text-align: right;
+    width: 70px;
+}
+.yes{
+    background: url("../images/yesno.jpg") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: right;
+    height: 27px;
+    text-align: right;
+    width: 70px;
+}
+/*menu admin*/
+#subnavbar {
+    background: url(../images/menu_bg.gif) repeat-x;
+    font-family: "Trebuchet MS";
+    font-weight: bold;
+    height: 27px;
+    margin: 0;
+    padding: 0;
+}
+#subnav {
+    margin: 0;
+    padding: 0;
+}
+#subnav ul {
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#subnav li {
+    float: left;
+    list-style: none outside none;
+    margin: 0 0 0 8px;
+    padding: 0;
+}
+#subnav li a, #subnav li a:link, #subnav li a:visited {
+    color: #666464;
+    display: block;
+    font-size: 13px;
+    margin: 0;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+#subnav li a:hover, #subnav li a:active {
+    background: none repeat scroll 0 0 #999999;
+    color: #000000;
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+#subnav li li a, #subnav li li a:link, #subnav li li a:visited {
+    background: url(../images/menu_bg.gif) repeat-x;
+    border-bottom: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+    margin: 0;
+    font-size: 12px;
+    padding: 5px 10px;
+    width: 135px;
+}
+#subnav li li {
+    margin: 0;
+}
+#subnav li li a:hover, #subnav li li a:active {
+    background: none repeat scroll 0 0 #999999;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+#subnav li ul {
+    height: auto;
+    left: -999em;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 160px;
+    z-index: 9999;
+}
+
+#subnav li ul a {
+    width: 140px;
+}
+#subnav li ul a:hover, #subnav li ul a:active {
+}
+#subnav li ul ul {
+    margin: -25px 0 0 161px;
+}
+#subnav li:hover ul ul, #subnav li:hover ul ul ul, #subnav li.sfhover ul ul, #subnav li.sfhover ul ul ul {
+    left: -999em;
+}
+#subnav li:hover ul, #subnav li li:hover ul, #subnav li li li:hover ul, #subnav li.sfhover ul, #subnav li li.sfhover ul, #subnav li li li.sfhover ul {
+    left: auto;
+}
+#subnav li:hover, #subnav li.sfhover {
+    position: static;
+}
+/*end menu admin*/

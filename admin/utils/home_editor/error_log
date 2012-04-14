@@ -1,0 +1,6 @@
+[07-Dec-2011 07:15:44] PHP Fatal error:  Class 'DB' not found in /home2/erdigi5/public_html/gourmetbasket/test/admin/utils/home_editor/edit.php on line 2
+[07-Dec-2011 07:17:14] PHP Warning:  include_once(_init.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home2/erdigi5/public_html/gourmetbasket/test/admin/utils/home_editor/edit.php on line 2
+[07-Dec-2011 07:17:14] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening '_init.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home2/erdigi5/public_html/gourmetbasket/test/admin/utils/home_editor/edit.php on line 2
+[07-Dec-2011 07:17:14] PHP Fatal error:  Class 'DB' not found in /home2/erdigi5/public_html/gourmetbasket/test/admin/utils/home_editor/edit.php on line 3
+[08-Dec-2011 11:15:13] PHP Fatal error:  Class 'DB' not found in /home2/erdigi5/public_html/gourmetbasket/test/admin/utils/home_editor/list_block.php on line 11
+[08-Dec-2011 11:15:28] PHP Fatal error:  Class 'DB' not found in /home2/erdigi5/public_html/gourmetbasket/test/admin/utils/home_editor/list_block.php on line 11

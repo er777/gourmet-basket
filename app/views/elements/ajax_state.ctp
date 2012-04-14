@@ -1,0 +1,1 @@
+<? echo $form->input('state', array('options' => $options,'label'=>false,'div'=>null));?>

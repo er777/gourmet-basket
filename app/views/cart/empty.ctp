@@ -1,0 +1,1 @@
+<b> Shopping Cart is empty </b>

@@ -1,0 +1,192 @@
+.checkout-orders{
+    float: left;
+    padding: 10px;
+    width: 785px;
+    }
+#orders{
+    float: left;
+    padding: 10px;
+    width: 975px; 
+}
+.cart-heading{
+    border-collapse: collapse;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    margin-bottom: 20px;
+    width: 100%;
+    }
+/************* Head table *************/
+.cart-heading thead{
+        background-color: #F7F7F7;
+        border-bottom: 1px solid #DDDDDD;
+        color: #4D4D4D;
+        font-weight: bold;
+    }
+.cart-heading thead th{
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #DDDDDD;
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+    }    
+.cart-heading thead .date{
+    text-align: center;
+    }
+.cart-heading thead .image{
+    text-align: center;
+    }
+.cart-heading thead .prod-name{
+    text-align: center;
+    }
+.cart-heading thead .quantity{
+    text-align: center;
+    }
+.cart-heading thead .unit-price{
+    text-align: center;
+    }
+.cart-heading thead .total{
+    text-align: center;
+    }
+/************ Tbody table *************/
+.cart-heading tbody{
+    
+}
+.cart-heading tbody td{
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    font-size: 13px;
+    padding: 3px 8px;
+    vertical-align: top;
+}
+/**************** Menu context *********************/
+.vtabs{
+    border-right: 1px solid #DDDDDD;
+    display: block;
+    float: left;
+    min-height: 300px;
+    padding: 10px 0;
+    width: 190px;   
+}
+.vtabs-content{
+    
+}
+.vtabs a.selected {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding-right: 15px;
+}
+.vtabs a {
+    display: none;
+}
+.vtabs a, .vtabs span {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border-bottom: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    clear: both;
+    color: #000000;
+    display: block;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 6px 14px 7px 15px;
+    text-align: right;
+    text-decoration: none;
+    width: 160px;
+}
+/****************************/
+.list {
+    border-collapse: collapse;
+    border-left: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.list .left {
+    padding: 7px;
+    text-align: left;
+}
+.list thead td a, .list thead td {
+    color: #222222;
+    font-weight: bold;
+    text-decoration: none;
+}
+.list thead td {
+    background-color: #F7F7F7;
+    padding: 0 5px;
+}
+.list td {
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+}
+/****************************/
+.title-account{
+    color: #555555;
+    float: left;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+}
+#items-account{
+    clear: both;
+    float: left;
+    margin-bottom: 95px;
+}
+#items-account span{
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 13px;
+}
+#items-account ul{
+    border: 1px solid #AFAFAF;
+    color: #000000;
+    margin-left: 10px;
+    padding: 10px 720px 10px 25px;
+    text-align: left;
+}
+#items-account li{
+    margin: 0;
+    padding: 0;
+}
+#items-account li > a{
+    color: #38B0E3;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-decoration: none;
+
+}
+/*************/
+.over_row {
+	background-color:#E7E9EE !important;
+}
+.br-old{
+    background-color: #FAFAFA;
+}
+.br-new{
+    background-color: #FFFFFF;
+}
+.br-selected{
+    background-color:#E3E2CD !important;
+}
+/*************/
+.detaill-account{
+    background: none repeat scroll 0 0 #FAFAFA;
+    border: 1px solid #E5E5E5;
+    float: left;
+    padding: 5px;
+    width: 974px;
+}
+.detaill-account a{
+    color: #D64C32;
+    float: right;
+    margin-right: 10px;
+    text-decoration: underline;
+    vertical-align: middle;
+}

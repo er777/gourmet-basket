@@ -1,0 +1,417 @@
+body {
+    font-family: Tahoma, sans-serif;
+    font-size: 9pt;
+    color:#033662;
+    margin: 8pt;
+    background-repeat: repeat-x;
+}
+
+.clear {
+	clear:both;
+}
+
+ul ol {
+	list-style:decimal;	
+}
+
+ol {
+	margin-bottom:10px;
+	
+}
+
+tr {
+    font-size: 9pt;
+}
+th {
+    font-size: 9pt;
+}
+td {
+    font-size: 9pt;
+}
+a:link {
+    font-weight: 700;
+    text-decoration: underline;
+}
+a:visited {
+    font-weight: 700;
+    text-decoration: underline;
+}
+a:hover {
+    font-weight: 700;
+    text-decoration: none;
+}
+a:active {
+    font-weight: 700;
+    color: #990000;
+    text-decoration: underline;
+}
+#navtop {
+    font-family: Tahoma, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #FFFFFF;
+    height: 44px;
+    width: 762px;
+    background-image: url(images/navbartop.gif);
+    background-repeat: no-repeat;
+    padding-left: 23px;
+    vertical-align: middle;
+    padding-top: 5px;
+}
+
+.form_fields {
+      font-size: 8pt;
+      font-weight: bold;
+      color: #003366;
+      text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+      font-family: Arial, Tahoma, Helvetica;
+}
+
+
+.form_fields input, select {
+      font-size: 8pt;
+      font-weight: normal;
+      background: #FFFFCE;
+      color: #000000;
+      text-decoration: none;
+      font-family: Arial, Tahoma, Helvetica;
+}
+
+
+.form_fields_white {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+      font-family: Arial, Tahoma, Helvetica;
+}
+
+.form_fields_white input, select {
+      font-size: 8pt;
+      font-weight: normal;
+      background: #FFFFCE;
+      color: #000000;
+      text-decoration: none;
+      font-family: Arial, Tahoma, Helvetica;
+}
+
+.form_fields_white a {
+      color: #FFFF99;
+}
+
+.form_fields_red {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #FF0000;
+      text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+      font-family: Arial, Tahoma, Helvetica;
+}
+
+
+.navtop {
+    font-weight: 700;
+    color: #FFFFFF;
+}
+a.navtop:link {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #FFFFFF;
+
+}
+a.navtop:hover {
+
+    font-weight: 700;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+#mainbody {
+    background-image: url(images/common/bg-whitemid.gif);
+    background-repeat: repeat-y;
+}
+#tabsideindex {
+    background-image: url(images/common/tabside_bg.gif);
+    background-repeat: repeat-y;
+    vertical-align: top;
+}
+.midheading {
+    font-size: 28px;
+    font-weight: 700;
+    color: #CC3300;
+    letter-spacing: -1px;
+    padding-left: 25px;
+}
+.midsmalltext {
+    font-size: 14px;
+    color: black;
+    padding-left: 25px;
+    font-weight: 700;
+
+}
+.midtinytext {
+    font-size: 8pt;
+    color: black;
+    padding-left: 25px;
+    padding-top: 8pt;
+
+}
+.headingmid {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.smalltextform {
+    font-size: 10px;
+    color: #FFFFFF;
+}
+
+#formtable {
+    color: #D23402;
+    font-weight: bold;
+    text-align: left;
+    font-size: 11px;
+}
+
+#cellform {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+#cellformtop {
+    border-top: 2px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+#cellformbottom {
+    border-bottom: 2px solid #CCCCCC;
+}
+
+.datefield {
+    width: 30px;
+    height: 20px;
+    background-repeat:no-repeat;
+    background-color: #FFFBF1;
+
+}
+
+.namefield {
+    width: 150px;
+    height: 20px;
+    background-repeat:no-repeat;
+    background-color: #FFFBF1;
+    }
+    
+#footer {
+    font-size: 10px;
+    color: #333333;
+}
+#footer {
+    font-size: 10px;
+    color: #000000;
+    text-align: center;
+
+}
+.midsupersmalltext {
+    font-size: 10px;
+    color: black;
+    padding-left: 25px;
+    font-weight: normal;
+    line-height: 15px;
+
+}
+
+.smalltext {
+    font-size: 11px;
+
+}
+
+.headermidblue {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    letter-spacing: -1px;
+    font-weight: 700;
+    vertical-align: middle;
+    color: #003366;
+
+}
+
+.headerbig {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    letter-spacing: -1px;
+    font-weight: 700;
+    vertical-align: middle;
+
+}
+
+.offerheader {
+
+    font-size: 11px;
+    font-weight: 700;
+    font-family: Tahoma, Tahoma, sans-serif;
+}
+.offerdescription {
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #333333;
+}
+
+#registerBlock {
+    height: 900px;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 5;
+}
+#registerBlock .input th {
+    text-align: right;
+}
+#leftRegister {
+    float: left;
+	width:450px;
+    
+}
+#leftRegisterFix {
+    background-color: #CCFF00;
+}
+.divider {
+    float: left;
+    height: 500px;
+    margin: 140px 0 0;
+    padding: 0;
+    width: 2px;
+    z-index: 20;
+}
+#rightRegister {
+    float: left;
+    padding: 5px 5px 5px 10px;
+}
+
+
+
+.admin-images-left, .admin-images-right {
+	
+	width: 440px;
+	
+}
+
+
+.admin-images-left {
+	float: left;
+
+}
+
+
+.admin-images-right {
+	float: right;
+}
+
+ul.sett li {
+    height: 30px;
+    width: 350px;
+}
+
+ul.sett input {
+    float: right;
+    width: 190px;
+}
+
+
+/*PAGINATION*/
+.pagination
+{
+ color: gray;  
+}
+.pagination ul{
+    list-style:none;  
+    float: right;
+    margin-right:5px;
+    
+}
+.pagination ul li{
+    display:block;   
+    float:left;
+    height:15px;
+    text-align:center;
+    margin:0 1px;
+}
+.pagination ul li a{
+    display:block;
+    color:black;
+    text-decoration:none;
+    font-family:Calibri, sans-serif;
+    font-size:11px;
+    padding: 0 5px;
+}
+.pagination ul li a:hover{
+    text-decoration:underline;
+    color: gray;
+}
+.pagination_prev, .pagination_next{
+    background:none;
+}
+.pagination ul li.pagination_prev a, .pagination ul li.pagination_next a{
+    color:#666 !important;
+    font-family:Calibri, sans-serif;
+    font-size: 13px !important;
+    font-weight: bold;
+}
+
+.current_pag{
+    display:block;
+    float:left;
+     height:15px;
+    text-align:center;
+    margin:0 1px;
+     color: gray;   
+}
+
+a.mor{
+    border: 1px none;
+    text-decoration: none;
+}
+.more{
+    display: block;
+    margin: 2px 0 0;
+    padding: 0px;
+}
+.uiproduct select{
+    width: 164px;
+}
+
+/*Recipes **/
+
+.recipe-box-left {
+	float:left;
+}
+
+.recipe-info {
+	width:410px;
+	text-align:right;
+}
+
+.recipe-info p {
+	font-size:80%;
+	
+}
+
+.recipe-label {
+	
+}
+
+
+.vendor-bullets {
+	float:left;
+	margin-left:7px;
+	width:600px;	
+}
+.bullet-box {
+	height:34px;
+}
