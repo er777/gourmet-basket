@@ -19,7 +19,7 @@ foreach ($sscproducts as $val) {
 
     <div class="content-product">
       <div class="content-img">
-      <?php $link = 'detail/' . $val['Product']['product_id'] . '_' . $val['Product']['product_name']; ?>
+      <?php $link = 'detail/' . $val['Product']['product_id'] . '-' . $val['Product']['product_name']; ?>
       <?php echo $html->image('../admin/images/product/'.($val['Product']['image']!=""?$val['Product']['image']:'default.png'), array('border' => '0', 'alt' => 'p', 'title' => 'p', 'width' => '118px', 'height' => '118 px',"url"=> $link)); ?>
       </div>
 

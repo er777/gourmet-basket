@@ -23,7 +23,7 @@
     <?php
     foreach ($subsubcategories as $key => $val) {   ?>
           <ul>
-              <li><a href="/products/subsubcategory/<?php echo $val['ssc']['sub_subcat_id'];?>_<?php echo $val['ssc']['sub_subcategory']; ?>">
+              <li><a href="/products/subsubcategory/<?php echo $val['ssc']['sub_subcat_id'];?>-<?php echo $val['ssc']['sub_subcategory']; ?>">
                   <div class="name"> <?php echo strlen($val['ssc']['sub_subcategory'])>25?substr($val['ssc']['sub_subcategory'],0,35)."...":$val['ssc']['sub_subcategory'];?></div></a>
               </li>
           </ul>
@@ -42,7 +42,7 @@ foreach ($products as $val) {
 
     <div class="content-product">
       <div class="content-img">
-      <?php $link = 'detail/' . $val['Product']['product_id'] . '_' . $val['Product']['product_name']; ?>
+      <?php $link = 'detail/' . $val['Product']['product_id'] . '-' . $val['Product']['product_name']; ?>
       <?php echo $html->image('../admin/images/product/'.($val['Product']['image']!=""?$val['Product']['image']:'default.png'), array('border' => '0', 'alt' => 'p', 'title' => 'p', 'width' => '118px', 'height' => '118px',"url"=> $link)); ?>
       </div>
 

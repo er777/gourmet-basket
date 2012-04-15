@@ -43,7 +43,11 @@ class Vendor extends AppModel {
 		$selectParentsAndChildren =    "SELECT  categories.category_id as category_id,
 							subcategories.subcategory_id as subcategory_id,
 							categories.category_name,
-							subcategories.subcategory
+							categories.category_image,
+							categories.category_article,
+							subcategories.subcategory,
+							REPLACE(LOWER(REPLACE(LOWER(categories.category_name), '/', '-')), ' ', '-') AS parent_slug,
+							REPLACE(LOWER(REPLACE(LOWER(subcategories.subcategory), '/', '-')), ' ', '-') AS child_slug
 						FROM categories  
 						LEFT JOIN subcategories 
 						ON subcategories.category_id = categories.category_id
@@ -52,34 +56,51 @@ class Vendor extends AppModel {
 		$selectGrandchildren = "SELECT 	sub_subcategories.sub_subcat_id,
 						subcategories.subcategory_id,
 						subcategories.subcategory,
-						sub_subcategories.sub_subcategory
+						sub_subcategories.sub_subcategory,
+						REPLACE(LOWER(REPLACE(LOWER(subcategories.subcategory), '/', '-')), ' ', '-') AS child_slug,
+						REPLACE(LOWER(REPLACE(LOWER(sub_subcategories.sub_subcategory), '/', '-')), ' ', '-') AS grandchild_slug
 					FROM subcategories  
 					INNER JOIN sub_subcategories 
 					ON subcategories.subcategory_id = sub_subcategories.subcategory_id
 					ORDER BY subcategories.subcategory, sub_subcategories.sub_subcategory;";
 					
 			$ParentsAndChildren = $this->query($selectParentsAndChildren);
+			/*print '<pre style="background-color:#fff">';
+			print_r($ParentsAndChildren);
+			print' </pre>';*/
 			$grandchildrenResults = $this->query($selectGrandchildren);
 			$AllGrandchildren = array();
 			foreach ($grandchildrenResults as $row) {
 				$subcat_id = $row['subcategories']['subcategory_id'];
 				$AllGrandchildren[$subcat_id][] = array('name' => $row['sub_subcategories']['sub_subcategory'],
-											 'id' => $row['sub_subcategories']['sub_subcat_id'],
-										        );
+									'id' => $row['sub_subcategories']['sub_subcat_id'],
+									'grandchild_slug' => $row[0]['grandchild_slug'],
+									);
 			}
 			foreach ($ParentsAndChildren as $row) {
 				$parent_category_name = $row['categories']['category_name'];
 				$parent_category_id = $row['categories']['category_id'];
+				$parent_category_image = $row['categories']['category_image'];
+				$parent_category_article = $row['categories']['category_article'];
+				
 				$child_category_id = $row['subcategories']['subcategory_id'];
 				$child_category_name = $row['subcategories']['subcategory'];
+				$child_category_name = $row['subcategories']['subcategory'];
+				$child_slug = $row[0]['child_slug'];
+				$parent_slug = $row[0]['parent_slug'];
 				$myGrandchildren = (isset($AllGrandchildren[$child_category_id]) ? $AllGrandchildren[$child_category_id] : FALSE);
 				
+				$structuredArrayOfAllCategories[$parent_category_id]['category_id'] = $parent_category_id;
+				$structuredArrayOfAllCategories[$parent_category_id]['category_name'] = $parent_category_name;
+				$structuredArrayOfAllCategories[$parent_category_id]['category_image'] = $parent_category_image;
+				$structuredArrayOfAllCategories[$parent_category_id]['category_article'] = $parent_category_article;
 				// Properly structured array of nested children, complete with ID's needed to make URL's.
-				$structuredArrayOfAllCategories[$parent_category_name]['children'][] = array('name' => $child_category_name,
+				$structuredArrayOfAllCategories[$parent_category_id]['children'][] = array('name' => $child_category_name,
 													     'subcategory_id' => $child_category_id,
 													     'grandchildren' => $myGrandchildren,
+													     'parent_slug' => $parent_slug,
+													     'child_slug' => $child_slug,
 													     );
-				$structuredArrayOfAllCategories[$parent_category_name]['category_id'] = $parent_category_id;
 			
 		}
         return $structuredArrayOfAllCategories;

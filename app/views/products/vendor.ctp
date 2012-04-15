@@ -22,7 +22,7 @@ $i = count($products);
 ?>
     <div class="content-product">
       <div class="content-img">
-      <?php $link = 'detail/' . $val['product_id'] . '_' . $val['product_name']; ?>
+      <?php $link = 'detail/' . $val['product_id'] . '-' . $val['product_name']; ?>
       <?php echo $html->image('../admin/images/product/'.($val['image']!=""?$val['image']:'default.png'), array( 'height' => '110px', 'width' => '110px','border' => '0', 'alt' => $val['description'], 'title' => $val['description'],   "url"=> $link)); ?>
         																										 <!-- 'class' =>'resizeme',-->
       </div>

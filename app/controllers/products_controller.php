@@ -142,7 +142,7 @@ class ProductsController extends AppController {
 	}
 
     function category($cid = null) {
-        $cat = explode("_",$cid);
+        $cat = explode("-",$cid);
         $cat = $cat[0];
 
         $this->layout = 'site';
@@ -163,7 +163,6 @@ class ProductsController extends AppController {
         }
         if (!empty($this->data)) {
             $conditions = array();
-
             if ($this->data['Product']['search'] != '') {
                 $search = strtolower($this->data['Product']['search']);
                 array_push($conditions, array(
@@ -218,9 +217,9 @@ class ProductsController extends AppController {
     }
 
     function subcategory($scid = null) {
-        $scat = explode("_",$scid);
+        $scat = explode("-",$scid);
         $scat_id = $scat[0];
-        $scat_name = $scat[1];
+	$scat_name = preg_replace ( "/^.*?\-/",'', $scid );
         $this->layout = 'site';
         if ($scid != null && 1==2) {
             $this->paginate = array(
