@@ -13,7 +13,7 @@
                 <?php if(isset($parent['children'])): ?>
                 <ul style="margin-left:10px;">
                   <?php foreach ($parent['children'] as $child) :?>
-                  <li><a class="hand-drawn" href="/products/category/<?php print $parent['category_id'] . "-" . $child['child_slug'];?>"><?php print $child['name'];?></a>
+                  <li><a class="hand-drawn" href="/products/subcategory/<?php print $child['subcategory_id'] . "-" . $child['child_slug'];?>"><?php print $child['name'];?></a>
 			<?php if ($child['grandchildren']): ?>
 			<ul style="font-size:11px; margin-left:20px;font-style:italic;">
 			<?php foreach ($child['grandchildren'] as $grandchild): ?>
