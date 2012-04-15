@@ -1,16 +1,4 @@
 <?php require_once('views/includes/doc-header.php'); ?>
-<?php
-echo $html->css('gb-main.css');
-echo $html->script('jquery-1.6.1.min.js');
-echo $html->script('jquery-ui.min.js');
-echo $html->script('jquery.mCustomScrollbar.js');
-echo $html->script('hoverIntent.js');
-//echo $html->script('superfish.js');
-echo $html->script('jquery.galleryview-3.0-dev.js');
-echo $html->script('jquery.easing.1.3.js');
-echo $html->script('jquery.touchcarousel-1.0.min.js');
-echo $html->script('jquery.mousewheel.min.js');
-?>
 
 	<script type="text/javascript">
 		  $(window).load(function() {
@@ -94,7 +82,7 @@ echo $html->script('jquery.mousewheel.min.js');
             <!--<div id="logo"></div>-->
                 
             <div id="nav">
-                 <?php echo $this->element('menu_top');?> 
+                 <?php echo $this->element('menu_top-new');?> 
             </div>
               
             <!-- Jorge original --> 

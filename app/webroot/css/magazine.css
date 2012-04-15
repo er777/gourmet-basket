@@ -650,36 +650,6 @@ span.price {
 /** DROP EVERYTHING MENU **/
 
 
-9 / 116 requests  ❘  783B / 125.24KB transferred  ❘  6.81s (onload: 5.19s, DOMContentLoaded: 1.82s)
-css
-fonts.googleapis.com
-7ms0
-css
-fonts.googleapis.com
-7ms0
-default.css
-/styles
-2ms
-dropEverything.css
-/menus/dropEverything
-182ms0
-buttons.abbf7096abf2d5235f5a712739e27809.css
-w.sharethis.com/button/css
-5ms0
-branding.css
-www.google.com/cse/api
-25ms0ms
-share.f3e2bdf5d7c0116cda1b7ba5aa35bb90.css
-w.sharethis.com/share5x/css
-0ms1ms
-dropEverything-ipad.css
-/menus/dropEverything
-350ms3ms
-r=O
-plusone.google.com/_/apps-static/_/ss/plusone/ver=1hsii7im6lem9/am=!0uyYGioceDR5m0zE/bf=BA
-19ms1ms
-
-HeadersPreviewResponseCookiesTiming
 /* ================================================================ 
 This copyright notice must be untouched at all times.
 
@@ -696,7 +666,7 @@ html {-webkit-animation: safariSelectorFix infinite 1s;}
 100% {zoom:1;}
 }
 
-.dropEverything {padding:0; margin:0 auto; list-style:none; !important; position:relative; height:36px; z-index:100;}
+.dropEverything {padding:0; margin:0 auto; list-style:none; !important; position:relative; height:36px; z-index:50000;}
 .dropEverything li.top-li {float:left; margin-right:1px; border-bottom:1px solid transparent;}
 .dropEverything a.top-a {display:block; padding:0 15px; font-size:13px; line-height:35px;font-weight:bold; color:#fff; text-decoration:none;
 -moz-border-radius: 8px 8px 0 0;
@@ -731,7 +701,7 @@ border-radius: 0 0 8px 8px;
 .dropEverything li.top-li:hover {border-bottom:1px solid #aaa;}
 .dropEverything li.top-only:hover {border-bottom:1px solid transparent;}
 .dropEverything li.top-li:hover > a.top-a {background:#dc563d;}
-.dropEverything li.top-li:hover div.dropEverything-page {left:0;}
+.dropEverything li.top-li:hover div.dropEverything-page {left:-100px;}
 
 .dropEverything li.pageOne:hover {position:static;}
 .dropEverything li.pageTwo:hover {position:static;}
@@ -740,12 +710,15 @@ border-radius: 0 0 8px 8px;
 .dropEverything li.pageFive:hover {position:relative;}
 .dropEverything li.pageSix:hover {position:static;}
 
-.dropEverything li.pageOne div.dropEverything-page {width:660px;}
+.dropEverything li.pageOne div.dropEverything-page {width:860px;}
 .dropEverything li.pageTwo div.dropEverything-page {width:737px;}
 .dropEverything li.pageThree div.dropEverything-page {width:500px;}
 .dropEverything li.pageFour div.dropEverything-page {width:737px;}
 .dropEverything li.pageFive div.dropEverything-page {width:330px;}
 .dropEverything li.pageSix div.dropEverything-page {width:737px;}
+
+
+.dropEverything li.pageOne div.dropEverything-page :hover {left:40px;}
 
 .dropEverything li.close {position:absolute; left:50%; bottom:37px; width:90px; height:35px; line-height:35px; margin-left:-50px; display:none;}
 .dropEverything li.close a {background:#c00; color:#fff; text-align:center;
@@ -763,6 +736,9 @@ border-radius: 8px;
 	color:#f02d41;
 }
 
+a.hand-drawn {
+	font-size:11px;
+}
 
 
 
@@ -784,6 +760,12 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 .dropdownMenu ul ul li:hover {position:static;}
 .dropdownMenu ul ul li:hover > ul {left:100%; margin-top:-22px;}
 .dropdownMenu ul ul li.rgt:hover > ul {left:auto; right:100%; margin-top:-22px;}
+
+.dropdownMenu ul li ul li a {
+	margin-left:20px;
+}
+
+
 
 /* flyout menu */
 .flyoutMenu {float:left; position:relative;}
@@ -809,6 +791,9 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 .dropEverything-gallery ul li span img {width:480px;}
 .dropEverything-gallery ul li span b {display:block; width:480px; font:normal 12px/30px; color:#000; background:#fff; text-align:center;}
 .dropEverything-gallery ul li:hover span {display:block;}
+.dropEverything-inner ul li ul li a.hand-drawn { margin-left:10px; }
+
+
 
 /* form */
 .dropEverything-form {padding:10px; margin:0;}

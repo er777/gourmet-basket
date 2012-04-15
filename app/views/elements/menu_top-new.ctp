@@ -1,23 +1,25 @@
 <!--<div id="shop-by"></div>-->
+
 <ul class="dropEverything">
   <li class="top-li pageOne"><a class="top-a" href="/categories">CATEGORIES</a>
     <div class="dropEverything-page">
-      <h2>Search by Categories</h2>
+      <h2>Full Page OF EVERYTHING -----><a href="/pages/catalog" style="color:#fff" >*** HERE ***</a></h2>
       <div class="dropEverything-row">
         <h3>CATEGORIES</h3>
         <div class="dropEverything-col1 jquery-column">
           <div class="dropEverything-inner">
             <ul>
-              <?php foreach ($all_categories as $parent) :?>
-              <li><a class="hand-drawn" href="/products/category/<?php print $parent['category_id'];?>"><?php print($parent['category_name']);?></a>
-                <?php if(isset($parent['children'])): ?>
+              <?php foreach ($all_categories as $category_name=>$children_and_cat_id) :?>
+              
+              <li> <a class="hand-drawn" href="/products/category/<?php print $children_and_cat_id['category_id'];?>"><?php print($category_name);?></a>
+                <?php if(isset($children_and_cat_id['children'])): ?>
                 <ul style="margin-left:10px;">
-                  <?php foreach ($parent['children'] as $child) :?>
-                  <li><a class="hand-drawn" href="/products/subcategory/<?php print $child['subcategory_id'] . "-" . $child['child_slug'];?>"><?php print $child['name'];?></a>
-			<?php if ($child['grandchildren']): ?>
+                  <?php foreach ($children_and_cat_id['children'] as $subcat_array) :?>
+                  <li><a class="hand-drawn" href="/products/category/<?php print $subcat_array['subcategory_id'] . "_" . urlencode($subcat_array['name']);?>"><?php print $subcat_array['name'];?></a>
+			<?php if ($subcat_array['grandchildren']): ?>
 			<ul style="font-size:11px; margin-left:20px;font-style:italic;">
-			<?php foreach ($child['grandchildren'] as $grandchild): ?>
-			<li><a href ="/products/subcategory/<?php print $grandchild['id']; ?>-<?php print $grandchild['grandchild_slug'];?>" style="color:#5864E8"><?php print $grandchild['name']; ?></a></li>
+			<?php foreach ($subcat_array['grandchildren'] as $grandchild): ?>
+			<li><a href ="/products/subcategory/<?php print $grandchild['id']; ?>" style="color:#5864E8"><?php print $grandchild['name']; ?></a></li>
 			<?php endforeach; ?>
 			</ul>
 			<?php endif; ?>
@@ -65,7 +67,7 @@
             <? //var_dump($users);?>
             <ul>
               <?php foreach ($users as $path => $anchor_text) :?>
-              <li><a href="<?php print $path;?>"><?php print $anchor_text; ?></a></li>
+              <li class="vendor"><a href="<?php print $path;?>"><?php print $anchor_text; ?></a></li>
               <? endforeach; ?>
             </ul>
           </div>

@@ -1,31 +1,4 @@
-<?php
-
-function generate_id($uri) {
-	/* regular expressions */
-	$regex1 = '/[^a-zA-Z0-9]/'; //remove anything but letters and numbers
-	$regex2 = '/[\-]+/'; //remove multiple "-"'s in a row
-	$regex3 = '/^[-]+/'; //remove starting "-"
-	$regex4 = '/[-]+$/'; //remove ending "-"
-	/* return... */
-	return preg_replace(
-				array($regex1,$regex2,$regex3,$regex4),
-				array('-','-','',''),
-				$_SERVER['REQUEST_URI']
-			  );
-}
-
-	$body_id = generate_id($_SERVER['REQUEST_URI']);
-?>
-
 <?php require_once('views/includes/doc-header.php'); ?>
-
-<?php
-echo $html->css('gb-main.css');
-echo $html->script('jquery-1.6.1.min.js');
-echo $html->script('hoverIntent.js');
-echo $html->script('superfish.js');
-?>
-
 </head>
 <body id="default">
 
@@ -39,9 +12,6 @@ echo $html->script('superfish.js');
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=214123048679188";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
-
-
 
 
 
@@ -70,7 +40,7 @@ echo $html->script('superfish.js');
                 
                 
                <div id="nav">
-                   <?php echo $this->element('menu_top');?> 
+                   <?php echo $this->element('menu_top-new');?> 
           		</div>
                 
             <!-- Jorge original --> 

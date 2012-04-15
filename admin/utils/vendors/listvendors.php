@@ -37,7 +37,7 @@
             $var1 .= "         ON c.country_id = u.country_id ";
             $var1 .= "       LEFT JOIN zone AS z ";
             $var1 .= "         ON u.zone_id = z.zone_id ";
-            $var1 .= "WHERE  u.`level` = 'vendor' " ;
+            $var1 .= "WHERE  u.`level` = 'vendor' ORDER BY u.shop_name " ;
             $pages = pagin_top(10,$var1);
             $var1 = $var1 . ' ' . $pages->limit;
             DB::query($var1);   
@@ -55,7 +55,7 @@
                 <td><?php echo $row["user_id"]; ?></td>
                 <td><a href="vendors.php?user_id=<?php echo $row["user_id"]; ?>"><?php echo $row["user_name"]; ?></a></td>
                 <td><?php echo $row["password"]; ?></td>
-                <td><?php echo $row["business_name"]; ?></td>
+                <td><?php echo $row["shop_name"]; ?></td>
                 <td><?php echo $row["street_address"]; ?></td>
                 <td><?php echo $row["city"]." , ".$row["zname"]." , " .$row["zip"]; ?></td>   
                 <td><?php echo $row["email"]; ?></td>     

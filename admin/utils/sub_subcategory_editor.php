@@ -72,7 +72,7 @@ if(isset($_GET["cmd"]) && $_GET["cmd"]=="delete") {
     <tr>
         <td>
             Sub Sub-Category Name:<br>
-            <input type="text" name="subsubcategory_name" id="subsubcategory_name" size="32" maxlength="32" value="<?php echo $sub_subcategory_name;?>"/><br>
+            <input type="text" name="subsubcategory_name" id="subsubcategory_name" size="40" maxlength="40" value="<?php echo $sub_subcategory_name;?>"/><br>
             <!--value="<?php //echo $subcategory_name; ?>" TOOK OUT - ER-->
         </td> 
     </tr> 
