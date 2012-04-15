@@ -1,31 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Gourmet-Basket!</title>
-<meta name="Description" content="">
-<meta name="Keywords" content="">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="robots" content="noindex, nofollow, noarchive" />
-
-<?php
-
-echo $html->css('gb-main.css');
-?>
-
-<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Pompiere|Prosto+One|Quattrocento Sans|Bowlby+One+SC|Changa+One|Boogaloo|Tangerine' >
-
-<?php
-echo $html->script('jquery-1.6.1.min.js');
-echo $html->script('hoverIntent.js');
-echo $html->script('superfish.js');
-echo $html->script('jquery.galleryview-3.0-dev.js');
-echo $html->script('jquery.easing.1.3.js');
-echo $html->script('jquery.touchcarousel-1.0.min.js');
-
-
-?>
-
-
+<?php require_once('views/includes/doc-header.php'); ?>
 
 </head>
 <body>
@@ -52,7 +25,7 @@ echo $html->script('jquery.touchcarousel-1.0.min.js');
                 
                 
         <div id="nav">
-			<?php echo $this->element('menu_top');?>
+			<?php echo $this->element('menu_top-new');?>
         </div>
 
     

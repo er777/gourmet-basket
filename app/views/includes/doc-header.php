@@ -13,8 +13,33 @@
 <link href='http://fonts.googleapis.com/css?family=Devonshire' rel='stylesheet' type='text/css'>
 <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Pompiere|Prosto+One|Telex|Federo|Quattrocento Sans|Bowlby+One+SC|Changa+One|Boogaloo|Tangerine' >
 
+<?php
+echo $html->css('gb-main.css');
+echo $html->script('jquery-1.6.1.min.js');
+echo $html->script('jquery-ui.min.js');
+//echo $html->script('jquery.mCustomScrollbar.js');
+//echo $html->script('hoverIntent.js');
+//echo $html->script('superfish.js'); 
+echo $html->script('jquery.galleryview-3.0-dev.js');
+echo $html->script('jquery.easing.1.3.js');
+echo $html->script('jquery.touchcarousel-1.0.min.js');
+//echo $html->script('jquery.mousewheel.min.js');
+//echo $html->script('jquery.marquee.js');
+echo $html->script('jquery.columnizer.min.js');
+//echo $html->script('hoverIntent.js');
+//echo $html->script('jquery.galleriffic.js');
+echo $html->script('jquery.opacityrollover.js');
+//echo $html->script('gallerifficOptions.js');
+echo $html->script('jquery.ae.image.resize.min.js');
+?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title><?php echo $title_for_layout; ?>:: GB</title>
+
+	<script>
+		jQuery(function(){
+			jQuery('.jquery-column').columnize({
+				columns : 4,
+				accuracy : 1,
+				buildOnce : true
+			})
+		});
+	</script>

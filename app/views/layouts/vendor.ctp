@@ -1,19 +1,5 @@
 <?php require_once('views/includes/doc-header.php'); ?>
 
-<?php 
-echo $html->script('jquery-1.6.1.min.js');
-echo $html->script('jquery-ui.min.js'); 
-//echo $html->script('hoverIntent.js');
-//echo $html->script('superfish.js'); 
-echo $html->script('jquery.galleriffic.js');
-echo $html->script('jquery.mCustomScrollbar.js');
-echo $html->script('jquery.opacityrollover.js');
-echo $html->script('gallerifficOptions.js');
-echo $html->script('jquery.easing.1.3.js');
-echo $html->script('jquery.touchcarousel-1.0.min.js');
-echo $html->script('jquery.ae.image.resize.min.js');
-echo $html->script('jquery.mousewheel.min.js');
-?>
 
 <!-- RELATED ITEMS SLIDER -->
 <script type="text/javascript">
@@ -22,7 +8,7 @@ echo $html->script('jquery.mousewheel.min.js');
 			jQuery("#carousel-image-and-text").touchCarousel({					
 				pagingNav: false,
 				snapToItems: false,
-				itemsPerMove: 4,				
+				itemsPerMove: 5,				
 				scrollToLast: false,
 				loopItems: false,
 				scrollbar: true
@@ -48,9 +34,9 @@ echo $html->script('jquery.mousewheel.min.js');
 		<script type="text/javascript">
 
 		// initialise plugins
-		jQuery(function(){
-			jQuery('ul.sf-menu').superfish();
-		});
+		//jQuery(function(){
+			//jQuery('ul.sf-menu').superfish();
+		//});
 
 		</script>
 
@@ -94,7 +80,7 @@ echo $html->script('jquery.mousewheel.min.js');
           </ul>
         </div>
         
-        <div id="nav"> <?php echo $this->element('menu_top');?>
+        <div id="nav"> <?php echo $this->element('menu_top-new');?>
         </div>
               
               <!-- <div class="logo"> <?php //echo $html->image('logo.png', array('border' => '0', 'width' => '140', 'alt' => 'Gourmet', 'title' => 'Gourmet', "url"=>"/")); ?> </div>--> 

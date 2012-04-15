@@ -250,7 +250,7 @@ background-image: url(../img/aqua-bkgnd.jpg);
     margin-bottom: 15px;
     padding-left: 15px;
     padding-top: 20px;
-    background:url('../img/content_product.png') no-repeat; 
+    background:url('../img/content-product.png') no-repeat; 
 }
 .content_product .content_img {
     overflow: hidden;
