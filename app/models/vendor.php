@@ -28,6 +28,8 @@ class Vendor extends AppModel {
         }
         return $r;
     }
+		
+		/*
    	function getCategories(){
         $var1 = "";
         $var1 .= "SELECT * ";
@@ -36,64 +38,6 @@ class Vendor extends AppModel {
 
         return $this->query($var1);
     }
-	
-	/**
-	  *  	[Array] @ getAllCategoryChildren
-	  * 	Description:
-	  *		Pull as much of a category tree as possible.
-	  *	Returns: Array
-	  *		 Array of category titles organized by parent=>child relationships.
-	  * 	Args:    NONE.
-	  */
-	function getAllCategoryChildren () {
-		$structuredArrayOfAllCategories = array();
-		$selectParentsAndChildren =    "SELECT  categories.category_id as category_id,
-							subcategories.subcategory_id as subcategory_id,
-							categories.category_name,
-							subcategories.subcategory
-						FROM categories  
-						LEFT JOIN subcategories 
-						ON subcategories.category_id = categories.category_id
-						ORDER BY category_name, subcategories.subcategory;";
-						
-		$selectGrandchildren = "SELECT 	sub_subcategories.sub_subcat_id,
-						subcategories.subcategory_id,
-						subcategories.subcategory,
-						sub_subcategories.sub_subcategory
-					FROM subcategories  
-					INNER JOIN sub_subcategories 
-					ON subcategories.subcategory_id = sub_subcategories.subcategory_id
-					ORDER BY subcategories.subcategory, sub_subcategories.sub_subcategory;";
-					
-			$ParentsAndChildren = $this->query($selectParentsAndChildren);
-			
-			$grandchildrenResults = $this->query($selectGrandchildren);
-			$AllGrandchildren = array();
-			foreach ($grandchildrenResults as $row) {
-				$subcat_id = $row['subcategories']['subcategory_id'];
-				$AllGrandchildren[$subcat_id][] = array('name' => $row['sub_subcategories']['sub_subcategory'],
-											 'id' => $row['sub_subcategories']['sub_subcat_id'],
-										        );
-			}
-			foreach ($ParentsAndChildren as $row) {
-				$parent_category_name = $row['categories']['category_name'];
-				$parent_category_id = $row['categories']['category_id'];
-				$child_category_id = $row['subcategories']['subcategory_id'];
-				$child_category_name = $row['subcategories']['subcategory'];
-				$myGrandchildren = (isset($AllGrandchildren[$child_category_id]) ? $AllGrandchildren[$child_category_id] : FALSE);
-				
-				// Properly structured array of nested children, complete with ID's needed to make URL's.
-				$structuredArrayOfAllCategories[$parent_category_name]['children'][] = array('name' => $child_category_name,
-													     'subcategory_id' => $child_category_id,
-													     'grandchildren' => $myGrandchildren,
-													     );
-				$structuredArrayOfAllCategories[$parent_category_name]['category_id'] = $parent_category_id;
-			
-		}
-        return $structuredArrayOfAllCategories;
-    }
-	
-	
 	
 	
     function getsubCategories($category_id){
@@ -125,14 +69,13 @@ class Vendor extends AppModel {
         //echo $var1; exit;
         return $this->query($var1);
     }
-
    	function getProdCreation(){     
         $var1 = "";
         $var1 .= "SELECT * ";
         $var1 .= "FROM `product_creation` AS pc " ;
         return $this->query($var1);  
     }
-    
+*/    
     function getCulinaryTraditions(){     
         $r = array();
         $var1 = "";
@@ -144,6 +87,7 @@ class Vendor extends AppModel {
         return $r;
     }
     
+
     function getCountries(){     
         $r = array();
         $var1 = "";

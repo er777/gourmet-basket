@@ -15,8 +15,8 @@ class RecipesController extends AppController {
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        $this->set('categories', $this->Vendor->getCategories());
+        $this->set('creations', $this->Product->getProdCreation());
+        $this->set('all_categories', $this->Product->getAllProductCategories());
         $this->layout = 'site';
         $this->paginate = array(
             'conditions' => array('product_name !=' => ""),
@@ -32,10 +32,10 @@ class RecipesController extends AppController {
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        $this->set('categories', $this->Vendor->getCategories());
+        $this->set('creations', $this->Product->getProdCreation());
+        $this->set('all_categories', $this->Product->getAllProductCategories());
         $this->layout = 'vendor';
-        $this->set('categories', $this->Vendor->getCategories());
+        $this->set('all_categories', $this->Product->getAllProductCategories());
         $data = $this->Product->find(
             "first",
             array(
@@ -89,8 +89,8 @@ class RecipesController extends AppController {
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        $this->set('categories', $this->Vendor->getCategories());
+        $this->set('creations', $this->Product->getProdCreation());
+        $this->set('all_categories', $this->Product->getAllProductCategories());
         $this->layout = 'vendor';
         $this->paginate = array(
             'joins' => array(
@@ -201,8 +201,8 @@ class RecipesController extends AppController {
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        $this->set('categories', $this->Vendor->getCategories());
+        $this->set('creations', $this->Product->getProdCreation());
+        $this->set('all_categories', $this->Product->getAllProductCategories());
         $this->set('products', $data);
     }
 

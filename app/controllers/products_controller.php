@@ -3,23 +3,42 @@
 class ProductsController extends AppController {
 
     var $name = 'Products';
-
     var $helpers = array('Html', 'Paginator', 'Form');
 
     function beforeFilter() {
         parent::beforeFilter();
     }
 
-    function index($id = null) {
-        $this->loadModel('Vendor');
-        $this->set('users', $this->Vendor->getVendors());
+    function index($parent_slug = null, $child_slug = null, $grandchild_slug = null) {
+				$args = array_unique(func_get_args());
+        $starting_depth = count($args);
+				$conditions = '';
+				$all_categories = $this->Product->getAllProductCategories();
+								
+				switch($starting_depth) {
+						case 1:
+								$conditions = array('category_id =' => $all_categories[$args[0]]['id']);
+						break;
+						case 2:
+								$conditions = array('subcategory_id =' => $all_categories[$args[0]]['children'][$args[1]]['id']);
+						break;
+						case 3:
+								$conditions = array('sub_subcat_id =' => $all_categories[$args[0]]['children'][$args[1]]['grandchildren'][$args[2]]['id']);
+						break;
+				}				
+								
+        /*
+				$this->loadModel('Vendor');
+				$this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        $this->set('categories', $this->Vendor->getCategories());
+        $this->set('creations', $this->Product->getProdCreation());
+				*/
+        $this->set('all_categories', $this->Product->getAllProductCategories());
+				
         $this->layout = 'site';
         $this->paginate = array(
-            'conditions' => array('product_name !=' => ""),
+            'conditions' => $conditions,
             'limit' => 8,
             'order' => array('product_id' => 'desc')
         );
@@ -32,10 +51,10 @@ class ProductsController extends AppController {
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        $this->set('categories', $this->Vendor->getCategories());
+        $this->set('creations', $this->Product->getProdCreation());
+        $this->set('all_categories', $this->Product->getAllProductCategories());
         $this->layout = 'vendor';
-        $this->set('categories', $this->Vendor->getCategories());
+        $this->set('all_categories', $this->Product->getAllProductCategories());
         $data = $this->Product->find(
             "first",
             array(
@@ -90,8 +109,8 @@ class ProductsController extends AppController {
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        $this->set('categories', $this->Vendor->getCategories());
+        $this->set('creations', $this->Product->getProdCreation());
+        $this->set('all_categories', $this->Product->getAllProductCategories());
         $this->layout = 'vendor';
         $this->paginate = array(
             'joins' => array(
@@ -210,8 +229,8 @@ class ProductsController extends AppController {
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        $this->set('categories', $this->Vendor->getCategories());
+        $this->set('creations', $this->Product->getProdCreation());
+        $this->set('all_categories', $this->Product->getAllProductCategories());
         $this->set('subcategories', $this->Vendor->getsubCategories($cat));
         $this->set('products', $data);
     }
@@ -286,8 +305,8 @@ class ProductsController extends AppController {
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        //$this->set('categories', $this->Vendor->getCategories());
+        $this->set('creations', $this->Product->getProdCreation());
+        //$this->set('all_categories', $this->Product->getAllProductCategories());
         $this->set('subcategory_id', $scat[0]);
         $this->set('subcategory_name', $scat[1]);
 
@@ -367,8 +386,8 @@ class ProductsController extends AppController {
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        //$this->set('categories', $this->Vendor->getCategories());
+        $this->set('creations', $this->Product->getProdCreation());
+        //$this->set('all_categories', $this->Product->getAllProductCategories());
         $this->set('subsubcategory_id', $sscat[0]);
         $this->set('subsubcategory_name', $sscat[1]);
 

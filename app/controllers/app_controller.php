@@ -40,21 +40,23 @@ class AppController extends Controller {
 
     function beforeFilter() {
         $this->loadModel('Vendor');
+        $this->loadModel('Product');
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        $this->set('categories', $this->Vendor->getCategories());
-        $this->set('all_categories', $this->Vendor->getAllCategoryChildren());
+        $this->set('creations', $this->Product->getProdCreation());
+        //$this->set('all_categories', $this->Product->getAllProductCategories());
+        $this->set('all_categories', $this->Product->getAllProductCategories());
     }
 
     protected function top_menu() {
         $this->loadModel('Vendor');
+        $this->loadModel('Product');
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
-        $this->set('creations', $this->Vendor->getProdCreation());
-        $this->set('categories', $this->Vendor->getCategories());
+        $this->set('creations', $this->Product->getProdCreation());
+        $this->set('all_categories', $this->Product->getAllProductCategories());
     }
 
     function setUser() {

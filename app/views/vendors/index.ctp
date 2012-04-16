@@ -21,14 +21,14 @@
 
 	<div class="content_category_wrapper">
 <?php
-foreach ($categories as $cat) {       
+foreach ($all_categories as $parent) {       
 ?>
-		<a class="hand-drawn" href="/products/category/<?php echo $cat['c']['category_id'];?>_<?php echo $cat['c']['category_name'];?>">
+		<a class="hand-drawn" href="/products/<?php echo $parent['slug'];?>">
   		<div class="cat">
         
-        <img src="../../app/webroot/img/pantry/<?php echo $cat['c']['category_image'];?>" width="100" height="100" alt="" />
+        <img src="../../app/webroot/img/pantry/<?php echo $parent['image'];?>" width="100" height="100" alt="" />
         
-		<span class="category-name"><?php echo $cat['c']['category_name'];?></span>
+		<span class="category-name"><?php echo $parent['name']; ?></span>
         </div>
         </a>
   <!--content-product-->

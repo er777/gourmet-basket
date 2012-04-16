@@ -84,8 +84,8 @@ class PagesController extends AppController {
             $this->set('users', $this->Vendor->getVendors());
             $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
             $this->set('countries', $this->Vendor->getCountries());
-            $this->set('creations', $this->Vendor->getProdCreation());
-            $this->set('categories', $this->Vendor->getCategories());
+            $this->set('creations', $this->Product->getProdCreation());
+            $this->set('all_categories', $this->Product->getAllProductCategories());
 			$this->layout = 'home';
             
             $datahome = $this->Page->getHomeData();
