@@ -2,7 +2,6 @@
 
 </head>
 <body>
-THIS IS A TEST
 <div id="outer-wrapper">
   <!--<div id="top_star"></div>-->
   

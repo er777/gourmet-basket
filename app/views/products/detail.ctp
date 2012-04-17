@@ -249,28 +249,17 @@
 </div>
 
 <div class="category-article-wrapper" id="mcs3-container">
-
-    <!-----------------THIS IS WHERE I WANT A CATEGORY ARTICLE TO GO ---------------------->
-    <?php foreach($categories as $category):
-         	if($category["c"]["category_id"] == $products[0]["Product"]["category_id"])
-             $thiscategory=$category;
-    		endforeach;
-    ?>
-
-    <!-- 	SOMETHING LIKE:
-
-                            echo category_article according to the category_id of this product
-    -->
-
+<?php if(isset($this_parent_category)):?>
 
     <div class="category-article-pic">
 
-        <img src="../../app/webroot/img/pantry/<?php echo$thiscategory['c']["category_image"];?>" width="280" height="240" />
+        <img src="../../app/webroot/img/pantry/<?php echo $this_parent_category["category_image"];?>" width="280" height="240" />
     </div>
     <div class="category-info">
-        <?php echo$thiscategory['c']["category_name"];?></h2>
-        <?php echo$thiscategory['c']["category_article"];?>
+        <?php echo $this_parent_category["category_name"];?></h2>
+        <?php echo $this_parent_category["category_article"]; ?>
   </div>
+  <?php endif;?>
 </div>
 <div class="clear"></div>
 <div class="vendor-story-wrapper">

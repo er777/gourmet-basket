@@ -10,23 +10,23 @@
 
 
 <div id="left-door">
-	<div style="position:absolute"> <img src="../../app/webroot/img/l-door-outside.png" width="234" height="667" /> </div>
-  	<div style="position:absolute; left: 5px; top: 30px;"><img src="../../app/webroot/img/l-door-inside.jpg" width="221" height="553" /> </div>
+	<div style="position:absolute"> <img src="/app/webroot/img/l-door-outside.png" width="234" height="667" /> </div>
+  	<div style="position:absolute; left: 5px; top: 30px;"><img src="/app/webroot/img/l-door-inside.jpg" width="221" height="553" /> </div>
 </div>
 
 <div id="right-door">
-	<div style="position:absolute;left: -10px; top: -44px;"><img src="../../app/webroot/img/r-door-outside.png" width="220" height="667" /></div>
-	<div style="position:absolute;"><img src="../../app/webroot/img/r-door-inside.jpg" width="205" height="546" /></div>
+	<div style="position:absolute;left: -10px; top: -44px;"><img src="/app/webroot/img/r-door-outside.png" width="220" height="667" /></div>
+	<div style="position:absolute;"><img src="/app/webroot/img/r-door-inside.jpg" width="205" height="546" /></div>
 </div>
 
 	<div class="content_category_wrapper">
 <?php
 foreach ($all_categories as $parent) {       
 ?>
-		<a class="hand-drawn" href="/products/<?php echo $parent['slug'];?>">
+		<a class="hand-drawn" href="/products/category/<?php echo $parent['slug'];?>">
   		<div class="cat">
         
-        <img src="../../app/webroot/img/pantry/<?php echo $parent['image'];?>" width="100" height="100" alt="" />
+        <img src="/app/webroot/img/pantry/<?php echo $parent['image'];?>" width="100" height="100" alt="" />
         
 		<span class="category-name"><?php echo $parent['name']; ?></span>
         </div>

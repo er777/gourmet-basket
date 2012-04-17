@@ -5,7 +5,7 @@
   <div class="header-shell">
     
     <ul id="header-nav" class="sf-menu">
-      <li class="navItem_1"><a href="/categories" title="Categories">CATEGORIES</a>
+      <li class="navItem_1"><a href="/products/categories" title="Categories">CATEGORIES</a>
         <div class="navRollover">
           <dl class="innerWrap">
             <dd class="col">
@@ -29,7 +29,7 @@
           </dl>
         </div>
       </li>
-      <li class="navItem_1"><a href="/categories" title="Categories">VENDORS</a>
+      <li class="navItem_1"><a href="/products/categories" title="Categories">VENDORS</a>
         <div class="navRollover">
          <dl class="innerWrap">
           <dd class="col">

@@ -35,7 +35,7 @@ public $name = 'Member';
         $member = $this->find(array('email' => $data['email']), array('member_id'));
         if(empty($member) == false)
             return $member['Member'];
-        return false;
+        return true;
     }
     
     function validateForgot($data){        

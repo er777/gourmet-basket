@@ -2,7 +2,7 @@
 <!--<div id="shop-by"></div>-->
     
 <ul class="dropEverything">
-<li class="top-li pageOne"><a class="top-a" href="/categories">CATEGORIES</a>
+<li class="top-li pageOne"><a class="top-a" href="/products/categories">CATEGORIES</a>
 <div class="dropEverything-page">
 	<h1>GOURMET BASKET - Search by Categories</h1>
 	<div class="dropEverything-row">

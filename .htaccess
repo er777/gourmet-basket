@@ -1,6 +1,6 @@
 Options +FollowSymlinks
 RewriteEngine on
-RewriteRule ^products/(.*?)$ products/index/$1
+#RewriteRule ^products/(.*?)$ products/index/$1
 RewriteRule ^opencart - [L]
 RewriteRule ^opencart/desktops - [L]
 RewriteRule ^sandbox - [L]

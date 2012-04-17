@@ -6,7 +6,7 @@
     
     <ul id="header-nav" class="sf-menu">
     
-      <li class="navItem_1"><a href="/categories" title="Categories">CATEGORIES</a>
+      <li class="navItem_1"><a href="/products/categories" title="Categories">CATEGORIES</a>
         <div class="navRollover jquery-column">
             <dl class="innerWrap">
                 <dd class="col">
