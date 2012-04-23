@@ -1,6 +1,8 @@
 <?php require_once('views/includes/doc-header.php'); ?>
-
-
+<?php
+	echo $html->script('jquery.galleriffic.js');
+	echo $html->script('gallerifficOptions.js');
+?>
 <!-- RELATED ITEMS SLIDER -->
 <script type="text/javascript">
 		jQuery(function($) {

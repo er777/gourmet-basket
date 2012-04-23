@@ -27,9 +27,7 @@ echo $html->script('jquery.touchcarousel-1.0.min.js');
 //echo $html->script('jquery.marquee.js');
 echo $html->script('jquery.columnizer.min.js');
 //echo $html->script('hoverIntent.js');
-//echo $html->script('jquery.galleriffic.js');
 echo $html->script('jquery.opacityrollover.js');
-//echo $html->script('gallerifficOptions.js');
 echo $html->script('jquery.ae.image.resize.min.js');
 ?>
 
@@ -37,7 +35,7 @@ echo $html->script('jquery.ae.image.resize.min.js');
 	<script>
 		jQuery(function(){
 			jQuery('.jquery-column').columnize({
-				columns : 4,
+				columns : 3,
 				accuracy : 1,
 				buildOnce : true
 			})

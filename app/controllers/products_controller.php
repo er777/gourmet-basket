@@ -33,12 +33,10 @@ class ProductsController extends AppController {
 				
 				
 				$this->loadModel('Vendor');
-				$this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
         $this->set('creations', $this->Product->getProdCreation());
-				
-        $this->set('all_categories', $this->Product->getAllProductCategories());
+				$this->set('AllProductsandUsers', $this->Product->_getAllProductsandUsers());
 				
 				
 				$args = array_unique(func_get_args());
@@ -79,7 +77,7 @@ class ProductsController extends AppController {
         $this->set('parent_category', $parent_category);
         $this->set('category', $this_category);
         $this->set('products', $this->paginate());
-				
+				$this->set('all_categories',$all_categories);
 		}
 		function	categories(){
 				//requires no preprocessing?
@@ -183,7 +181,7 @@ class ProductsController extends AppController {
                 'u.shop_description',
 				'u.shop_quote',
 				'u.shop_name',
-                'REPLACE(LOWER(u.business_name),\' \',\'\') AS bname'
+                'REPLACE(LOWER(u.shop_name),\' \',\'\') AS bname'
             ),
             'conditions' => array('REPLACE(LOWER(u.business_name),\' \',\'\') = ' => $vid),
             'limit' => 12,

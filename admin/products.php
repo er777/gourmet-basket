@@ -53,12 +53,20 @@ function checkProductForm(){
         if(subcategory_id.value =='') strErr += ' - ID Subcategory\n';
         if(weight.value =='') strErr += ' - Weight\n';
         //if(size.value =='') strErr += ' - Size';
-        
+				jQuery('[name^="modifier_"]:visible').each(function(){
+					$this = jQuery(this);
+					if($this.val() == ''){
+						strErr += ' - Modifier has empty field\n';
+						$this.focus();
+					}
+				});
+				
         if(strErr != ''){
             alert('Please correct the following:\n' + strErr);
             return false;
-        }
-        else
+        }else{
+                jQuery('.single_modifier.template').remove(); // remove the hidden template from the dom before sugmitting the form
             return true;
+			 	}
      } 
 </script>

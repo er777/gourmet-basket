@@ -26,8 +26,14 @@ include_once '_init.php';
         <link rel="stylesheet" type="text/css" href="css/menu.css"/>
         <link media="all" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" rel="stylesheet">
 <link media="all" type="text/css" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" rel="stylesheet">
+<link media="all" type="text/css" href="/admin/js/Apprise/apprise.min.css" rel="stylesheet">
         
         <script type="text/javascript" src="js/st.js" language="javascript" ></script>
+ <script type="text/javascript" src="/admin/js/Apprise/apprise-1.5.min.js"></script>       
+<script type="text/javascript" src="/admin/js/jquery.js"></script>
+<script type="text/javascript">
+ jQuery.noConflict();
+</script>
         <?php if($page!="vendors" || $page!="orders"){ ?>
         <script type="text/javascript" src="library/js/lib/prototype.js"></script>
         <script type="text/javascript" src="library/js/lib/scriptaculous.js?load=effects"></script>

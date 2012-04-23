@@ -11,7 +11,16 @@ class Vendor extends AppModel {
 		'slug_max_length' => 100
 		)
 	);
-	
+	function _getVendorByProductId($product_id){
+		if(is_numeric($product_id)){
+		$sql = "SELECT * FROM products 
+								LEFT JOIN users
+								ON products.product_id = users.user_id
+								WHERE products.product_id = '".$product_id."';	";
+		return $this->query($sql);
+		}else{
+			return false;
+	}
 	function getVendors(){     
         $var1 = "";
         $var1 .= "SELECT user_id, ";

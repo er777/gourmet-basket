@@ -1,10 +1,3 @@
-<!--
-<br />
-<pre>
-<?php //print_r($products);?>
-</pre>
-<br />
--->
 <div id="tea_shoppe">
 	<?php echo $html->image('awning-cont.png', array('border' => '0', 'alt' => 'awning', 'width' => '670','title' => 'awning')); ?>
     <div id="shop-info"><?php echo $products[0]['u']['shop_name'] ?></div>
@@ -22,11 +15,13 @@ $i = count($products);
 ?>
     <div class="content-product">
       <div class="content-img">
-      <?php $link = 'detail/' . $val['product_id'] . '-' . $val['product_name']; ?>
-      <?php echo $html->image('../admin/images/product/'.($val['image']!=""?$val['image']:'default.png'), array( 'height' => '110px', 'width' => '110px','border' => '0', 'alt' => $val['description'], 'title' => $val['description'],   "url"=> $link)); ?>
+      <a href="/product/<?php echo $val['product_id'] . '-' . $val['product_name']; ?>">
+      <img height= "110" width="110" src="/admin/images/product/<?php echo ( $val['image'] != "" ? $val['image'] : 'default.png' ); ?>" alt="<?php echo  $val['description'];?>" />
+      </a>
+      
         																										 <!-- 'class' =>'resizeme',-->
       </div>
-          <a href="/products/detail/<?php echo $val['product_id'];?>_<?php echo $val['product_name'];?>">
+          <a href="/product/<?php echo $val['product_id'];?>-<?php echo str_replace(array("&","/"," "), "-",$val['product_name']);?>">
               <div class="name-price">
                 <div class="p-name"> <?php echo strlen($val['product_name'])>40?substr($val['product_name'],0,40)."...":$val['product_name'];?> </div>
                 <div class="price"> $<?php echo $val['price'];?> </div>

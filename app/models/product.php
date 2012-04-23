@@ -40,6 +40,20 @@ class Product extends AppModel{
 				$result =  $this->query($sql); // will return false on fail??
 				return $result[0]['categories'];
 		}
+		function _getAllProductsandUsers(){
+			$sql = "SELECT products.product_id, users.shop_name 
+			FROM  users
+      LEFT JOIN products
+      ON products.user_id = users.user_id
+			WHERE users.shop_name != ''; ";
+	 		$result = $this->query($sql);
+			foreach($result as $row){
+				$array[$row['products']['product_id']]= $row['users']['shop_name']	;
+			}
+			return $array;
+			
+			
+		}
 	function getAllProductCategories () {
 		// vars.
 		$structuredArrayOfAllCategories = array();
@@ -57,7 +71,8 @@ class Product extends AppModel{
 						FROM categories  
 						LEFT JOIN subcategories 
 						ON subcategories.category_id = categories.category_id
-						ORDER BY category_name, subcategories.subcategory;";
+						ORDER BY categories.category_name;
+						;";
 						
 		// Query to grab all grandchildren correctly.			
 		$selectGrandchildren = "SELECT 	sub_subcategories.sub_subcat_id,

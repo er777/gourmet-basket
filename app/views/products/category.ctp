@@ -21,7 +21,6 @@
 		<h2><?php echo $parent_category["name"];?></h2>
         <h3>Products:</h3>
 					<?php
-					pr($parent_category['slug']);
 					if(isset($category['children']) && !empty($category['children'])):
 					foreach ($category['children'] as $child) :
 					
@@ -39,12 +38,16 @@
     </div>
 <h1>All Products in <?php echo $category["name"];?></h1>
 <?php
-foreach ($products as $product) :?>
+
+foreach ($products as $product) :
+
+?>
 
 <div class="content-product">
     <div class="content-img">
-        <?php $link = 'product/' . $product['Product']['product_id'] . '-' . str_replace(array("&"," ","/"), array("-"),$product['Product']['product_name']); ?>
-        <?php echo $html->image('../admin/images/product/'.($product['Product']['image']!=""?$product['Product']['image']:'default.png'), array('border' => '0', 'alt' => 'p', 'title' => 'p', 'width' => '118px', 'height' => '118px',"url"=> $link)); ?>
+        <?php $link = '/product/' . $product['Product']['product_id'] . '-' .  str_replace(array("&","/"," "),"-",$product['Product']['product_name']); ?>
+        <a href="<?php echo $link;?> "><img src="/admin/images/product/<?php echo ($product['Product']['image']!="" ? $product['Product']['image']:'default.png')?>" height="118" width="118"/></a>
+				
     </div>
     <a href="/product/<?php echo $product['Product']['product_id'];?>-<?php echo str_replace(array("&"," ","/"), array("-"),$product['Product']['product_name']); ?>">
 		<div class="name-price">
@@ -52,7 +55,7 @@ foreach ($products as $product) :?>
     
             <div class="price"> $<?php echo $product['Product']['price'];?> </div></a>
 		</div>
- <a href="">vendor</a>      
+ <a href=""><?php print  (isset($AllProductsandUsers[$product['Product']['product_id']]) ? $AllProductsandUsers[$product['Product']['product_id']] : '');?></a>      
 </div>
 <?php endforeach; ?>
 </div>
