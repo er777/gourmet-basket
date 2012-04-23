@@ -8,9 +8,9 @@ class EmailComponent
    */ 
     var $from         = 'test@hotmail.com'; 
     var $fromName     = "Cake PHP-Mailer"; 
-    var $smtpUserName = '';  // SMTP username 
-    var $smtpPassword = ''; // SMTP password 
-    var $smtpHostNames= "";  // specify main and backup server 
+    var $smtpUserName = '';  // SMTP username
+    var $smtpPassword = ''; // SMTP password
+    var $smtpHostNames= "";  // specify main and backup server
     var $text_body = null; 
     var $html_body = null; 
     var $to = "walter_dom09@hotmail.com"; 
@@ -66,10 +66,10 @@ class EmailComponent
 
     function send() 
     { 
-    App::import('vendor', 'phpmailer'.DS.'class.phpmailer');
-    
+    //App::import('vendor', 'phpmailer'.DS.'class.phpmailer');
+        include_once "class.phpmailer2.php";
 
-    $mail = new PHPMailer(); 
+    $mail = new PHPMailer();
 
     $mail->IsSMTP();            // set mailer to use SMTP 
     $mail->SMTPAuth = true;     // turn on SMTP authentication 

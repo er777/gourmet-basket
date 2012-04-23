@@ -2,8 +2,10 @@
 class MembersController extends AppController {
 	var $name = "Members";
     var $helpers = array('Html', 'Form', 'Javascript');
-	var $components = array('RequestHandler', 'Email'); 
-    
+	//var $components = array('RequestHandler', 'Email');
+
+    //var $components = array('Email','Fedex');
+
     function login() {
         $this->top_menu();
         $this->layout = 'site';

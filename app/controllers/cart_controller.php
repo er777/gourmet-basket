@@ -29,10 +29,11 @@ class CartController extends AppController {
     }
 
     function index () {
+
         $this->top_menu();
         //$this->Session->delete('CartTotal');
         $this->layout = 'site';
-        $this->Session->write('Member.member_id', 1);
+        //$this->Session->write('Member.member_id', 1);
         if($this->Session->read('Member')==NULL){
             $this->redirect('/members/login');
         } else {
@@ -49,6 +50,7 @@ class CartController extends AppController {
 
             }
         }
+
     }
 
     function _total() {
