@@ -114,7 +114,7 @@ if (isset($_POST['product_id'])) {
     $p = array_merge($p, $n);
  
  		$sql = "SELECT mod_sku, serialized_mod_data 
-								FROM product_mods WHERE product_id = '" . $product_id . "';";
+								FROM product_mods WHERE product_id = '" . $product_id . "' ORDER BY mod_sku DESC;";
 		// I may be blind, but i can not see a method in the DB class that returns an entire result set...
 		$SQL_ResultOfMods =	mysql_query($sql); // So i am writing my own SQL query statement...
 		while($product_mod = mysql_fetch_array($SQL_ResultOfMods)) {
@@ -125,6 +125,7 @@ if (isset($_POST['product_id'])) {
 				}
 		}
 }
+//asort($x);
 				
 				
 //tvar($p);
