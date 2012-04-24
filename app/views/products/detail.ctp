@@ -101,7 +101,7 @@
         </td></tr>
         <tr class="th20"> </tr>
         <tr>
-            <td width="75"><span class="price">Price:</span></td>
+            <td width="75"><span class="priceLabel">Price:</span></td>
             <td><span class="price">$<?php echo $products[0]['Product']['selling_price'];?></span></td>
         </tr>
         <tr>
@@ -275,3 +275,36 @@
     </div>
 </div>
 </div>
+<script type="text/javascript">
+
+// Format for money method.
+Number.prototype.formatMoney = function(c, d, t){
+var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+   return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+ };
+ 
+    var deviation_model = <?php print $deviation_json;?>;
+    $('.mod_selector').change(function(){
+    var price = <?php echo $products[0]['Product']['selling_price'];?>;
+        $('.mod_selector').each(function(){
+            $this = $(this);
+            $sku = $this.val();
+            $model = deviation_model[$sku];
+            switch($model['direction']){
+            case '+':
+                price = (parseFloat(price) + parseFloat($model['retail_deviation']));
+                console.log('add' + $model['retail_deviation']);
+            break;
+            case '-':
+                price = (parseFloat(price) - parseFloat($model['retail_deviation']));
+                
+                console.log('subtract' + $model['retail_deviation']);
+            break;
+            }
+        });
+        
+        $('.price').html('$');
+        $('.price').append(price.formatMoney(2, '.', ','));
+        console.log(parseInt(price.formatMoney(2, '.', ',')));
+    });
+</script>

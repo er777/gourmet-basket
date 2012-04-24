@@ -93,25 +93,43 @@ class ProductsController extends AppController {
         $this->set('this_parent_category', $this->Product->_getThisCategory($id));
         $this->layout = 'vendor';
         $this->set('all_categories', $this->Product->getAllProductCategories());
+				
+				// Author of below: Dean Shelton. 4/24/2012
+				// I am new to Cake, and the logic behind custom queries and cake's inferred
+				// relationships escapes me, ATM.
 				$allProductMods = $this->Product->_getAllProductMods($id);
 				$product_mods = ''; //set default
 				if(!empty($allProductMods)){
 						foreach ($allProductMods as $mod) {                     
 								$mod['unserialized_mod_data'] = unserialize($mod['product_mods']['serialized_mod_data']);
-								ksort($mod['unserialized_mod_data']); 
 								foreach ($mod['unserialized_mod_data'] as $label=>$values) {
+										
+										// Save jSON for use on the detail.ctp price deviation calculations.
+										// NOTE: This feature is purely for aesthetics, and the backend must recalculate the price.
+										$deviation_json[$values['sku']]['sku'] = $values['sku'];
+										$deviation_json[$values['sku']]['direction'] = $values['direction'];
+										$deviation_json[$values['sku']]['retail_deviation'] = $values['retail_deviation'];
+										$deviation_json[$values['sku']]['wholesale_deviation'] = $values['wholesale_deviation'];
+										
+										// Save the options of a dropdown as HTML, ordered by label
 										$options[$label][] = '<option value="' . $values['sku'] . '">' . $values['name'] . '</option>';
 								}
 						}
+						$deviation_json = json_encode($deviation_json); // Encode this for use in JS on the front-end.
+						$this->set('deviation_json', $deviation_json); // Send to detail.ctp.
+						
+						//Structure HTML for display on detail.ctp.
 						foreach($options as $label => $values){
 								$product_mods .= '<div class="mod_display"><strong>' . $label . '</strong><br/>';
-								$product_mods .= '<select name="'.$label.'">';
+								$product_mods .= '<select class="mod_selector" name="'.$label.'">';
 								$product_mods .= join($values);
 								$product_mods .= '</select></div>';
 						}
 				}
 				
         $this->set('product_mods', $product_mods);
+				// End Dean's Code.
+				
         $data = $this->Product->find(
             "first",
             array(
