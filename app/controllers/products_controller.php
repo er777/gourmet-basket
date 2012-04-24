@@ -93,6 +93,25 @@ class ProductsController extends AppController {
         $this->set('this_parent_category', $this->Product->_getThisCategory($id));
         $this->layout = 'vendor';
         $this->set('all_categories', $this->Product->getAllProductCategories());
+				$allProductMods = $this->Product->_getAllProductMods($id);
+				$product_mods = NULL; //set default
+				if(!empty($allProductMods)){
+            print "<strong>Product Features:</strong><br/>";
+						foreach ($allProductMods as $mod) {                     
+								$mod['unserialized_mod_data'] = unserialize($mod['product_mods']['serialized_mod_data']);     
+								foreach ($mod['unserialized_mod_data'] as $label=>$values) {
+										$options[$label][] = '<option value="' . $values['sku'] . '">' . $values['name'] . '</option>';
+								}
+						}
+						foreach($options as $label => $values){
+								$product_mods .= '<strong>' . $label . '</strong>';
+								$product_mods .= '<select name="'.$label.'">';
+								$product_mods .= join($values);
+								$product_mods .= '</select>';
+						}
+				}
+				
+        $this->set('product_mods', $product_mods);
         $data = $this->Product->find(
             "first",
             array(

@@ -60,11 +60,27 @@ if (isset($_POST['product_id'])) {
 			if(strstr($key, 'modifier_')){ // search for modifiers
 				preg_match('/^modifier_([a-zA-Z0-9]*?)_(\w*?)$/',$key, $matches);
 				$mod_sku = $matches[1];
-				$mod_key = $matches[2];
-				$serialize_me[$mod_sku][$mod_key] = $value; // to be serialized
+				$mod_key = $matches[2];        
+				// NOT GOOD ENOUGH --> $serialize_me[$mod_sku][$mod_key] = $value; // to be serialized
 				$sku_numbers[$mod_sku] = $mod_sku;
+				$avoid_automatic_insert_attempt[$key] = $value;
 				unset($_POST[$key]); // kill this from the post array to avoid db.php attempting to insert it. 
 			}
+		}
+		foreach ($sku_numbers as $sku) {
+				// Orgonize an array that will make looping in a view, easy.
+				$label = $avoid_automatic_insert_attempt['modifier_' . $sku . '_label']; 
+				$name = $avoid_automatic_insert_attempt['modifier_' . $sku . '_name'];
+				$wholesale_deviation = $avoid_automatic_insert_attempt['modifier_' . $sku . '_wholesale_deviation'];
+				$retail_deviation = $avoid_automatic_insert_attempt['modifier_' . $sku . '_retail_deviation'];
+				$direction = $avoid_automatic_insert_attempt['modifier_' . $sku . '_direction'];
+				
+				$serialize_me[$sku][$label]['name'] = $name;
+				$serialize_me[$sku][$label]['wholesale_deviation'] = $wholesale_deviation;
+				$serialize_me[$sku][$label]['direction'] = $direction;
+				$serialize_me[$sku][$label]['retail_deviation'] = $retail_deviation;
+				$serialize_me[$sku][$label]['sku'] = $sku;
+				$serialize_me[$sku][$label]['label'] = $label;
 		}
 		
     $p = DB::insert_update('products', 'product_id', $_POST);
@@ -100,9 +116,17 @@ if (isset($_POST['product_id'])) {
  		$sql = "SELECT mod_sku, serialized_mod_data 
 								FROM product_mods WHERE product_id = '" . $product_id . "';";
 		// I may be blind, but i can not see a method in the DB class that returns an entire result set...
-		$SQL_ResultOfMods =	mysql_query($sql); // So i am writing my own SQL query statement... 
+		$SQL_ResultOfMods =	mysql_query($sql); // So i am writing my own SQL query statement...
+		while($product_mod = mysql_fetch_array($SQL_ResultOfMods)) {
+				$arr = unserialize($product_mod['serialized_mod_data']);
+				foreach ($arr as $label => $mod_data){
+						 $mod_data['label'] = $label;
+						 $x[] =$mod_data;
+				}
+		}
 }
-
+				
+				
 //tvar($p);
 ?>
 
@@ -263,20 +287,19 @@ margin-right: 5px;
                     <p>If this product has variations that effect the price, you can create that logic here. For example: If you are selling a laptop, you may have different options that your customers can choose from. Like monitor size, storage capacity, color, et cetera. To create the modicications simply follow the instructions in the fields below.</p>
                     <p><a href="#" class="mod_add_remove add_mod">Add new mod<span class="icons"></span></a></p>
                     <div id="mod_section">
-                    <?php if (isset($SQL_ResultOfMods)) :?>
-                    <?php	while($product_mod = mysql_fetch_array($SQL_ResultOfMods)):
-										$product_mod['unserialized_mod_data'] = unserialize($product_mod['serialized_mod_data']); ?>
+                    <?php if (isset($x)) :?>
+                    <?php	foreach($x as $product_mod):?>
 										<div class="single_modifier clearfix ">
                       <div class="mod_menu"><a href="#" class="mod_add_remove remove_mod">Remove mod <span class="icons"></span></a>
-                        <div class="mod_number">SKU: <?php echo $product_mod['mod_sku'];?></div>
+                        <div class="mod_number">SKU: <?php echo $product_mod['sku'];?></div>
                         </div>
                         <div class="float_left">
-                          <label for="modifier_<?php echo $product_mod['mod_sku'];?>_label">Display Label:</label>
+                          <label for="modifier_<?php echo $product_mod['sku'];?>_label">Display Label:</label>
                           <input 
                              type="text"
-                             name="modifier_<?php echo $product_mod['mod_sku'];?>_label" 
-                             id="modifier_<?php echo $product_mod['mod_sku'];?>_label" 
-                             value="<?php echo $product_mod['unserialized_mod_data']['label'];?>" 
+                             name="modifier_<?php echo $product_mod['sku'];?>_label" 
+                             id="modifier_<?php echo $product_mod['sku'];?>_label" 
+                             value="<?php echo $product_mod['label'];?>" 
                            />
                           <div class="description">
                             <p>The name of this mod. that is presented to the users. Eg.:</p>
@@ -289,12 +312,12 @@ margin-right: 5px;
                         </div>
                         <!-- end float_left -->
                         <div class="float_left">
-                          <label for="modifier_<?php echo $product_mod['mod_sku'];?>_name">Mod &quot;Value&quot;:</label>
+                          <label for="modifier_<?php echo $product_mod['sku']; ?>_name">Mod &quot;Value&quot;:</label>
                           <input 
                               type="text" 
-                              name="modifier_<?php echo $product_mod['mod_sku'];?>_name" 
-                              id="modifier_<?php echo $product_mod['mod_sku'];?>_name"
-                              value="<?php echo $product_mod['unserialized_mod_data']['name'];?>" 
+                              name="modifier_<?php echo $product_mod['sku'];?>_name" 
+                              id="modifier_<?php echo $product_mod['sku'];?>_name"
+                              value="<?php echo $product_mod['name'];?>" 
                            />
                           <div class="description">
                             <p>If a mod has multiple available values, just use the same label.</p>
@@ -308,11 +331,11 @@ margin-right: 5px;
                         </div>
                         <!-- end float_left -->
                         <div class="float_left">
-                          <label for="modifier_<?php echo $product_mod['mod_sku'];?>_direction">Price mod:</label>
-                          <select name="modifier_<?php echo $product_mod['mod_sku'];?>_direction" id="modifier_<?php echo $product_mod['mod_sku'];?>_direction" >
-                            <option value="xx"<?php echo ($product_mod['unserialized_mod_data']['direction'] == 'xx' ? ' selected' :'');?>>No effect.</option>
-                            <option value="+"<?php echo ($product_mod['unserialized_mod_data']['direction'] == '+' ? ' selected' :'');?>>+ (Add to the price)</option>
-                            <option value="-"<?php echo ($product_mod['unserialized_mod_data']['direction'] == '-' ? ' selected' :'');?>>- (Subtract from the price)</option>
+                          <label for="modifier_<?php echo $product_mod['sku'];?>_direction">Price mod:</label>
+                          <select name="modifier_<?php echo $product_mod['sku'];?>_direction" id="modifier_<?php echo $product_mod['sku'];?>_direction" >
+                            <option value="xx"<?php echo ($product_mod['direction'] == 'xx' ? ' selected' :''); ?>>No effect.</option>
+                            <option value="+"<?php echo ($product_mod['direction'] == '+' ? ' selected' :''); ?>>+ (Add to the price)</option>
+                            <option value="-"<?php echo ($product_mod['direction'] == '-' ? ' selected' :''); ?>>- (Subtract from the price)</option>
                           </select>
                           <div class="description">
                             <p>How should this option effect the price? 
@@ -322,12 +345,12 @@ margin-right: 5px;
                         </div>
                         <!-- end float_left -->
                         <div class="float_left">
-                          <label for="modifier_<?php echo $product_mod['mod_sku'];?>_retail_deviation">Retail Impact</label>
+                          <label for="modifier_<?php echo $product_mod['sku'];?>_retail_deviation">Retail Impact</label>
                           <input 
                           	type="text" 
-                            name="modifier_<?php echo $product_mod['mod_sku'];?>_retail_deviation" 
-                            id="modifier_<?php echo $product_mod['mod_sku'];?>_retail_deviation" 
-                            value="<?php echo $product_mod['unserialized_mod_data']['retail_deviation'];?>" 
+                            name="modifier_<?php echo $product_mod['sku'];?>_retail_deviation" 
+                            id="modifier_<?php echo $product_mod['sku'];?>_retail_deviation" 
+                            value="<?php echo $product_mod['retail_deviation'];?>" 
                           />
                           <div class="description">
                             <p>The &quot;impact&quot; of this mod, is the deviation from the base price.</p>
@@ -340,11 +363,11 @@ margin-right: 5px;
                         </div>
                         <!-- end float_left -->
                         <div class="float_left last">
-                        <label for="modifier_<?php echo $product_mod['mod_sku'];?>_wholesale_deviation">Wholesale Impact</label>
+                        <label for="modifier_<?php echo $product_mod['sku'];?>_wholesale_deviation">Wholesale Impact</label>
                           <input type="text" 
-                          name="modifier_<?php echo $product_mod['mod_sku'];?>_wholesale_deviation" 
-                          id="modifier_<?php echo $product_mod['mod_sku'];?>_wholesale_deviation" 
-                           value="<?php echo $product_mod['unserialized_mod_data']['wholesale_deviation'];?>" 
+                          name="modifier_<?php echo $product_mod['sku'];?>_wholesale_deviation" 
+                          id="modifier_<?php echo $product_mod['sku'];?>_wholesale_deviation" 
+                           value="<?php echo $product_mod['wholesale_deviation'];?>" 
                           />
                           <div class="description">
                             <p>The &quot;impact&quot; of this mod, is the deviation from the base price.</p>
@@ -358,7 +381,7 @@ margin-right: 5px;
                         <!-- end float_left --> 
                       </div>
                       <!-- end single_modifier --> 
-										<?php endwhile; ?>
+										<?php endforeach; ?>
                     <?php endif; ?>
                       <div class="single_modifier clearfix first template" style="display:none;">
                       <div class="mod_menu"><a href="#" class="mod_add_remove"><!-- replace with Javascript --></a>

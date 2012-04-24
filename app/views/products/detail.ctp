@@ -93,6 +93,12 @@
         <tr >
             <td colspan="2"><strong>Ingredients:</strong><span class="ingredients"><br /><?php echo $products[0]['Product']['ingredients'];?> </span></td>
         </tr>
+        <tr><td colspan="2">
+        <?php if(!empty($product_mods)):?>
+        <strong>Product Features:</strong><br/>
+        <?php print $product_mods;?>
+        <?php endif;?>
+        </td></tr>
         <tr class="th20"> </tr>
         <tr>
             <td width="75"><span class="price">Price:</span></td>

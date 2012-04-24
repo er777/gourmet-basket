@@ -30,6 +30,14 @@ class Product extends AppModel{
         $var1 .= "FROM `product_creation` AS pc " ;
         return $this->query($var1);  
     }
+		
+		function _getAllProductMods($product_id){
+				$sql = "SELECT mod_sku, serialized_mod_data 
+								FROM product_mods WHERE product_id = '" . $product_id . "';";
+				return $this->query($sql);
+				
+		}
+		
 		function _getThisCategory($id){
 				preg_match("/^\d*/",$id,$match);
 				$id = (is_numeric($match[0]) ? $match[0] : 1);
