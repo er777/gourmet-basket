@@ -132,67 +132,38 @@
 
 <div style="clear:both"></div>
 
+<?php $attributes = array("allergen",
+                          "gluten",
+                          "vegan",
+                          "fat_free",
+                          "sugar",
+                          "msg",
+                          "lactose",
+                          "low_carb",
+                          "nut",
+                          "heart",
+                          "no_preservatives",
+                          "organic",
+                          "kosher",
+                          "halal",
+                          "fair_traded"
+                          );
+?>
 <div>
-<?php if(isset($products[0]['Product']['awards'])) : ?>
-<?php if($products[0]['Product']['awards'] == 1):?>
-	<div class="icon-set">
-    	<div class="icons"><img src="../../app/webroot/img/attributes/awards.png" width="50" height="50" /></div>
-    <div class="icon-caption">awards</div>
+<?php foreach ($attributes as $attribute):?>
+<?php if(isset($products[0]['Product'][$attribute])) : ?>
+<?php if($products[0]['Product'][$attribute] == 1):?>
+    <div class="icon-set">
+        <div class="icons">
+            <img src="../../app/webroot/img/attributes/<?php print $attribute;?>.png" width="50" height="50" />
+        </div>
+        <div class="icon-caption">
+            <?php print $attribute;?>
+        </div>
     </div>
 <?php endif;?>
 <?php endif;?>
-  
-  
-<?php if(isset($products[0]['Product']['artisanal'])) : ?>
-<?php if($products[0]['Product']['artisanal'] == 1):?>  
-	<div class="icon-set">
-    	<div class="icons"><img src="../../app/webroot/img/attributes/artisanal.png" width="50" height="50" /></div>
-    <div class="icon-caption">artisanal</div>
-    </div>
-<?php endif;?>
-<?php endif;?>
-
-<?php if(isset($products[0]['Product']['fair_traded'])) : ?>
-<?php if($products[0]['Product']['fair_traded'] == 1): ?> 
-	<div class="icon-set">
-    <div class="icons"><img src="../../app/webroot/img/attributes/fair-trade.png" width="50" height="50" /></div>
-    	<div class="icon-caption">fair trade</div>
-    </div>
-<?php endif;?>
-<?php endif;?>
-
-<?php if(isset($products[0]['Product']['vegetarian'])) : ?>
-<?php if($products[0]['Product']['vegetarian'] == 1): ?> 
-	<div class="icon-set">
-    <div class="icons"><img src="../../app/webroot/img/attributes/vegetarian.png" width="50" height="50" /></div>
-    	<div class="icon-caption">vegetarian</div>
-    </div>
-<?php endif;?>
-<?php endif;?>
-
-<?php if(isset($products[0]['Product']['organic'])) : ?>
-<?php if($products[0]['Product']['organic'] == 1): ?> 
-	<div class="icon-set">
-    <div class="icons"><img src="../../app/webroot/img/attributes/organic.png" width="50" height="50" /></div>
-    	<div class="icon-caption">organic</div>
-    </div>
-<?php endif;?>
-<?php endif;?>
-
-<?php if(isset($products[0]['Product']['imported'])) : ?>
-<?php if($products[0]['Product']['imported'] == 1): ?> 
-	<div class="icon-set">
-    <div class="icons"><img src="../../app/webroot/img/attributes/imported.png" width="50" height="50" /></div>
-    	<div class="icon-caption">imported</div>
-    </div>
-<?php endif;?>
-<?php endif;?>
-
-	<div class="icon-set">
-    <div class="icons"><img src="../../app/webroot/img/attributes/kosher.png" width="50" height="50" /></div>
-    	<div class="icon-caption">kosher</div>
-    </div>
-
+<?php endforeach;?>
 </div>
 
 
