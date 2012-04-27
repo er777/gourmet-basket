@@ -263,7 +263,10 @@ margin-right: 5px;
                     
                                     // Replace the <textarea id="editor"> with an CKEditor
                                     // instance, using default configurations.
-                                    CKEDITOR.replace( 'long_description' );
+																		if (CKEDITOR.instances['long_description']) {
+																		CKEDITOR.instances['long_description'].destroy();
+																		}
+																		CKEDITOR.replace('long_description');
                                     
                     
                                     //]]>
