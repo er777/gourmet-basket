@@ -106,6 +106,8 @@ if (isset($_POST['product_id'])) {
 		foreach ($attributes as $attribute){
 				if(isset($_POST[$attribute])){
 				$set_list[] = $attribute . "='".$_POST[$attribute]."'";
+				}else{
+						$set_list[] = $attribute ."='0'";
 				}
 		}
 		if(isset($_POST['related_products'])){
@@ -671,44 +673,6 @@ margin-right: 5px;
                               <td><input type="checkbox" value="1" name="<?php echo $attribute; ?>" id="<?php echo $attribute; ?>" <?php echo ($p[$attribute] ? "checked" : ''); ?>/></td>
 														</tr>
 														<?php endforeach;?>
-															
-															
-															
-															<!--
-                              <td> Gluten Free </td>
-                              <td><input type="checkbox" value= <?php echo checked($p['gluten'], 1) ?> name="gluten" id="gluten" /></td>
-                              <td> Vegan </td>
-                              <td><input type="checkbox" value= <?php echo checked($p['vegan'], 1) ?> name="vegan" id="vegan" /></td>
-                            </tr>
-                            <tr>
-                              <td> Sugar-Free </td>
-                              <td><input type="checkbox" value="1" <?php echo checked($p['sugar'], 1) ?> name="sugar" id="sugar" /></td>
-                              <td> Lactose Free </td>
-                              <td><input type="checkbox" value="1" <?php echo checked($p['lactose'], 1) ?> name="lactose" id="lactose" /></td>
-                              <td> Nut-Free </td>
-                              <td><input type="checkbox" value="1" <?php echo checked($p['nut'], 1) ?> name="nut" id="nut" /></td>
-                            </tr>
-                          </table></td>
-                        <td><table class="checkbox1">
-                            <tr>
-                              <td colspan="6"><label> Certified Products (Must be Officially Certified) <br/>
-                                  Check all that apply for each product:</label></td>
-                            </tr>
-                            <tr>
-                              <td> American Heart Association </td>
-                              <td><input type="checkbox" value="1" <?php echo checked($p['heart'], 1) ?> name="heart" id="heart" /></td>
-                              <td> Organic </td>
-                              <td><input type="checkbox" value="1" <?php echo checked($p['organic'], 1) ?> name="organic" id="organic" /></td>
-                              <td> Kosher </td>
-                              <td><input type="checkbox" value="1" <?php echo checked($p['kosher'], 1) ?> name="kosher" id="kosher" /></td>
-                            </tr>
-                            <tr>
-                              <td> Halal </td>
-                              <td><input type="checkbox" value="1" <?php echo checked($p['halal'], 1) ?> name="halal" id="halal" /></td>
-                              <td> Fair Traded </td>
-                              <td><input type="checkbox" value="1" <?php echo checked($p['fair_traded'], 1) ?> name="fair_traded" id="fair_traded" /></td>
-                             </tr>
-                            -->
                           </table></td>
                       </tr>
                     </table></td>
