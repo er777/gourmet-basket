@@ -67,24 +67,55 @@ if (isset($_POST['product_id'])) {
 				unset($_POST[$key]); // kill this from the post array to avoid db.php attempting to insert it. 
 			}
 		}
-		foreach ($sku_numbers as $sku) {
-				// Orgonize an array that will make looping in a view, easy.
-				$label = $avoid_automatic_insert_attempt['modifier_' . $sku . '_label']; 
-				$name = $avoid_automatic_insert_attempt['modifier_' . $sku . '_name'];
-				$wholesale_deviation = $avoid_automatic_insert_attempt['modifier_' . $sku . '_wholesale_deviation'];
-				$retail_deviation = $avoid_automatic_insert_attempt['modifier_' . $sku . '_retail_deviation'];
-				$direction = $avoid_automatic_insert_attempt['modifier_' . $sku . '_direction'];
-				
-				$serialize_me[$sku][$label]['name'] = $name;
-				$serialize_me[$sku][$label]['wholesale_deviation'] = $wholesale_deviation;
-				$serialize_me[$sku][$label]['direction'] = $direction;
-				$serialize_me[$sku][$label]['retail_deviation'] = $retail_deviation;
-				$serialize_me[$sku][$label]['sku'] = $sku;
-				$serialize_me[$sku][$label]['label'] = $label;
+		if(isset($sku_numbers)){
+				foreach ($sku_numbers as $sku) {
+						// Orgonize an array that will make looping in a view, easy.
+						$label = $avoid_automatic_insert_attempt['modifier_' . $sku . '_label']; 
+						$name = $avoid_automatic_insert_attempt['modifier_' . $sku . '_name'];
+						$wholesale_deviation = $avoid_automatic_insert_attempt['modifier_' . $sku . '_wholesale_deviation'];
+						$retail_deviation = $avoid_automatic_insert_attempt['modifier_' . $sku . '_retail_deviation'];
+						$direction = $avoid_automatic_insert_attempt['modifier_' . $sku . '_direction'];
+						
+						$serialize_me[$sku][$label]['name'] = $name;
+						$serialize_me[$sku][$label]['wholesale_deviation'] = $wholesale_deviation;
+						$serialize_me[$sku][$label]['direction'] = $direction;
+						$serialize_me[$sku][$label]['retail_deviation'] = $retail_deviation;
+						$serialize_me[$sku][$label]['sku'] = $sku;
+						$serialize_me[$sku][$label]['label'] = $label;
+				}
 		}
 		
-    $p = DB::insert_update('products', 'product_id', $_POST);
-    $_POST['product_id'] = $p['product_id'];
+    $p = DB::insert_update('products', 'product_id', $_POST);// This is not getting the checkboxes from the product features... :/
+		
+		 $attributes = array("allergen",
+														"gluten",
+														"vegan",
+														"fat_free",
+														"sugar",
+														"msg",
+														"lactose",
+														"low_carb",
+														"nut",
+														"heart",
+														"no_preservatives",
+														"organic",
+														"kosher",
+														"halal",
+														"fair_traded"
+														);
+		foreach ($attributes as $attribute){
+				if(isset($_POST[$attribute])){
+				$set_list[] = $attribute . "='".$_POST[$attribute]."'";
+				}
+		}
+		if(isset($_POST['related_products'])){
+				$set_list[] = "related_products='".serialize($_POST['related_products'])."'";
+		}
+		$sql = "UPDATE products SET " . join(", ", $set_list) . " WHERE product_id = '" . $p['product_id'] . "';";
+    DB::execute($sql);
+		
+		
+		$_POST['product_id'] = $p['product_id'];
     $_POST['nutrition_id'] = $_POST['nutrition_id']==''?'new':$_POST['nutrition_id'];
     $p = DB::insert_update('nutrition', 'nutrition_id', $_POST);
     
@@ -107,7 +138,7 @@ if (isset($_POST['product_id'])) {
 }else{
     //$product array
     $p = DB::get_single('products', 'product_id',$product_id);
-	
+		$related_products = unserialize($p['related_products']);
     $sql = "SELECT nutrition_id FROM nutrition WHERE product_id = '$product_id'";
     $nutrition_id = DB::result($sql);
     $n = DB::get_single('nutrition', 'nutrition_id',$nutrition_id);
@@ -130,6 +161,34 @@ if (isset($_POST['product_id'])) {
 				
 //tvar($p);
 ?>
+
+<script type="text/javascript" src="/admin/js/jquery.js"></script>
+<style type="text/css" title="currentStyle">
+@import "/admin/js/datatables/css/jquery.dataTables.css";
+</style>
+<script type="text/javascript" language="javascript" src="/admin/js/datatables/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery.noConflict();
+jQuery(document).ready(function($) {
+		$.fn.dataTableExt.afnSortData['dom-checkbox'] = function  ( oSettings, iColumn )
+{
+    var aData = [];
+    $( 'td:eq('+iColumn+') input', oSettings.oApi._fnGetTrNodes(oSettings) ).each( function () {
+        aData.push( this.checked==true ? "1" : "0" );
+    } );
+    return aData;
+}
+$('.related_products').dataTable({
+		"aaSorting": [[ 3, "desc" ]],
+    "aoColumns": [ 
+      { "sType": "numeric" },
+      null,
+      null,
+      { "sSortDataType": "dom-checkbox" }
+    ]
+  });
+});
+</script>
 
 <div style="background: none repeat scroll 0% 0% white; overflow: hidden;">
   <style type="text/css">
@@ -218,11 +277,12 @@ margin-right: 5px;
       <td><div id="tabs">
           <div class="items-tab">
             <ul>
-              <li id="tab1" style=" background: #BFBFBF;"><a style="text-decoration: none; color: gray;" href="javascript:changeStatusTab('tab_1')"><span style=" font-weight: bold;">Product Description</span></a></li>
-              <li id="tab2" ><a style="text-decoration: none; color: gray;" href="javascript:changeStatusTab('tab_2')"><span style=" font-weight: bold;">Choice of Categories</span></a></li>
-              <li id="tab3" ><a style="text-decoration: none; color: gray;" href="javascript:changeStatusTab('tab_3')"><span style=" font-weight: bold;">Product Features</span></a></li>
+              <li id="tab1" style=" background: #BFBFBF;"><a style="text-decoration: none; color: gray;" href="javascript:changeStatusTab('tab_1')"><span style=" font-weight: bold;">Description</span></a></li>
+              <li id="tab2" ><a style="text-decoration: none; color: gray;" href="javascript:changeStatusTab('tab_2')"><span style=" font-weight: bold;">Categories</span></a></li>
+              <li id="tab3" ><a style="text-decoration: none; color: gray;" href="javascript:changeStatusTab('tab_3')"><span style=" font-weight: bold;">Features</span></a></li>
               <li id="tab4" ><a style="text-decoration: none; color: gray;" href="javascript:changeStatusTab('tab_4')"><span style=" font-weight: bold;">Nutrition</span></a></li>
               <li id="tab5" ><a style="text-decoration: none; color: gray;" href="javascript:changeStatusTab('tab_5')"><span style=" font-weight: bold;">Product Images</span></a></li>
+              <li id="tab6" ><a style="text-decoration: none; color: gray;" href="javascript:changeStatusTab('tab_6')"><span style=" font-weight: bold;">Related Products</span></a></li>
             </ul>
           </div>
           <div style=" clear: both;"></div>
@@ -589,9 +649,32 @@ margin-right: 5px;
                               <td colspan="6"><label>Certification:<br/>
                                   Check all that apply for each product.:</label></td>
                             </tr>
+														<?php $attributes = array("allergen",
+																												"gluten",
+																												"vegan",
+																												"fat_free",
+																												"sugar",
+																												"msg",
+																												"lactose",
+																												"low_carb",
+																												"nut",
+																												"heart",
+																												"no_preservatives",
+																												"organic",
+																												"kosher",
+																												"halal",
+																												"fair_traded"
+																												);?>
+														<?php foreach ($attributes as $attribute) :?>														
                             <tr>
-                              <td> Allergen Free </td>
-                              <td><input type="checkbox" value= <?php echo checked($p['allergen'], 1) ?> name="allergen" id="allergen" /></td>
+                              <td><?php echo ucwords(str_replace("_"," ",$attribute)); ?></td>
+                              <td><input type="checkbox" value="1" name="<?php echo $attribute; ?>" id="<?php echo $attribute; ?>" <?php echo ($p[$attribute] ? "checked" : ''); ?>/></td>
+														</tr>
+														<?php endforeach;?>
+															
+															
+															
+															<!--
                               <td> Gluten Free </td>
                               <td><input type="checkbox" value= <?php echo checked($p['gluten'], 1) ?> name="gluten" id="gluten" /></td>
                               <td> Vegan </td>
@@ -624,7 +707,8 @@ margin-right: 5px;
                               <td><input type="checkbox" value="1" <?php echo checked($p['halal'], 1) ?> name="halal" id="halal" /></td>
                               <td> Fair Traded </td>
                               <td><input type="checkbox" value="1" <?php echo checked($p['fair_traded'], 1) ?> name="fair_traded" id="fair_traded" /></td>
-                            </tr>
+                             </tr>
+                            -->
                           </table></td>
                       </tr>
                     </table></td>
@@ -707,6 +791,45 @@ margin-right: 5px;
                     <input type="file" name="image_5" style="float: left; width: 100px;"  /></td>
                 </tr>
               </table>
+            </div>
+            <div id="tab_6" style=" display: none;">
+						<h2>Other Products From This Vendor</h2>
+						<table class="related_products">
+						<thead>
+						<th>Product ID</th>
+						<th>Product Name</th>
+						<th>Description</th>
+						<th>Related Product?</th>
+						</thead>
+						<tbody>
+              <?php
+							// Select all products created by this vendor.
+							 $sql = "
+							 SELECT * FROM products
+							 LEFT JOIN users
+							 ON products.user_id = users.user_id
+							 WHERE product_id != '".$product_id."'
+							 AND users.user_id IN (SELECT user_id
+																		 FROM products
+																		 WHERE product_id = '". $product_id ."'
+																		 );";
+						   // Return all products created by this vendor.
+							 $result = mysql_query($sql);
+							 $checked='';
+							 while($row = mysql_fetch_object($result)): ?>
+							 <?php if (isset($related_products) && !empty($related_products)){
+								$checked = (in_array($row->product_id, $related_products) ? 'checked' : '');
+								}
+								 ?>
+								<tr><td><?php echo $row->product_id;?></td>
+								<td><?php echo $row->product_name;?></td>
+								<td><?php echo $row->description;?></td>
+								<td><input type="checkbox" name="related_products[]" class="related_product_checkbox" value="<?php echo $row->product_id;?>" <?php echo $checked;?>/></td>
+								</tr>
+								
+							 <?php endwhile; ?>
+							 </tbody>
+						</table>
             </div>
             <!-- End tabs --> 
           </div>

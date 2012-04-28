@@ -173,6 +173,7 @@ class ProductsController extends AppController {
                     'Product.fair_traded',
                     'Product.heat_sensitivity',
                     'Product.all_natural',
+                    'Product.related_products',
                     'u.user_id',
 					'u.shop_name',
                     'u.logo',

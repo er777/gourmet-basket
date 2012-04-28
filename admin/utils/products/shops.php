@@ -11,6 +11,8 @@ $var1 .= "       AND ( users.business_name <> '' ) ORDER BY users.business_name"
 //$var1 = $var1 . ' ' . $pages->limit;
 DB::query($var1);
 ?>
+<a href="products.php?id=all">LIST ALL PRODUCTS FROM ALL VEDORS</a>
+<h2>By Vendor</h2>
 <table id="vendorTable" class="sortandsearch">
     <thead><tr><th>Company Name</th></tr></thead>
     <tbody>

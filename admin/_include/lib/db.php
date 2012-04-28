@@ -362,6 +362,12 @@ class DB {
     /* / for insert or update in db / */
 
     function insert_update($table, $pk, $d, $empty = false) {
+        
+        // This is a slick function, but consider that it is MUCH more confusing than it is helpful.
+        // I get what's going on here, but as an outside developer, it seems almost like you are sayin "Fuck everyone else."
+        // I need to keep looking between files to be sure what the arguments are because
+        // the variable names like $pk, $x, $m, and $d do not make sense.
+        // Please use duck typing when naming vars and methods: http://en.wikipedia.org/wiki/Duck_typing 
         $lastid = 0;
         $fields = DB::get_fields($table, $pk);
         $d = addslashes_f_array($d);
@@ -376,14 +382,14 @@ class DB {
             $m = "";
             $var1 = "";
             $var1 .= "UPDATE `$table` SET  ";
-            foreach ($x as $k => $v) {
+            foreach ($x as $k => $v) { 
                 if ($k == $pk)
                     continue;
                 $var1.= $m . " `$k` = '' ";
                 $m = ", ";
             }
             $var1 .= " WHERE  `$pk` = '" . $d[$pk] . "' ";
-            //echo $var1."<br>";
+            echo $var1."<br>";
 
             DB::execute($var1);
         }

@@ -158,96 +158,36 @@
             <img src="../../app/webroot/img/attributes/<?php print $attribute;?>.png" width="50" height="50" />
         </div>
         <div class="icon-caption">
-            <?php print $attribute;?>
+            <?php print str_replace("_"," ",$attribute);?>
         </div>
     </div>
 <?php endif;?>
 <?php endif;?>
 <?php endforeach;?>
 </div>
-
-
-
-<div> <img src="../../app/webroot/img/social-bar.jpg" width="660" height="27" alt="" /> </div>
-
- <h2>PAIRINGS & RELATED PRODUCTS</h2>
-
-
+<div><img src="../../app/webroot/img/social-bar.jpg" width="660" height="27" alt="" /> </div>
+<?php
+if(!empty($products[0]['Product']['related_products'])):
+$related_products = unserialize($products[0]['Product']['related_products']);
+$sql = "SELECT product_name, product_id, description, image FROM products WHERE product_id IN (".join(",",$related_products).")";
+$result = mysql_query($sql);?>
+<h2>PAIRINGS & RELATED PRODUCTS</h2>
 <div id="carousel-image-and-text" class="touchcarousel grey-blue">
     <ul class="touchcarousel-container">
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/1.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/2.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/3.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/4.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/5.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/6.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/7.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/8.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/9.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/10.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/11.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/12.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/13.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/14.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/15.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
-        <li class="touchcarousel-item"> <a class="item-block" href=""> <img src="/app/webroot/img/carousel/16.jpeg" width="148" height="200" />
-            <h4>Lorem Ipsum</h4>
-            <p>Dolor sit amet</p>
-        </a> </li>
+        <?php while ($row = mysql_fetch_object($result)):?>
+        <li class="touchcarousel-item">
+            <a class="item-block" href="/product/<?php echo $row->product_id;?>">
+                <img src="/admin/images/product/<?php echo $row->image; ?>"/>
+                <h4><?php echo $row->product_name; ?></h4>
+                <p><?php echo $row->description; ?></p>
+            </a>
+        </li>
+        <?php endwhile;?>
     </ul>
 </div>
-
-
-
+<?php endif;?>
 <div class="clear"></div>
-
 </div>
-
 <div class="category-article-wrapper" id="mcs3-container">
 <?php if(isset($this_parent_category)):?>
 

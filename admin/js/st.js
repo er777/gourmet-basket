@@ -64,8 +64,7 @@ function less(l){
 
 function changeStatusTab(hidden){
     var ob;
-    for( f = 1; f <= 5; f++ ){
-        
+    for( f = 1; f <= 6; f++ ){
         ob = document.getElementById('tab_' + f);
         current = document.getElementById('tab' + f);
         if(hidden=='tab_'+f){  
