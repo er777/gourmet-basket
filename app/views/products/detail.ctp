@@ -169,7 +169,7 @@
 <?php
 if(!empty($products[0]['Product']['related_products'])):
 $related_products = unserialize($products[0]['Product']['related_products']);
-$sql = "SELECT product_name, product_id, description, image FROM products WHERE product_id IN (".join(",",$related_products).")";
+$sql = "SELECT product_name, product_id, description, image FROM products WHERE product_id IN (".join(",",array_keys($related_products)).")";
 $result = mysql_query($sql);?>
 <h2>PAIRINGS & RELATED PRODUCTS</h2>
 <div id="carousel-image-and-text" class="touchcarousel grey-blue">
@@ -179,7 +179,9 @@ $result = mysql_query($sql);?>
             <a class="item-block" href="/product/<?php echo $row->product_id;?>">
                 <img src="/admin/images/product/<?php echo $row->image; ?>"/>
                 <h4><?php echo $row->product_name; ?></h4>
-                <p><?php echo $row->description; ?></p>
+                <p>
+                <?php echo (!empty($related_products[$row->product_id]['description']) ? $related_products[$row->product_id]['description'] : $row->description) ; ?>
+                </p>
             </a>
         </li>
         <?php endwhile;?>

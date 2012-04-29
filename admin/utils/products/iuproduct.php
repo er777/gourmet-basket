@@ -1,4 +1,8 @@
-<?php //insert update product 
+<?php //insert update product
+// DS - I do not approve of this.
+// There is so much wrong with how this site is structured.
+// I am not in a position to repair all of this, but there are many
+// places where the structure and markup needs to be improved.
 session_start();
 include_once '../../_init.php';
 
@@ -21,7 +25,7 @@ if (isset($_POST['product_id'])) {
         $_POST['image'] = uploadFiles('image');
     }
     for($i=1;$i<=5;$i++)
-    	$_FILES["image_$i"]["name"]and$_POST["image_$i"]=uploadFiles("image_$i");
+    	$_FILES["image_$i"]["name"]and$_POST["image_$i"]=uploadFiles("image_$i"); 
 		
 		
 		
@@ -85,7 +89,7 @@ if (isset($_POST['product_id'])) {
 				}
 		}
 		
-    $p = DB::insert_update('products', 'product_id', $_POST);// This is not getting the checkboxes from the product features... :/
+    $p = DB::insert_update('products', 'product_id', $_POST);// This is not getting the checkboxes from the product features... :/ FAIL.
 		
 		 $attributes = array("allergen",
 														"gluten",
@@ -105,23 +109,24 @@ if (isset($_POST['product_id'])) {
 														);
 		foreach ($attributes as $attribute){
 				if(isset($_POST[$attribute])){
-				$set_list[] = $attribute . "='".$_POST[$attribute]."'";
+						$set_list[] = $attribute . "='".$_POST[$attribute]."'";
 				}else{
 						$set_list[] = $attribute ."='0'";
 				}
 		}
 		if(isset($_POST['related_products'])){
-				$set_list[] = "related_products='".serialize($_POST['related_products'])."'";
+				foreach ($_POST['related_products'] as $related_product_id){
+						$related_products[$related_product_id]['description'] = $_POST['relational_description_' . $related_product_id];
+				}
+				$set_list[] = "related_products='".serialize($related_products)."'";
 		}
 		$sql = "UPDATE products SET " . join(", ", $set_list) . " WHERE product_id = '" . $p['product_id'] . "';";
     DB::execute($sql);
 		
-		
 		$_POST['product_id'] = $p['product_id'];
     $_POST['nutrition_id'] = $_POST['nutrition_id']==''?'new':$_POST['nutrition_id'];
     $p = DB::insert_update('nutrition', 'nutrition_id', $_POST);
-    
-	/**
+	 /**
 		** PRODUCT MOD INSERT / UPDATE
 		**/
 		if(isset($sku_numbers) && !empty($sku_numbers)){
@@ -181,9 +186,10 @@ jQuery(document).ready(function($) {
     return aData;
 }
 $('.related_products').dataTable({
-		"aaSorting": [[ 3, "desc" ]],
+		"aaSorting": [[ 4, "desc" ]],
     "aoColumns": [ 
       { "sType": "numeric" },
+      null,
       null,
       null,
       { "sSortDataType": "dom-checkbox" }
@@ -651,22 +657,6 @@ margin-right: 5px;
                               <td colspan="6"><label>Certification:<br/>
                                   Check all that apply for each product.:</label></td>
                             </tr>
-														<?php $attributes = array("allergen",
-																												"gluten",
-																												"vegan",
-																												"fat_free",
-																												"sugar",
-																												"msg",
-																												"lactose",
-																												"low_carb",
-																												"nut",
-																												"heart",
-																												"no_preservatives",
-																												"organic",
-																												"kosher",
-																												"halal",
-																												"fair_traded"
-																												);?>
 														<?php foreach ($attributes as $attribute) :?>														
                             <tr>
                               <td><?php echo ucwords(str_replace("_"," ",$attribute)); ?></td>
@@ -763,28 +753,29 @@ margin-right: 5px;
 						<th>Product ID</th>
 						<th>Product Name</th>
 						<th>Description</th>
+						<th>Relational Description</th>
 						<th>Related Product?</th>
 						</thead>
 						<tbody>
               <?php
-							
-							// Select all products created by this vendor.
+							 // Select all products, and display correct checked boxes, and descriptions.
 							 $sql = "
-							 SELECT * FROM products;";
-						   // Return all products created by this vendor.
+							 SELECT * FROM products WHERE product_id != '".$product_id."';";
 							 $result = mysql_query($sql);
-							 $checked='';
-							 while($row = mysql_fetch_object($result)): ?>
-							 <?php if (isset($related_products) && !empty($related_products)){
-								$checked = (in_array($row->product_id, $related_products) ? 'checked' : '');
-								}
+							 while($row = mysql_fetch_object($result)):
+									 $checked='';
+									 $relational_description ='';
+										if (isset($related_products) && !empty($related_products)):
+												$checked = (key_exists($row->product_id, $related_products) ? 'checked' : '');
+												$relational_description = (isset($related_products[$row->product_id]['description']) ? $related_products[$row->product_id]['description'] : '');
+										endif;
 								 ?>
 								<tr><td><?php echo $row->product_id;?></td>
 								<td><?php echo $row->product_name;?></td>
 								<td><?php echo $row->description;?></td>
+								<td><input type="text" name="relational_description_<?php echo $row->product_id;?>" value="<?php echo $relational_description;?>"></td>
 								<td><input type="checkbox" name="related_products[]" class="related_product_checkbox" value="<?php echo $row->product_id;?>" <?php echo $checked;?>/></td>
 								</tr>
-								
 							 <?php endwhile; ?>
 							 </tbody>
 						</table>
