@@ -14,7 +14,7 @@
 <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Pompiere|Prosto+One|Telex|Federo|Quattrocento Sans|Bowlby+One+SC|Changa+One|Boogaloo|Tangerine' >
 
 <?php
-echo $html->css('gb-main.css');
+
 echo $html->script('jquery-1.6.1.min.js');
 echo $html->script('jquery-ui.min.js');
 //echo $html->script('jquery.mCustomScrollbar.js');
