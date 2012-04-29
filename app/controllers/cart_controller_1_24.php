@@ -1,5 +1,5 @@
 <?php
-class CartController extends AppController {
+class Cart2Controller extends AppController {
 
 	var $name = "Cart";
     var $components = array('Fedex', 'Ups');

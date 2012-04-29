@@ -5,25 +5,31 @@ class EmailComponent
     
   /** 
    * Send email using SMTP Auth by default. 
-   */ 
-    var $from         = 'test@hotmail.com'; 
-    var $fromName     = "Cake PHP-Mailer"; 
-    var $smtpUserName = '';  // SMTP username
-    var $smtpPassword = ''; // SMTP password
-    var $smtpHostNames= "";  // specify main and backup server
-    var $text_body = null; 
-    var $html_body = null; 
-    var $to = "walter_dom09@hotmail.com"; 
-    var $toName = null; 
-    var $subject = null; 
-    var $cc = null; 
-    var $bcc = null; 
-    var $template = '/members/default'; 
+   */
+    var $smtpUserName = 'fortesting@juanphp.com';  // SMTP username
+    var $smtpPassword = 'fortesting'; // SMTP password
+    var $smtpHostNames= "smtp.1and1.com";  // specify main and backup serve
+
+    var $text_body = null;
+    var $html_body = null;
+
+    var $from = 'fortesting@juanphp.com';
+    var $fromName = "JUANPHP";
+    var $to = "jd@juanphp.com";
+    var $toName = null;
+    var $cc = null;
+    var $ccName = null;
+    var $bcc = null;
+    var $bccName = null;
+
+    var $subject = null;
+    var $template = '/members/default';
     var $attachments = null; 
 
     var $controller; 
 
-    function startup( &$controller ) { 
+    function startup( &$controller ) {
+      require "mail.php";
       $this->controller = &$controller; 
     } 
 
@@ -46,9 +52,9 @@ class EmailComponent
       $temp_layout = $this->controller->layout; 
       $this->controller->layout = 'email';  //  HTML wrapper for my html email in /app/views/layouts 
       $this->controller->render($this->template . '_html');  
-      $mail = ob_get_clean(); 
+      $mail_content = ob_get_clean();
       $this->controller->layout = $temp_layout; // Turn on layout wrapping again 
-      return $mail; 
+      return $mail_content;
     } 
 
     function attach($filename, $asfile = '') { 
@@ -65,47 +71,61 @@ class EmailComponent
 
 
     function send() 
-    { 
-    //App::import('vendor', 'phpmailer'.DS.'class.phpmailer');
-        include_once "class.phpmailer2.php";
+    {
 
-    $mail = new PHPMailer();
 
-    $mail->IsSMTP();            // set mailer to use SMTP 
-    $mail->SMTPAuth = true;     // turn on SMTP authentication 
-    $mail->Host   = $this->smtpHostNames; 
-    $mail->Username = $this->smtpUserName; 
-    $mail->Password = $this->smtpPassword; 
+        $from = $this->fromName . '<' . $this->from . '>';
 
-    $mail->From     = $this->from; 
-    $mail->FromName = $this->fromName; 
-    $mail->AddAddress($this->to, $this->toName ); 
-    $mail->AddReplyTo($this->from, $this->fromName ); 
+        $to = $this->toName . '<' . $this->to . '>';
 
-    $mail->CharSet  = 'UTF-8'; 
-    $mail->WordWrap = 50;  // set word wrap to 50 characters 
+        $replyTo = $this->replyTo;
 
-    if (!empty($this->attachments)) { 
-      foreach ($this->attachments as $attachment) { 
-        if (empty($attachment['asfile'])) { 
-          $mail->AddAttachment($attachment['filename']); 
-        } else { 
-          $mail->AddAttachment($attachment['filename'], $attachment['asfile']); 
-        } 
-      } 
-    } 
+        if ($this->cc != NULL) {
+             $cc = $this->ccName . '<' . $this->cc . '>';
+             $to = $to . ',' . $cc;
+        }
 
-    $mail->IsHTML(true);  // set email format to HTML 
+        if ($this->bcc != NULL) {
+             $bcc = $this->bccName . '<' . $this->bcc . '>';
+             $to = $to . ',' . $bcc;
+        }
 
-    $mail->Subject = $this->subject; 
-    //$mail->Body    = $this->bodyHTML(); 
-    //$mail->AltBody = $this->bodyText(); 
+        $subject = $this->subject;
+        $body = $this->template;
+        //$body = $this->bodyHTML();
+            //$mail->AltBody = $this->bodyText();
 
-    $result = $mail->Send(); 
+        $headers = array ('From' => $from,
+            'to' => $to,
+            'reply-to' => $replyTo,
+            'Subject' => $subject,
+            'Content-type' => 'text/html; charset=iso-8859-1');
 
-    if($result == false ) $result = $mail->ErrorInfo; 
+        $smtp = Mail::factory('smtp',
+            array ('host' => $this->smtpHostNames,
+                'auth' => true,
+                'username' => $this->smtpUserName,
+                'password' => $this->smtpPassword));
 
-    return $result; 
-    } 
+        $mail = $smtp->send($to, $headers, $body);
+
+        if (PEAR::isError($mail)) {
+            return false;
+        } else {
+            //echo("<p>Message successfully sent!</p>");
+            return true;
+        }
+/*
+         if (!empty($this->attachments)) {
+         foreach ($this->attachments as $attachment) {
+            if (empty($attachment['asfile'])) {
+               $mail->AddAttachment($attachment['filename']);
+            } else {
+               $mail->AddAttachment($attachment['filename'], $attachment['asfile']);
+            }
+         }
+*/
+
+    }
 } 
 ?>

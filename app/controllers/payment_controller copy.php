@@ -1,5 +1,5 @@
 <?php
-class PaymentController extends AppController {
+class Payment2Controller extends AppController {
 
 	var $name = 'Payment'; 
     var $send = false;
