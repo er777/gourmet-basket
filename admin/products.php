@@ -9,7 +9,7 @@ $prod_name = ((isset($_GET['prod_name']))?$_GET['prod_name']:"");
 <table border="0" cellpadding="0" cellspacing="0" style="width:800px; text-align:left">
         
         <tr>
-            <td><img src="images/titles/<?php echo ($_SESSION["l_level"] == 'admin' ? "title_vendors.jpg" : "title_my_products.jpg"); ?>" /><br></td>
+            <td> <!-- <img src="images/titles/<?php echo ($_SESSION["l_level"] == 'admin' ? "title_vendors.jpg" : "title_my_products.jpg"); ?>" /><br> --></td>
         </tr>
         <tr>   
             <td>

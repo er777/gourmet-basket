@@ -767,16 +767,10 @@ margin-right: 5px;
 						</thead>
 						<tbody>
               <?php
+							
 							// Select all products created by this vendor.
 							 $sql = "
-							 SELECT * FROM products
-							 LEFT JOIN users
-							 ON products.user_id = users.user_id
-							 WHERE product_id != '".$product_id."'
-							 AND users.user_id IN (SELECT user_id
-																		 FROM products
-																		 WHERE product_id = '". $product_id ."'
-																		 );";
+							 SELECT * FROM products;";
 						   // Return all products created by this vendor.
 							 $result = mysql_query($sql);
 							 $checked='';
