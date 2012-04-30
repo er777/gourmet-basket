@@ -101,6 +101,9 @@ class CartController extends AppController {
                       //echo 'testenter ';
                       $totals['taxdescription'] = $tax['description'];
                       $totals['tax_rate'] = $tax['rate'];
+                 } else {
+                     $totals['taxdescription'] = 'NA/No Apply';
+                     $totals['tax_rate'] = 0;
                  }
                  //echo $tax['rate']; echo $tax['description']; exit;
 
