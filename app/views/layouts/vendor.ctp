@@ -137,11 +137,9 @@ echo $html->image('logos/'.$products[0]['u']['image3'], array('width' => '250px'
                     <div class ="vendor-group-pics">
                     
 					<div class="vendor-article-pic-box">
-                    
-                    <?php if( $val['image4'] != ""){
-
+										<?php 
+										if( $products[0]['u']['image4'] != ""){
                     echo $html->image('logos/'.$products[0]['u']['image4'], array('width' => '250px', 'border' => '0', 'class' =>'vendor-story-pic', 'alt' => 'Vendor', 'title' => 'Vendor Pic 4' ));
-                    
                     }else{
 ?>
 
