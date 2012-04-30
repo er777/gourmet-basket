@@ -190,19 +190,19 @@ $result = mysql_query($sql);?>
 <?php endif;?>
 <div class="clear"></div>
 </div>
-<div class="category-article-wrapper" id="mcs3-container">
-<?php if(isset($this_parent_category)):?>
+<!--<div class="category-article-wrapper" id="mcs3-container">
+<?php //if(isset($this_parent_category)):?>
 
     <div class="category-article-pic">
 
         <img src="../../app/webroot/img/pantry/<?php echo $this_parent_category["category_image"];?>" width="280" height="240" />
     </div>
     <div class="category-info">
-        <?php echo $this_parent_category["category_name"];?></h2>
-        <?php echo $this_parent_category["category_article"]; ?>
-  </div>
-  <?php endif;?>
-</div>
+        <?php //echo $this_parent_category["category_name"];?>
+        <?php //echo $this_parent_category["category_article"]; ?>
+  	</div>
+  <?php //endif;?>
+</div>-->
 <div class="clear"></div>
 <div class="vendor-story-wrapper">
     <div class="signup"> <img src="../../app/webroot/img/temp-pics/signup.png" width="460" /> </div>

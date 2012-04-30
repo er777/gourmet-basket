@@ -71,14 +71,3 @@ $i = count($products);
 </div>
 
 
-
-
-
-
-
-
-
-
-	
-		
-   
