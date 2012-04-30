@@ -5,7 +5,22 @@
 // places where the structure and markup needs to be improved.
 session_start();
 include_once '../../_init.php';
-
+$attributes = array("allergen",
+										"gluten",
+										"vegan",
+										"fat_free",
+										"sugar",
+										"msg",
+										"lactose",
+										"low_carb",
+										"nut",
+										"heart",
+										"no_preservatives",
+										"organic",
+										"kosher",
+										"halal",
+										"fair_traded"
+										);
 if (isset($_GET["cmd"]) && $_GET["cmd"] == "delete") {
 $pid =	filter_var($_GET['pid'],FILTER_SANITIZE_NUMBER_INT);
     $qry = "DELETE FROM products WHERE  product_id = " . $pid;
@@ -91,22 +106,6 @@ if (isset($_POST['product_id'])) {
 		
     $p = DB::insert_update('products', 'product_id', $_POST);// This is not getting the checkboxes from the product features... :/ FAIL.
 		
-		 $attributes = array("allergen",
-														"gluten",
-														"vegan",
-														"fat_free",
-														"sugar",
-														"msg",
-														"lactose",
-														"low_carb",
-														"nut",
-														"heart",
-														"no_preservatives",
-														"organic",
-														"kosher",
-														"halal",
-														"fair_traded"
-														);
 		foreach ($attributes as $attribute){
 				if(isset($_POST[$attribute])){
 						$set_list[] = $attribute . "='".$_POST[$attribute]."'";
