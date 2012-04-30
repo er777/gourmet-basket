@@ -81,9 +81,6 @@ class PaymentController extends AppController {
             $order_id = $this->Payment->saveOrderData($this->Session->read('Member.member_id'), $this->Session->read('Memberaddress.shipping'), $this->Session->read('Memberaddress.billing'), $this->Session->read('Cart'), $this->Session->read('CartTotal'), $ip_customer, $this->data['cc_type']);
 
             $order_admin = $this->Payment->getOrderAdminData($order_id);
-            //$view = new View($this, false);
-            //$content = $view->element('email\html\order_admin', $order_admin);
-            //echo $content; exit;
 
             $email_admin = $this->Payment->getEmailAdminData();
 
@@ -141,7 +138,10 @@ class PaymentController extends AppController {
 
         $this->Email->fromName = 'Gourmet-Basket';
 
-        $this->Email->template = 'order_admin';
+        $view = new View($this, false);
+        $body_html = $view->element('email\html\order_admin',  array("order_info" => $order));
+
+        $this->Email->template = $body_html;
 
         $this->Email->sendAs = 'both';
 
@@ -172,11 +172,12 @@ class PaymentController extends AppController {
 
         $this->Email->fromName = 'Gourmet-Basket';
 
-        $this->Email->template = 'order_customer';
+        $view = new View($this, false);
+        $body_html = $view->element('email\html\order_customer',  array("order_info" => $order));
+
+        $this->Email->template = $body_html;
 
         $this->Email->sendAs = 'both';
-
-        $this->set('order_info', $order);
 
         $this->Email->send();
 
@@ -203,11 +204,12 @@ class PaymentController extends AppController {
 
         $this->Email->fromName = 'Gourmet-Basket';
 
-        $this->Email->template = 'order_vendor';
+        $view = new View($this, false);
+        $body_html = $view->element('email\html\order_vendor',  array("order_info" => $order));
+
+        $this->Email->template = $body_html;
 
         $this->Email->sendAs = 'both';
-
-        $this->set('order_info', $order);
 
         $this->Email->send();
 

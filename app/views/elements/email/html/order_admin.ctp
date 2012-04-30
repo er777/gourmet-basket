@@ -1,4 +1,4 @@
-<table style="font-family: Verdana,sans-serif; font-size: 11px; color: #374953; width: 600px;">  
+<table style="font-family: Verdana,sans-serif; font-size: 11px; color: #374953; width: 600px;">
   <tr>
     <td align="left"><a href="http://test.gourmet-basket.com/admin/" title="gourmet-basket.com"><img src="http://gourmet-basket.com/test/app/webroot/img/logo.png" alt="gourmet-basket.com" style="border: none;"/></a></td>
   </tr>
