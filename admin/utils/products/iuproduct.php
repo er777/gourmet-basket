@@ -295,7 +295,7 @@ margin-right: 5px;
           <div style=" clear: both;"></div>
           <div class="tab_container">
             <div id="tab_1" style="display: block;">
-              <table style="width: 630px;">
+              <table style="width: 805px;">
                 <tr>
                   <?php if($_SESSION["l_level"]=='admin'){?>
                   <td><label>Select Vendor: (*)</label>
@@ -375,8 +375,8 @@ margin-right: 5px;
                           <div class="description">
                             <p>The name of this mod. that is presented to the users. Eg.:</p>
                             <ul>
-                              <li>Exmple: "Color"</li>
-                              <li>Exmple: "Size"</li>
+                              <li>Example: "Color"</li>
+                              <li>Example: "Size"</li>
                             </ul>
                           </div>
                           <!-- end description --> 
@@ -749,7 +749,7 @@ margin-right: 5px;
 						<h2>Other Products From This Vendor</h2>
 						<table class="related_products">
 						<thead>
-						<th>Product ID</th>
+						<th width="70">Prod ID</th>
 						<th>Product Name</th>
 						<th>Description</th>
 						<th>Relational Description</th>

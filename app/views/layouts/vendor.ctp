@@ -105,12 +105,10 @@ script('jquery.galleriffic.js'); echo $html->script('gallerifficOptions.js'); ?>
             
 			<div class="vendor-article-pic-box upper-left">
             
-            	<?php if (!empty($images)) {
-
-            
-echo $html->image('logos/'.$products[0]['u']['image3'], array('width' => '250px', 'border' => '0', 'class' =>'vendor-story-pic', 'alt' => 'Vendor', 'title' => 'Vendor Pic 3' ));
-
-				}else{
+<?php 
+		if( $products[0]['u']['image3'] != ""){
+        echo $html->image('logos/'.$products[0]['u']['image3'], array('width' => '250px', 'border' => '0', 'class' =>'vendor-story-pic', 'alt' => 'Vendor', 'title' => 'Vendor Pic 3' ));
+        			}else{
 ?>
 
 <img src="/admin/images/default.png" alt="" />
@@ -137,10 +135,10 @@ echo $html->image('logos/'.$products[0]['u']['image3'], array('width' => '250px'
                     <div class ="vendor-group-pics">
                     
 					<div class="vendor-article-pic-box">
-										<?php 
-										if( $products[0]['u']['image4'] != ""){
-                    echo $html->image('logos/'.$products[0]['u']['image4'], array('width' => '250px', 'border' => '0', 'class' =>'vendor-story-pic', 'alt' => 'Vendor', 'title' => 'Vendor Pic 4' ));
-                    }else{
+<?php 
+		if( $products[0]['u']['image4'] != ""){
+        echo $html->image('logos/'.$products[0]['u']['image4'], array('width' => '250px', 'border' => '0', 'class' =>'vendor-story-pic', 'alt' => 'Vendor', 'title' => 'Vendor Pic 4' ));
+        			}else{
 ?>
 
 <img src="/admin/images/default.png" alt="" />
@@ -151,11 +149,10 @@ echo $html->image('logos/'.$products[0]['u']['image3'], array('width' => '250px'
                     
 					<div class="vendor-article-pic-box">
                     
-                    <?php if( $val['image5'] != ""){
-                    
-echo $html->image('logos/'.$products[0]['u']['image5'], array('width' => '250px', 'border' => '0', 'class' =>'vendor-story-pic', 'alt' => 'Vendor', 'title' => 'Vendor Pic 5' )); 
-
-					}else{
+<?php 
+		if( $products[0]['u']['image5'] != ""){
+        echo $html->image('logos/'.$products[0]['u']['image5'], array('width' => '250px', 'border' => '0', 'class' =>'vendor-story-pic', 'alt' => 'Vendor', 'title' => 'Vendor Pic 5' ));
+        			}else{
 ?>
 
 <img src="/admin/images/default.png" alt="" />
@@ -166,12 +163,10 @@ echo $html->image('logos/'.$products[0]['u']['image5'], array('width' => '250px'
                     
 					<div class="vendor-article-pic-box" style="padding-right:0">
                     
-<?php if( $val['image6'] != ""){
-						
- echo $html->image('logos/'.$products[0]['u']['image6'], array('width' => '250px', 'border' => '0', 'class' =>'vendor-story-pic', 'alt' => 'Vendor', 'title' => 'Vendor Pic 6' )); 
- 
-
-    				}else{
+<?php 
+		if( $products[0]['u']['image6'] != ""){
+        echo $html->image('logos/'.$products[0]['u']['image6'], array('width' => '250px', 'border' => '0', 'class' =>'vendor-story-pic', 'alt' => 'Vendor', 'title' => 'Vendor Pic 6' ));
+        			}else{
 ?>
 
 <img src="/admin/images/default.png" alt="" />
