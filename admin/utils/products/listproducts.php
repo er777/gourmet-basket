@@ -3,7 +3,7 @@
     <tr>
         <td>List of current Products:</td>
         <td align="right">
-        <a href="utils/products/iuproduct.php?product_id=new&user_id=<?php echo ((isset($_GET['id']) && $_GET['id']!='all')?$_GET['id']:($_SESSION["l_level"]=='admin'?'admin':'')); ?>&url=<?php echo urlencode($_SERVER['REQUEST_URI']) ?>" class="add" title="Gourmet Basket - Product Editor" onclick="Modalbox.show(this.href, {title: this.title, width:665, height: 470, aspnet: false}); return false;">
+        <a href="utils/products/iuproduct.php?product_id=new&user_id=<?php echo ((isset($_GET['id']) && $_GET['id']!='all')?$_GET['id']:($_SESSION["l_level"]=='admin'?'admin':'')); ?>&url=<?php echo urlencode($_SERVER['REQUEST_URI']) ?>" class="add" title="Gourmet Basket - Product Editor" onclick="Modalbox.show(this.href, {title: this.title, width:800, height: 600, aspnet: false}); return false;">
         <img src="images/add.png" width="16"/> Add Product</a>
         </td>
         <!--<td align="right">[&nbsp;<a href="utils/tab_product1.php?user_id=<?php echo $_SESSION["l_user_id"]; ?>" title="Gourmet Basket - Product Editor">Create New Product</a>&nbsp;]</td>-->
@@ -95,7 +95,7 @@ DB::query($var1);?>
                         <td>
 												<!-- <a href="/admin/utils/products/iuproduct.php?product_id=<?php echo $row["product_id"]; ?>&user_id=<?php echo $row["user_id"]; ?>&url=<?php echo urlencode($_SERVER['REQUEST_URI']) ?>">
                         <!-- OLD MODAL CODE -->
-                        <a href="#" onclick="javascript:Modalbox.show('utils/products/iuproduct.php?product_id=<?php echo $row["product_id"]; ?>&user_id=<?php echo $row["user_id"]; ?>&url=<?php echo urlencode($_SERVER['REQUEST_URI']) ?>', {title: 'Gourmet Basket - Product Editor', width: 704, height: 576, aspnet: false}); return false;"">
+                        <a href="#" onclick="javascript:Modalbox.show('utils/products/iuproduct.php?product_id=<?php echo $row["product_id"]; ?>&user_id=<?php echo $row["user_id"]; ?>&url=<?php echo urlencode($_SERVER['REQUEST_URI']) ?>', {title: 'Gourmet Basket - Product Editor', width: 850, height: 700, aspnet: false}); return false;"">
                         
                         <?php echo $row["product_name"]; ?></a>
                         </td> 
