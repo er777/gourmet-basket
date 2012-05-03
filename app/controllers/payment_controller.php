@@ -139,7 +139,7 @@ class PaymentController extends AppController {
         $this->Email->fromName = 'Gourmet-Basket';
 
         $view = new View($this, false);
-        $body_html = $view->element('email\html\order_admin',  array("order_info" => $order));
+        $body_html = $view->element('email/html/order_admin',  array("order_info" => $order));
 
         $this->Email->template = $body_html;
 
@@ -173,7 +173,7 @@ class PaymentController extends AppController {
         $this->Email->fromName = 'Gourmet-Basket';
 
         $view = new View($this, false);
-        $body_html = $view->element('email\html\order_customer',  array("order_info" => $order));
+        $body_html = $view->element('email/html/order_customer',  array("order_info" => $order));
 
         $this->Email->template = $body_html;
 
@@ -205,7 +205,7 @@ class PaymentController extends AppController {
         $this->Email->fromName = 'Gourmet-Basket';
 
         $view = new View($this, false);
-        $body_html = $view->element('email\html\order_vendor',  array("order_info" => $order));
+        $body_html = $view->element('email/html/order_vendor',  array("order_info" => $order));
 
         $this->Email->template = $body_html;
 
