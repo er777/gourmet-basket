@@ -1,9 +1,20 @@
 <?php
  // category.ctp
+$url_array = explode('/',$this->params['url']['url']); // pull full URL path from CAKE.
+array_shift($url_array); // kill 'products'
+array_shift($url_array); // kill 'category'
+$last = count($url_array); 
+$growing_crumb_path = '';
+$i=1;
+foreach ($url_array as $crumb) {
+			$readable_crumb = ucwords(str_replace("-", " ", $crumb));
+			$growing_crumb_path .= '/' . $crumb;
+			$useable_path = ($i < $last ? "/products/category/" . $growing_crumb_path : NULL );
+			$this->Html->addCrumb($readable_crumb, $useable_path);
+			$i++;
+}
 ?>
-<?php	 $this->Html->addCrumb('All Categories', 'categories'); ?>
-<?php	 $this->Html->addCrumb($parent_category['name']); ?>
-<?php if($category['name'] !== $parent_category['name']) $this->Html->addCrumb($category['name']); ?>
+<br/>
 <?php echo $this->Html->getCrumbs(' > ','Home'); ?>
 <div id="category-article">
 <div id="category-article-name"><?php print $category['name'];?></div>
