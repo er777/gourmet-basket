@@ -31,12 +31,11 @@
           
           
             
-                <div id="account">
-                     <ul class="gb-horiz-account">
-                          <li class="gb-account"><a href="/members/login">LOG IN</a></li>
-                          <li class="gb-account"><a href="/members/register">SUBSCRIBE</a></li>
-                      </ul>
-                </div>
+                <ul class="gb-horiz-account">
+					<li class="gb-account"><a href="/members/login">LOG IN</a></li>
+					<!--<li class="gb-account"><a href="/members/register">SUBSCRIBE</a></li>-->
+					<li class="gb-account"><a href="/cart">CART</a></li>
+				</ul>
                 
                 
                <div id="nav">
