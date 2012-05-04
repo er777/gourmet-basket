@@ -21,21 +21,25 @@
 
     <!-- <div id="middle-wrapper-bg"></div>-->
           
+      <div id="wrapper-shell">
+     		<div id="sun-left">&nbsp;</div>
+        	<div id="sun-right">&nbsp;</div>
+     
         <div id="wrapper">
+       
+        	<div id="left-header">&nbsp;</div>
           
-          <div id="header">
-          	 <a href="/"><div id="header-link"></div></a>
-				<div id="left-header">&nbsp;</div>
-				<div id="right-header">&nbsp;</div>
-          </div>
+          	<div id="header">
+          		<a href="/"><div id="header-link"></div></a>
+          	</div>
           
-          
-            
+            <div id="account">
                 <ul class="gb-horiz-account">
 					<li class="gb-account"><a href="/members/login">LOG IN</a></li>
 					<!--<li class="gb-account"><a href="/members/register">SUBSCRIBE</a></li>-->
 					<li class="gb-account"><a href="/cart">CART</a></li>
 				</ul>
+            </div>
                 
                 
                <div id="nav">
