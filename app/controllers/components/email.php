@@ -29,7 +29,7 @@ class EmailComponent
     var $controller; 
 
     function startup( &$controller ) {
-      require "mail.php";
+      //require "mail.php";
       $this->controller = &$controller; 
     } 
 
@@ -95,21 +95,32 @@ class EmailComponent
         //$body = $this->bodyHTML();
             //$mail->AltBody = $this->bodyText();
 
-        $headers = array ('From' => $from,
-            'to' => $to,
-            'reply-to' => $replyTo,
-            'Subject' => $subject,
-            'Content-type' => 'text/html; charset=iso-8859-1');
+        //$headers = array ('From' => $from,
+        //    'to' => $to,
+        //    'reply-to' => $replyTo,
+        //    'Subject' => $subject,
+        //    'Content-type' => 'text/html; charset=iso-8859-1');
 
-        $smtp = Mail::factory('smtp',
-            array ('host' => $this->smtpHostNames,
-                'auth' => true,
-                'username' => $this->smtpUserName,
-                'password' => $this->smtpPassword));
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-        $mail = $smtp->send($to, $headers, $body);
+        // Additional headers
+        //$headers .= 'To: ' . $to . "\r\n";
+        $headers .= 'From: ' . $from . "\r\n";
+        $headers .= 'reply-to: ' . $replyTo . "\r\n";
+        $headers .= 'subject: ' . $subject . "\r\n";
 
-        if (PEAR::isError($mail)) {
+        //$smtp = Mail::factory('smtp',
+        //    array ('host' => $this->smtpHostNames,
+        //        'auth' => true,
+        //        'username' => $this->smtpUserName,
+        //        'password' => $this->smtpPassword));
+//echo $to; exit;
+        //$mail = $smtp->send($to, $headers, $body);
+        $mailsend = mail($to, $subject, $body, $headers);
+
+        //if (PEAR::isError($mail)) {
+        if ($mailsend) {
             return false;
         } else {
             //echo("<p>Message successfully sent!</p>");
