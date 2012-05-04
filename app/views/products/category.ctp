@@ -66,7 +66,7 @@ foreach ($products as $product) :
          <div class="price"> $<?php echo $product['Product']['price'];?> </div>
          
          </a> </div>
-      <div class="vendor-label"> <a href=""><?php print  (isset($AllProductsandUsers[$product['Product']['product_id']]) ? $AllProductsandUsers[$product['Product']['product_id']] : '');?></a> </div>
+      <div class="vendor-label"><a href=""><?php print  (isset($AllProductsandUsers[$product['Product']['product_id']]) ? $AllProductsandUsers[$product['Product']['product_id']] : '');?></a> </div>
    </div>
    <?php endforeach; ?>
 </div>
