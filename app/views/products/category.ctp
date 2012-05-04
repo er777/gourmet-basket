@@ -56,11 +56,11 @@ foreach ($products as $product) :
 
 <div class="content-product">
     <div class="content-img">
-        <?php $link = '/product/' . $product['Product']['product_id'] . '-' .  str_replace(array("&","/"," "),"-",$product['Product']['product_name']); ?>
+        <?php $link = '/product/' . $product['Product']['product_id'] . '-' .  str_replace(array("&","/","'",'"'," "), array("-and-","-","","","-"),$product['Product']['product_name']); ?>
         <a href="<?php echo $link;?> "><img src="/admin/images/product/<?php echo ($product['Product']['image']!="" ? $product['Product']['image']:'default.png')?>" height="118" width="118"/></a>
 				
     </div>
-    <a href="/product/<?php echo $product['Product']['product_id'];?>-<?php echo str_replace(array("&"," ","/"), array("-"),$product['Product']['product_name']); ?>">
+    <a href="/product/<?php echo $product['Product']['product_id'];?>-<?php echo str_replace(array("&","/","'",'"'," "), array("-and-","-","","","-"),$product['Product']['product_name']); ?>">
 		<div class="name-price">
             <div class="p-name"> <?php echo strlen($product['Product']['product_name']) > 25 ? substr($product['Product']['product_name'], 0, 25) . "..." : $product['Product']['product_name']; ?> </div>
     

@@ -107,7 +107,7 @@
         <tr>
             <td width="75"><span class="quantity">Qty:</span></td>
             <td><?php
-                echo $this->Form->create(null, array('url' => array('controller' => 'products', 'action' => 'addcart')));
+                echo $this->Form->create(null, array('url' => array('controller' => 'product', 'action' => 'addcart')));
                 echo $form->hidden('product_id', array('value' => $products[0]['Product']['product_id']));
                 echo $form->hidden('product_name', array('value' => $products[0]['Product']['product_name']));
                 echo $form->hidden('business_name', array('value' => $products[0][0]['bname']));
