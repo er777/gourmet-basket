@@ -76,7 +76,7 @@ class ProductsController extends AppController {
         $this->set('parent_category', $parent_category);
         $this->set('category', $this_category);
         $this->set('products', $this->paginate());
-				$this->set('all_categories',$all_categories);
+		$this->set('all_categories',$all_categories);
 		}
 		function	categories(){
 				//requires no preprocessing?
@@ -235,6 +235,7 @@ class ProductsController extends AppController {
 				'u.image6',
                 'u.shop_description',
 				'u.shop_quote',
+				'u.short_name',
 				'u.shop_name',
                 'REPLACE(LOWER(u.shop_name),\' \',\'\') AS bname'
             ),

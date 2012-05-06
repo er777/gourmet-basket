@@ -111,7 +111,7 @@
                 echo $form->hidden('product_id', array('value' => $products[0]['Product']['product_id']));
                 echo $form->hidden('product_name', array('value' => $products[0]['Product']['product_name']));
                 echo $form->hidden('business_name', array('value' => $products[0][0]['bname']));
-                echo $form->hidden('price', array('value' => $products[0]['Product']['price']));
+                echo $form->hidden('price', array('value' => $products[0]['Product']['selling_price']));
                 echo $form->input('qty', array('label' => false, 'style' => 'width:40px', 'value' => '1'));
                 ?>
             </td>
@@ -222,6 +222,7 @@ var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, 
     var deviation_model = <?php print $deviation_json;?>;
     $('.mod_selector').change(function(){
     var price = <?php echo $products[0]['Product']['selling_price'];?>;
+    $('#ProductPrice').val(price.formatMoney(2, '.', ','));
         $('.mod_selector').each(function(){
             $this = $(this);
             $sku = $this.val();
@@ -240,6 +241,7 @@ var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, 
         });
         
         $('.price').html('$');
+        $('#ProductPrice').val(price.formatMoney(2, '.', ','));
         $('.price').append(price.formatMoney(2, '.', ','));
         console.log(parseInt(price.formatMoney(2, '.', ',')));
     });
