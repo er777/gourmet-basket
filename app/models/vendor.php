@@ -16,7 +16,7 @@ class Vendor extends AppModel {
         $var1 = "";
         $var1 .= "SELECT user_id, ";
 		
-        $var1 .= "business_name, short_name ";
+        $var1 .= "business_name, short_name, shop_name ";
         $var1 .= "FROM   users t " ;
         $var1 .= "WHERE business_name != '' " ;
         $var1 .= "AND level = 'vendor' " ;
