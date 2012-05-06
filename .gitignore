@@ -4,3 +4,4 @@
 /vendors
 /app/config/core.php
 /app/views/includes/_notes/
+/**/_notes/*
