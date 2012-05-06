@@ -235,7 +235,7 @@ class ProductsController extends AppController {
 				'u.image6',
                 'u.shop_description',
 				'u.shop_quote',
-				'u.shop_name',
+				'u.short_name',
                 'REPLACE(LOWER(u.shop_name),\' \',\'\') AS bname'
             ),
             'conditions' => array('REPLACE(LOWER(u.business_name),\' \',\'\') = ' => $vid),

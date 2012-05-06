@@ -16,14 +16,15 @@ class Vendor extends AppModel {
         $var1 = "";
         $var1 .= "SELECT user_id, ";
 		
-        $var1 .= "       business_name ";
+        $var1 .= "business_name, short_name ";
         $var1 .= "FROM   users t " ;
         $var1 .= "WHERE business_name != '' " ;
         $var1 .= "AND level = 'vendor' " ;
         $var1 .= "order by business_name" ;
+				$current_domain_with_no_subdomain = substr($_SERVER['HTTP_HOST'], strpos($_SERVER['HTTP_HOST'],"."), strlen($_SERVER['HTTP_HOST']));
+				
         foreach($this->query($var1) as $k){
-            //$var = "/products/vendor.".str_replace(" ",'',strtolower($k['t']['business_name']));
-            $var = "//" . str_replace(" ", '', strtolower($k['t']['business_name'])) . "gourmet-basket.com";
+            $var = "//" . $k['t']['short_name'] . $current_domain_with_no_subdomain ; // vendorShortName.gourmet-basket.[local/com]
             $r[$var] = $k['t']['business_name'];
         }
         return $r;
