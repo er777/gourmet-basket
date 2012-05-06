@@ -935,7 +935,7 @@ img.vendor-story-pic {
 	position:relative;
 	z-index:500;
 	float:left;
-	margin-bottom:20px;
+	margin-bottom:35px;
 	
 }
 
@@ -2501,7 +2501,7 @@ div.pagination span.ellipsis {
 *
 \******************************************************/
 .touchcarousel.grey-blue .arrow-icon {
-	background-image: url(/test/app/webroot/img/sprite.png);
+	background-image: url(/app/webroot/img/sprite.png);
 	background-repeat: no-repeat;
 	width: 11px;
 	height: 19px;

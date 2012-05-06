@@ -19,7 +19,7 @@ echo $html->script('jquery-1.6.1.min.js');
 echo $html->script('jquery-ui.min.js');
 //echo $html->script('jquery.mCustomScrollbar.js');
 //echo $html->script('hoverIntent.js');
-//echo $html->script('superfish.js');
+echo $html->script('superfish.js');
 echo $html->script('custom.js');
 echo $html->script('jquery.galleryview-3.0-dev.js');
 echo $html->script('jquery.easing.1.3.js');
@@ -34,11 +34,19 @@ echo $html->script('jquery.ae.image.resize.min.js');
 ?>
 
 	<script>
-		jQuery(function(){
+		jQuery(document).ready(function() { 
+		
+		// Columnizer
 			jQuery('.jquery-column').columnize({
 				columns : 3,
 				accuracy : 1,
 				buildOnce : true
 			})
+		
+		// Suckerfish
+		 jQuery('ul.dropEverything').superfish();	
+			
+			
+			
 		});
 	</script>

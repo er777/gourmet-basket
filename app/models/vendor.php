@@ -22,9 +22,11 @@ class Vendor extends AppModel {
         $var1 .= "AND level = 'vendor' " ;
         $var1 .= "order by business_name" ;
         foreach($this->query($var1) as $k){
-            //$var = "/products/vendor.".str_replace(" ",'',strtolower($k['t']['business_name']));
-            $var = "//" . str_replace(" ", '', strtolower($k['t']['business_name'])) . "gourmet-basket.com";
-            $r[$var] = $k['t']['business_name'];
+            $var = "/products/vendor.".str_replace(" ",'',strtolower($k['t']['business_name']));
+			
+			//Dean's code - temporaqrily reverted so we can work on this today
+            //$var = "//" . str_replace(" ", '', strtolower($k['t']['business_name'])) .".". "gourmet-basket.com";
+           // $r[$var] = $k['t']['business_name'];
         }
         return $r;
     }

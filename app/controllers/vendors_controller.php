@@ -46,6 +46,7 @@ class VendorsController extends AppController {
 				'u.image5',
 				'u.image6',
 				'u.shop_name',
+				'u.short_name',
 				'u.shop_description',
 				'u.shop_quote',
 				'u.image_feature',

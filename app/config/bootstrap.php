@@ -25,11 +25,15 @@
 // Author: Dean Shelton
 // Purpose: Reroute subdomains coming in to this server riding the wildcard DNS to the
 // 					appropriate action within the products table. In this case the vendor action.
-$subdomain = substr( env("HTTP_HOST"), 0, strpos(env("HTTP_HOST"), ".") );
-if( strlen($subdomain)>0 && $subdomain != "test") {
+
+
+//$subdomain = substr( env("HTTP_HOST"), 0, strpos(env("HTTP_HOST"), ".") );
+//if( strlen($subdomain)>0 && $subdomain != "test") {
 		// Assume this is a vendor slug, and pass the request to the product controller's vendor action.
-    $_GET["url"] = "products/vendor/" . $subdomain . "/" . (isset($_GET["url"]) ? $_GET["url"] : ""); 
-}
+//    $_GET["url"] = "products/vendor/" . $subdomain . "/" . (isset($_GET["url"]) ? $_GET["url"] : ""); 
+//}
+
+
 // END OF ADDITION FOR GOURMET-BASKET
 /**
  * The settings below can be used to set additional paths to models, views and controllers.

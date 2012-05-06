@@ -13,7 +13,13 @@ foreach ($url_array as $crumb) {
 			$this->Html->addCrumb($readable_crumb, $useable_path);
 			$i++;
 }
+
+
 ?>
+
+<pre><?php //var_dump($category);?>
+</pre>
+
 
 <br/>
 <?php echo $this->Html->getCrumbs(' > ','Home'); ?>
