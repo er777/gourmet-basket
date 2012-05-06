@@ -74,9 +74,10 @@
           
             <div id="account">
                 <ul class="gb-horiz-account">
-                      <li class="gb-account"><a href="/members/login">LOG IN</a></li>
-                      <li class="gb-account"><a href="/members/register">SUBSCRIBE - cat</a></li>
-                  </ul>
+					<li class="gb-account"><a href="/members/login">LOG IN</a></li>
+					<!--<li class="gb-account"><a href="/members/register">SUBSCRIBE</a></li>-->
+					<li class="gb-account"><a href="/cart">CART</a></li>
+				</ul>
             </div>
             
             <!--<div id="logo"></div>-->

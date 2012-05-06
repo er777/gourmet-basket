@@ -24,7 +24,7 @@ $five = 5;
 <div id="nested-1">
         <div class="recipe-box-left">
         
-         	<input type="hidden" name="data[users_recipes][recipe_number]" id="users_Recipe_number" value="<?=$r[$one]?>" />
+         	<input type="hidden" name="data[users_recipes][recipe_number]" id="users_Recipe_number" value="<?=$r['$one']?>" />
         
             <div class="recipe-info"><span class="recipe-label">Name</span>
             <input name="data[users_recipes][recipe_name]" value="<?=$r['recipe_name']?>" type="text" class="" id="usersRecipe_name" size="39"/>

@@ -531,7 +531,7 @@ span.radio-label {
 	
 <!--<div style="text-align:left;">
   	<span class="radio"><input type="radio" name="attribute<?php //echo ($i); ?>" value="radio" <?//=$a["vendor_product_attributes"]==1?"checked":""?>id="none<?php //echo ($i); ?> "> </span>
-   	<span class="radio"><input type="radio" name="attribute<?php //echo ($i); ?>" value="radio" <?//=$a["vendor_product_attributes"]==2?"checked":""?>id="some<?php echo ($i); ?> "> </span>
+   	<span class="radio"><input type="radio" name="attribute<?php //echo ($i); ?>" value="radio" <?//=$a["vendor_product_attributes"]==2?"checked":""?>id="some<?php //echo ($i); ?> "> </span>
    	<span class="radio"><input type="radio" name="attribute<?php //echo ($i); ?>" value="radio" <?//=$a["vendor_product_attributes"]==3?"checked":""?>id="all<?php// echo ($i); ?> "> </span>
     <?php //echo $row['attribute'];
 	

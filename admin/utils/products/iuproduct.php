@@ -271,7 +271,7 @@ margin-right: 5px;
 </style>
   <form method="post" onsubmit="return checkProductForm()" id="form" action="utils/products/iuproduct.php" enctype="multipart/form-data" class="uiproduct" name="uiproduct" id="uiproduct">
   <input type="hidden" value="<?php echo $product_id; ?>" name="product_id"  />
-  <input type="hidden" value="<?php echo $p['nutrition_id']; ?>" name="nutrition_id"  />
+  <input type="hidden" value="<?php echo (isset($p['$1']) ? $p['$1'] : ''); ?>" name="nutrition_id"  />
   <?php if($user_id!='admin'){?>
   <input type="hidden" value="<?php echo $user_id; ?>" name="user_id" id="user_id"/>
   <?php } ?>
@@ -305,21 +305,21 @@ margin-right: 5px;
                     </select></td>
                   <?php } ?>
                   <td valign="top"><label>Your Item No.: (*)</label>
-                    <input type="text" name="item" id="item" size="16" maxlength="16" value="<?php echo $p['item'] ; ?>"/></td>
+                    <input type="text" name="item" id="item" size="16" maxlength="16" value="<?php echo (isset($p['item']) ? $p['item'] : '') ; ?>"/></td>
                 </tr>
                 <tr>
                   <td><label>Product Name: (*)</label>
-                    <input type="text" name="product_name" id="product_name" size="32" maxlength="50" value="<?php echo $p['product_name']; ?>"/></td>
+                    <input type="text" name="product_name" id="product_name" size="32" maxlength="50" value="<?php echo (isset($p['product_name']) ? $p['product_name'] : ''); ?>"/></td>
                   <td><label>Tags (each separated by a comma):</label>
-                    <textarea id="tags" class="tags" wrap="ON" style="width: 200px; height: 45px;" name="tags"><?php echo $p['tags'] ?></textarea></td>
+                    <textarea id="tags" class="tags" wrap="ON" style="width: 200px; height: 45px;" name="tags"><?php echo (isset($p['tags']) ? $p['tags'] : '') ?></textarea></td>
                 </tr>
                 <tr>
                   <td valign="top"><label>Product Description: (*)</label>
-                    <textarea id="description" class="description" wrap="ON" style="width: 388px; height: 30px;" name="description"><?php echo $p['description']; ?></textarea></td>
+                    <textarea id="description" class="description" wrap="ON" style="width: 388px; height: 30px;" name="description"><?php echo (isset($p['description']) ? $p['description'] : ''); ?></textarea></td>
                 </tr>
                 <tr>
                   <td valign="top" colspan="3"><label>Long Description:</label>
-                    <textarea id="long_description" class="description" wrap="ON" style="width: 400px; height: 70px;" name="long_description"><?php echo $p['long_description']; ?></textarea></td>
+                    <textarea id="long_description" class="description" wrap="ON" style="width: 400px; height: 70px;" name="long_description"><?php echo (isset($p['long_description']) ? $p['long_description'] : ''); ?></textarea></td>
                 </tr>
                 <script type="text/javascript">
                                     //<![CDATA[
@@ -342,16 +342,16 @@ margin-right: 5px;
                   <td colspan="3"><table>
                       <tr>
                         <td><label>Selling Price: (*)</label>
-                          <input type="text" value="<?php echo $p['selling_price'] ?>" name="selling_price" id="selling_price" size="15" /></td>
+                          <input type="text" value="<?php echo (isset($p['selling_price']) ? $p['selling_price'] : '') ?>" name="selling_price" id="selling_price" size="15" /></td>
                         <td><label>Wholesale Cost: (*)</label>
-                          <input type="text" value="<?php echo $p['cost'] ?>" name="price" id="price" size="15" /></td>
+                          <input type="text" value="<?php echo (isset($p['cost']) ? $p['cost'] : '') ?>" name="price" id="price" size="15" /></td>
                         <td><label for="taxable" style="margin-right: 10px;">Is Taxable:</label>
-                          <input type="hidden" value="<?php echo $p['taxable'] ?>" name="taxable1" id="taxable1"/>
-                          <input type="checkbox" value="1" <?php echo checked($p['taxable'], 1) ?> name="taxable" id="taxable" size="15" /></td>
+                          <input type="hidden" value="<?php echo (isset($p['taxable']) ? $p['taxable'] : '') ?>" name="taxable1" id="taxable1"/>
+                          <input type="checkbox" value="1" <?php echo (isset($p['taxable']) ? checked($p['taxable'], 1) : '') ?> name="taxable" id="taxable" size="15" /></td>
                         <td><label>Stock Quantity: (*)</label>
-                          <input type="text" value="<?php echo $p['stock'] ?>" name="stock" id="stock" size="15" /></td>
+                          <input type="text" value="<?php echo (isset($p['stock']) ? $p['stock'] : '') ?>" name="stock" id="stock" size="15" /></td>
                         <td><label>Ratings:</label>
-                          <input type="text" value="<?php echo $p['ratings'] ?>" name="ratings" id="ratings" size="15" /></td>
+                          <input type="text" value="<?php echo (isset($p['ratings']) ? $p['ratings'] : '') ?>" name="ratings" id="ratings" size="15" /></td>
                       </tr>
                     </table>
                     <h2>Product Modifications</h2>
@@ -543,9 +543,9 @@ margin-right: 5px;
                       <?php 
                                                 $mycat = DB::result("SELECT mycategories from users where user_id = '$user_id'");
                                                 if($mycat==""){
-                                                    echo DB::db_options("SELECT `category_id`, `category_name` FROM `categories` order by `category_id`", $p['category_id']);
+                                                    echo DB::db_options("SELECT `category_id`, `category_name` FROM `categories` order by `category_id`", (isset($p['category_id']) ? $p['category_id']: ''));
                                                 }else{
-                                                    echo DB::db_options("SELECT `category_id`, `category_name` FROM `categories` where category_id IN ($mycat) order by `category_id`", $p['category_id']);
+                                                    echo DB::db_options("SELECT `category_id`, `category_name` FROM `categories` where category_id IN ($mycat) order by `category_id`", (isset($p['category_id']) ? $p['category_id'] : ''));
                                                 }
                                                 ?>
                     </select>
@@ -554,14 +554,14 @@ margin-right: 5px;
                     <span id="cat-subcat" style="padding: 0px;">
                     <select name="subcategory_id" id="subcategory_id" class="left" onchange="exeAjax('id='+this.value+'&action=3', 'scat-ssubcat', false)" >
                       <option value="">Select</option>
-                      <?php echo DB::db_options("SELECT `subcategory_id`, `subcategory` FROM `subcategories` where `category_id` = '". $p['category_id'] ."' order by `subcategory_id`", $p['subcategory_id']) ?>
+                      <?php echo DB::db_options("SELECT `subcategory_id`, `subcategory` FROM `subcategories` where `category_id` = '". (isset($p['category_id']) ? $p['category_id'] : '')."' order by `subcategory_id`", (isset($p['subcategory_id']) ? $p['subcategory_id'] : '')) ?>
                     </select>
                     </span></td>
                   <td><label>Sub-Subcategory:</label>
                     <span id="scat-ssubcat" style="padding: 0px;">
                     <select name="sub_subcat_id" id="sub_subcat_id" class="left" >
                       <option value="">Select</option>
-                      <?php echo DB::db_options("SELECT `sub_subcat_id`, `sub_subcategory` FROM `sub_subcategories` where `subcategory_id` = '".$p['subcategory_id']."' order by `sub_subcat_id`", $p['sub_subcat_id']) ?>
+                      <?php echo DB::db_options("SELECT `sub_subcat_id`, `sub_subcategory` FROM `sub_subcategories` where `subcategory_id` = '".(isset($p['subcategory_id']) ? $p['subcategory_id'] : '')."' order by `sub_subcat_id`", (isset($p['sub_subcat_id']) ? $p['sub_subcat_id'] : '')) ?>
                     </select>
                     </span></td>
                 </tr>
@@ -570,7 +570,7 @@ margin-right: 5px;
                     <select name="country_id" id="country_id" class="left">
                       <option value="">Select</option>
                       <option value="223" selected="selected" >United States</option>
-                      <?php echo DB::db_options("SELECT `country_id`, `name` FROM `countries` order by `country_id`", $p['country_id']) ?>
+                      <?php echo DB::db_options("SELECT `country_id`, `name` FROM `countries` order by `country_id`", (isset($p['country_id']) ? $p['country_id'] : '')) ?>
                     </select></td>
                   <td><label>International Areas where used</label>
                     <select name="culinary_country_id" id="culinary_country" class="left">
@@ -591,14 +591,14 @@ margin-right: 5px;
                   <td><label>Creation Type:</label>
                     <select name="creation_id" id="creation_id" class="left">
                       <option value="">Select</option>
-                      <?php echo DB::db_options("SELECT `creation_id`, `type` FROM `product_creation` order by `creation_id`", $p['creation_id']) ?>
+                      <?php echo DB::db_options("SELECT `creation_id`, `type` FROM `product_creation` order by `creation_id`", (isset($p['creation_id']) ? $p['creation_id'] : '')) ?>
                     </select></td>
                 </tr>
                 <tr>
                   <td valign="top" id="traditions"><label>Culinary Tradition <br />
                       <small>(Can include more than one tradition)</small>:</label>
                     <?php
-                                            $traditions = explode(", ", $p['tradition_ids']);
+                                            $traditions = explode(", ", (isset($p['tradition_ids']) ? $p['tradition_ids'] : ''));
                                             $i_trad = 0;
                                             do {
                                                 ?>
@@ -613,18 +613,14 @@ margin-right: 5px;
                                                 $i_trad++;
                                             } while (isset($traditions[$i_trad]));
                                             ?></td>
-                  <td><!-- <label>Image:</label>> 
-                                            <input type="hidden" value="<?php echo $p['image'] ?>" name="image" id="image" />
-                                            <img src="/admin/images/<?php echo ($p['image'] != "")?"product/".$p['image']:"logo.png";?>" alt="UPLOAD IMAGE" id="image2" height="150" width="150"/>
-                                            <br />
-                                            <input type="file" name="image3" id="image3" style="float: left; width: 100px;"  /--></td>
+                  <td></td>
                   <td valign="top"><br />
                     <br />
                     <label><b>Featured product</b>:
-                      <input type="checkbox" value="1" name="featured_product" <?php if ($p['featured_product'] != '0') //{echo 'checked';} ?> />
+                      <input type="checkbox" value="1" name="featured_product" <?php if ((isset($p['featured_product']) ? $p['featured_product'] : '') != '0') //{echo 'checked';} ?> />
                     </label>
                     <label><b>Available as Gift Packaged</b>:
-                      <input type="checkbox" value="1" name="gift_product" <?php if ($p['gift_product'] != '0') //{echo 'checked';} ?>/>
+                      <input type="checkbox" value="1" name="gift_product" <?php if ((isset($p['gift_product']) ? $p['gift_product'] : '') != '0') //{echo 'checked';} ?>/>
                     </label></td>
                 </tr>
               </table>
@@ -633,20 +629,20 @@ margin-right: 5px;
               <table style="width: 630px;">
                 <tr>
                   <td valign="top"><label>Product Weight <small>(exact weight in ounces)</small> : (*)</label>
-                    <input type="text" value="<?php echo $p['weight'] ?>" name="weight" id="weight" /></td>
+                    <input type="text" value="<?php echo (isset($p['weight']) ? $p['weight'] : '') ?>" name="weight" id="weight" /></td>
                   <td><!--<label>Content in ounces /liquid measurement :</label> 
-                                             <input type="text" value="<?php // echo $p['measurement'] ?>" name="measurement" id="measurement" />--></td>
+                                             <input type="text" value="<?php // echo (isset($p['measurement']) ? $p['measurement'] : '') ?>" name="measurement" id="measurement" />--></td>
                 </tr>
                 <tr>
                   <td colspan="2"><!--
                                          <td>
                                             <label> Product size in inches <small>(H x W x D) </small> : (*)</label> 
-                                            <input type="text" value="<?php // echo $p['size'] ?>" name="size" id="size" />  
+                                            <input type="text" value="<?php // echo (isset($p['size']) ? $p['size'] : '') ?>" name="size" id="size" />  
                                         </td>
                                          -->
                     
                     <label> List of Ingredients <small>(each separated by a comma) </small> :</label>
-                    <textarea name="ingredients" id="ingredients" cols="45" rows="3"><?php echo $p['ingredients'] ?></textarea></td>
+                    <textarea name="ingredients" id="ingredients" cols="45" rows="3"><?php echo (isset($p['ingredients']) ? $p['ingredients'] : '') ?></textarea></td>
                 </tr>
                 
                   <td valign="top" colspan="2"><table>
@@ -659,7 +655,7 @@ margin-right: 5px;
 														<?php foreach ($attributes as $attribute) :?>														
                             <tr>
                               <td><?php echo ucwords(str_replace("_"," ",$attribute)); ?></td>
-                              <td><input type="checkbox" value="1" name="<?php echo $attribute; ?>" id="<?php echo $attribute; ?>" <?php echo ($p[$attribute] ? "checked" : ''); ?>/></td>
+                              <td><input type="checkbox" value="1" name="<?php echo $attribute; ?>" id="<?php echo $attribute; ?>" <?php echo (isset($p[$attribute]) ? "checked" : ''); ?>/></td>
 														</tr>
 														<?php endforeach;?>
                           </table></td>
@@ -676,71 +672,71 @@ margin-right: 5px;
                 </tr>
                 <tr>
                   <td> Serving Size </td>
-                  <td><input type="text" size="5" value="<?php echo $p['serv_size'] ?>" name="serv_size" id="serv_size" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['serv_size']) ? $p['serv_size'] : '') ?>" name="serv_size" id="serv_size" /></td>
                   <td> Calories </td>
-                  <td><input type="text" size="5" value="<?php echo $p['cal'] ?>" name="cal" id="cal" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['cal']) ? $p['cal'] : '') ?>" name="cal" id="cal" /></td>
                   <td> Calories from Fat</td>
-                  <td><input type="text" size="5" value="<?php echo $p['cal_fat'] ?>" name="cal_fat" id="cal_fat" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['cal_fat']) ? $p['cal_fat'] : '') ?>" name="cal_fat" id="cal_fat" /></td>
                 </tr>
                 <tr>
                   <td> Servings per Container </td>
-                  <td><input type="text" size="5" value="<?php echo $p['serv_per_cont'] ?>" name="serv_per_cont" id="serv_per_cont" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['serv_per_cont']) ? $p['serv_per_cont'] : '') ?>" name="serv_per_cont" id="serv_per_cont" /></td>
                   <td>&nbsp;</td>
                 </tr>
                 <tr>
                   <td>Total Fat</td>
-                  <td><input type="text" size="5" value="<?php echo $p['total_fat'] ?>" name="total_fat" id="total_fat" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['total_fat']) ? $p['total_fat'] : '') ?>" name="total_fat" id="total_fat" /></td>
                   <td>Saturated Fat</td>
-                  <td><input type="text" size="5" value="<?php echo $p['sat_fat'] ?>" name="sat_fat" id="sat_fat" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['sat_fat']) ? $p['sat_fat'] : '') ?>" name="sat_fat" id="sat_fat" /></td>
                   <td>Trans Fat</td>
-                  <td><input type="text" size="5" value="<?php echo $p['trans_fat'] ?>" name="trans_fat" id="trans_fat" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['trans_fat']) ? $p['trans_fat'] : '') ?>" name="trans_fat" id="trans_fat" /></td>
                 </tr>
                 <tr>
                   <td>Cholesterol</td>
-                  <td><input type="text" size="5" value="<?php echo $p['chol']  ?>" name="chol" id="chol" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['chol']) ? $p['chol'] : '')  ?>" name="chol" id="chol" /></td>
                   <td>Sodium</td>
-                  <td><input type="text" size="5" value="<?php echo $p['sodium'] ?>" name="sodium" id="sodium" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['sodium']) ? $p['sodium'] : '') ?>" name="sodium" id="sodium" /></td>
                 </tr>
                 <tr>
                   <td>Total Carbohydrate</td>
-                  <td><input type="text" size="5" value="<?php echo $p['carbo'] ?>" name="carbo" id="carbo" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['carbo']) ? $p['carbo'] : '') ?>" name="carbo" id="carbo" /></td>
                   <td>Dietary Fiber</td>
-                  <td><input type="text" size="5" value="<?php echo $p['fiber'] ?>" name="fiber" id="fiber" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['fiber']) ? $p['fiber'] : '') ?>" name="fiber" id="fiber" /></td>
                   <td>Sugars</td>
-                  <td><input type="text" size="5" value="<?php echo $p['sugar'] ?>" name="sugar" id="sugar" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['sugar']) ? $p['sugar'] : '') ?>" name="sugar" id="sugar" /></td>
                 </tr>
                 <tr>
                   <td>Protein</td>
-                  <td><input type="text" size="5" value="<?php echo $p['protein'] ?>" name="protein" id="protein" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['protein']) ? $p['protein'] : '') ?>" name="protein" id="protein" /></td>
                   <td>Vitamin A</td>
-                  <td><input type="text" size="5" value="<?php echo $p['vit_A'] ?>" name="vit_A" id="vit_A" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['vit_A']) ? $p['vit_A'] : '') ?>" name="vit_A" id="vit_A" /></td>
                   <td>Vitamin C</td>
-                  <td><input type="text" size="5" value="<?php echo $p['vit_C'] ?>" name="vit_C" id="vit_C" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['vit_C']) ? $p['vit_C'] : '') ?>" name="vit_C" id="vit_C" /></td>
                 </tr>
                 <tr>
                   <td>Calcium</td>
-                  <td><input type="text" size="5" value="<?php echo $p['calcium'] ?>" name="calcium" id="calcium" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['calcium']) ? $p['calcium'] : '') ?>" name="calcium" id="calcium" /></td>
                   <td>Iron</td>
-                  <td><input type="text" size="5" value="<?php echo $p['iron']; ?>" name="iron" id="iron" /></td>
+                  <td><input type="text" size="5" value="<?php echo (isset($p['iron']) ? $p['iron'] : ''); ?>" name="iron" id="iron" /></td>
                 </tr>
               </table>
             </div>
             <div id="tab_5" style=" display: none;">
               <table style="width: 630px;padding:20px;">
                 <tr>
-                  <td><img src="/admin/images/<?php echo ($p['image'] != "")?"product/".$p['image']:"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
+                  <td><img src="/admin/images/<?php echo ((isset($p['image']) ? $p['image'] : '') != "")?"product/".(isset($p['image']) ? $p['image'] : ''):"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
                     <input type="file" name="image" style="float: left; width: 100px;"  /></td>
-                  <td><img src="/admin/images/<?php echo ($p['image_1'] != "")?"product/".$p['image_1']:"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
+                  <td><img src="/admin/images/<?php echo ((isset($p['image_1']) ? $p['image_1'] : '') != "")?"product/".(isset($p['image_1']) ? $p['image_1'] : ''):"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
                     <input type="file" name="image_1" style="float: left; width: 100px;"  /></td>
-                  <td><img src="/admin/images/<?php echo ($p['image_2'] != "")?"product/".$p['image_2']:"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
+                  <td><img src="/admin/images/<?php echo ((isset($p['image_2']) ? $p['image_2'] : '') != "")?"product/".(isset($p['image_2']) ? $p['image_2'] : ''):"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
                     <input type="file" name="image_2" style="float: left; width: 100px;"  /></td>
                 </tr>
                 <tr>
-                  <td><img src="/admin/images/<?php echo ($p['image_3'] != "")?"product/".$p['image_3']:"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
+                  <td><img src="/admin/images/<?php echo ((isset($p['image_3']) ? $p['image_3'] : '') != "")?"product/".(isset($p['image_3']) ? $p['image_3'] : ''):"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
                     <input type="file" name="image_3" style="float: left; width: 100px;"  /></td>
-                  <td><img src="/admin/images/<?php echo ($p['image_4'] != "")?"product/".$p['image_4']:"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
+                  <td><img src="/admin/images/<?php echo ((isset($p['image_4']) ? $p['image_4'] : '') != "")?"product/".(isset($p['image_4']) ? $p['image_4'] : ''):"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
                     <input type="file" name="image_4" style="float: left; width: 100px;"  /></td>
-                  <td><img src="/admin/images/<?php echo ($p['image_5'] != "")?"product/".$p['image_5']:"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
+                  <td><img src="/admin/images/<?php echo ((isset($p['image_5']) ? $p['image_5'] : '') != "")?"product/".(isset($p['image_5']) ? $p['image_5'] : ''):"logo.png";?>" alt="UPLOAD IMAGE" height="100" width="100"/> <br />
                     <input type="file" name="image_5" style="float: left; width: 100px;"  /></td>
                 </tr>
               </table>

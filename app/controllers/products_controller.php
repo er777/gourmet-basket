@@ -8,7 +8,6 @@ class ProductsController extends AppController {
     function beforeFilter() {
         parent::beforeFilter();
     }
-
     function index($parent_slug = null, $child_slug = null, $grandchild_slug = null) {
 					
 						
@@ -84,6 +83,7 @@ class ProductsController extends AppController {
 		}
 		
     function detail($id = null) {
+
 				
         $this->loadModel('Vendor');
         $this->set('users', $this->Vendor->getVendors());
@@ -121,7 +121,7 @@ class ProductsController extends AppController {
 						//Structure HTML for display on detail.ctp.
 						foreach($options as $label => $values){
 								$product_mods .= '<div class="mod_display"><strong>' . $label . '</strong><br/>';
-								$product_mods .= '<select class="mod_selector" name="'.$label.'">';
+								$product_mods .= '<select class="mod_selector" name="mod_'.$label.'">';
 								$product_mods .= join($values);
 								$product_mods .= '</select></div>';
 						}

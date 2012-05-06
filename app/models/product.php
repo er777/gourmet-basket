@@ -32,6 +32,14 @@ class Product extends AppModel{
     }
 		
 		function _getAllProductMods($product_id){
+				if(!is_numeric($product_id)){
+						// This is a precaution.
+						// This will ensure that only numeric values will be passed.
+						// Although, ALL LINKS should be DEVOID of special chars when they render the SEO specific product ID+PRODUCTNAME path.
+						preg_match("/(^\d*?)-/", $product_id, $matches);
+						$product_id = $matches[1];
+				}
+				
 				$sql = "SELECT mod_sku, serialized_mod_data 
 								FROM product_mods WHERE product_id = '" . $product_id . "';";
 				return $this->query($sql);

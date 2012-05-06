@@ -15,13 +15,13 @@ $i = count($products);
 ?>
     <div class="content-product">
       <div class="content-img">
-      <a href="/product/<?php echo $val['product_id'] . '-' . $val['product_name']; ?>">
+      <a href="/product/<?php echo $val['product_id'] . '-' . str_replace(array("&","/","'",'"'," "), array("-and-","-","","","-"),$val['product_name']);?>">
       <img height= "110" width="110" src="/admin/images/product/<?php echo ( $val['image'] != "" ? $val['image'] : 'default.png' ); ?>" alt="<?php echo  $val['description'];?>" />
       </a>
       
         																										 <!-- 'class' =>'resizeme',-->
       </div>
-          <a href="/product/<?php echo $val['product_id'];?>-<?php echo str_replace(array("&","/"," "), "-",$val['product_name']);?>">
+          <a href="/product/<?php echo $val['product_id'];?>-<?php echo str_replace(array("&","/","'",'"'," "), array("-and-","-","","","-"),$val['product_name']);?>">
               <div class="name-price">
                 <div class="p-name"> <?php echo strlen($val['product_name'])>40?substr($val['product_name'],0,40)."...":$val['product_name'];?> </div>
                 <div class="price"> $<?php echo $val['price'];?> </div>
