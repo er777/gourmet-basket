@@ -77,7 +77,7 @@ class ProductsController extends AppController {
         $this->set('parent_category', $parent_category);
         $this->set('category', $this_category);
         $this->set('products', $this->paginate());
-				$this->set('all_categories',$all_categories);
+		$this->set('all_categories',$all_categories);
 		}
 		function	categories(){
 				//requires no preprocessing?
