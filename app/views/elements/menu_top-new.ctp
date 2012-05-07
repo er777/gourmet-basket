@@ -59,7 +59,7 @@
       <!-- end row --> 
     </div>
   </li>
-  <li class="top-li pageTwo"><a class="top-a" href="/vendors">VENDORS!</a>
+  <li class="top-li pageTwo"><a class="top-a" href="http://test.gourmet-basket.com/vendors">VENDORS!</a>
     <div class="dropEverything-page">
       <div class="dropEverything-row">
         <div class="dropEverything-col1 jquery-column">
