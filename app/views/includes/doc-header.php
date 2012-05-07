@@ -20,7 +20,7 @@ echo $html->script('jquery-ui.min.js');
 //echo $html->script('jquery.mCustomScrollbar.js');
 //echo $html->script('hoverIntent.js');
 echo $html->script('superfish.js');
-echo $html->script('custom.js');
+//echo $html->script('custom.js');
 echo $html->script('jquery.galleryview-3.0-dev.js');
 echo $html->script('jquery.easing.1.3.js');
 echo $html->script('jquery.touchcarousel-1.0.min.js');
@@ -28,7 +28,7 @@ echo $html->script('jquery.touchcarousel-1.0.min.js');
 //echo $html->script('jquery.marquee.js');
 echo $html->script('jquery.columnizer.min.js');
 //echo $html->script('hoverIntent.js');
-echo $html->script('jquery.dropkick-1.0.0.js');
+//echo $html->script('jquery.dropkick-1.0.0.js');
 echo $html->script('jquery.opacityrollover.js');
 echo $html->script('jquery.ae.image.resize.min.js');
 ?>
