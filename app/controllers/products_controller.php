@@ -239,7 +239,7 @@ class ProductsController extends AppController {
 				'u.shop_name',
                 'REPLACE(LOWER(u.shop_name),\' \',\'\') AS bname'
             ),
-            'conditions' => array('REPLACE(LOWER(u.business_name),\' \',\'\') = ' => $vid),
+            'conditions' => array('u.short_name=' => $vid),
             'limit' => 12,
             'order' => array('product_id' => 'desc')
         );
