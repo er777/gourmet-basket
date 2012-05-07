@@ -233,6 +233,7 @@ class ProductsController extends AppController {
 				'u.image4',
 				'u.image5',
 				'u.image6',
+				'u.short_name',
                 'u.shop_description',
 				'u.shop_quote',
 				'u.short_name',
