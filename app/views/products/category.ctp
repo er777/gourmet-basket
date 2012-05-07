@@ -13,14 +13,7 @@ foreach ($url_array as $crumb) {
 			$this->Html->addCrumb($readable_crumb, $useable_path);
 			$i++;
 }
-
-
 ?>
-
-<pre><?php //var_dump($category);?>
-</pre>
-
-
 <br/>
 <?php echo $this->Html->getCrumbs(' > ','Home'); ?>
 <div id="category-article">
@@ -56,14 +49,18 @@ foreach ($url_array as $crumb) {
    <?php
 
 foreach ($products as $product) :
-
+			if(isset($AllProductsandUsers[$product['Product']['product_id']])):
+						$product_id = $product['Product']['product_id'];
+						$shop_name = $AllProductsandUsers[$product_id]['shop_name'];
+						$url = $AllProductsandUsers[$product_id]['url'];
+			endif;
 ?>
    <div class="content-product">
       <div class="content-img">
-         <?php $link = '/product/' . $product['Product']['product_id'] . '-' .  str_replace(array("&","/","'",'"'," "), array("-and-","-","","","-"),$product['Product']['product_name']); ?>
+         <?php $link = $url.'/product/' . $product['Product']['product_id'] . '-' .  str_replace(array("&","/","'",'"'," "), array("-and-","-","","","-"),$product['Product']['product_name']); ?>
          <a href="<?php echo $link;?> "><img src="/admin/images/product/<?php echo ($product['Product']['image']!="" ? $product['Product']['image']:'default.png')?>" height="118" width="118"/></a> </div>
          
-      <a href="/product/<?php echo $product['Product']['product_id'];?>-<?php echo str_replace(array("&","/","'",'"'," "), array("-and-","-","","","-"),$product['Product']['product_name']); ?>">
+      <a href="<?php echo $url;?>/product/<?php echo $product['Product']['product_id'];?>-<?php echo str_replace(array("&","/","'",'"'," "), array("-and-","-","","","-"),$product['Product']['product_name']); ?>">
       
       <div class="name-price">
       
@@ -72,7 +69,8 @@ foreach ($products as $product) :
          <div class="price"> $<?php echo $product['Product']['price'];?> </div>
          
          </a> </div>
-      <div class="vendor-label"><a href=""><?php print  (isset($AllProductsandUsers[$product['Product']['product_id']]) ? $AllProductsandUsers[$product['Product']['product_id']] : '');?></a> </div>
+				
+      <div class="vendor-label"><a href="<?php echo $url; ?>"><?php echo $shop_name; ?></a> </div>
    </div>
    <?php endforeach; ?>
 </div>
