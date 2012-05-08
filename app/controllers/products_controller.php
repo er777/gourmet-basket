@@ -193,11 +193,20 @@ class ProductsController extends AppController {
     }
 
     function vendor($vid = null) {
-
+		/*
+		 *	Why the hell are the VENDORS within the USERS table?!? 
+		 *	The Vendors should be within the VENDORS table! It defeats the purpose
+		 *	of MVC when you build like this. 
+		 */
+		
         if($vid==null){
             $this->redirect('/vendors');
             exit();
         }
+				$result = $this->Vendor->query("SELECT user_id FROM users WHERE short_name = '" . $vid . "';");
+				if(count($result) === 0){
+						$this->cakeError('error404');
+				}
         $this->loadModel('Vendor');
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
