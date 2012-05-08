@@ -30,10 +30,12 @@ $path = $_SERVER['REQUEST_URI'];
 $onHomepage = strlen($path) <= 1; // homepage requests will be "/" that is... Homepage request length = 1
 
 if($onHomepage) {	// This magic should only effect homepage requests. All other requests should be handled normally.
-	$subdomain = substr( env("HTTP_HOST"), 0, strpos(env("HTTP_HOST"), ".") );
-	if( strlen($subdomain)>0 && $subdomain != "test") {
-			// Assume this is a vendor slug, and pass the request to the product controller's vendor action.
-			$_GET["url"] = "products/vendor/" . $subdomain . "/" . (isset($_GET["url"]) ? $_GET["url"] : ""); 
+	if(count(explode(".",env("HTTP_HOST"))) == 3 ){
+		$subdomain = substr( env("HTTP_HOST"), 0, strpos(env("HTTP_HOST"), ".") );
+		if( strlen($subdomain) > 0 && $subdomain != "test") {
+				// Assume this is a vendor slug, and pass the request to the product controller's vendor action.
+				$_GET["url"] = "products/vendor/" . $subdomain . "/" . (isset($_GET["url"]) ? $_GET["url"] : ""); 
+		}
 	}
 }
 
