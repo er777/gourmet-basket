@@ -935,7 +935,7 @@ img.vendor-story-pic {
 	position:relative;
 	z-index:500;
 	float:left;
-	margin-bottom:35px;
+	margin-bottom:20px;
 	
 }
 
@@ -1522,8 +1522,7 @@ table.cart th {
 	border-style: none;
 	border-color: gray;
 	background-color: white;
-    text-align: center;
-    font-weight: bold;
+    text-align: right;
 }
 table.cart td {
 	border-width: 5px;
@@ -2502,7 +2501,7 @@ div.pagination span.ellipsis {
 *
 \******************************************************/
 .touchcarousel.grey-blue .arrow-icon {
-	background-image: url(/app/webroot/img/sprite.png);
+	background-image: url(/test/app/webroot/img/sprite.png);
 	background-repeat: no-repeat;
 	width: 11px;
 	height: 19px;

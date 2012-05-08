@@ -11,18 +11,12 @@ class Product extends AppModel{
             $cart_new['product_name'] = $cart[0]['p']['product_name'];
             $cart_new['image'] = $cart[0]['p']['image'];
             //$cart_new['retail_price'] = $cart[0]['p']['retail_price'];
-            //$cart_new['price'] = $cart[0]['p']['price'];
-            $cart_new['price'] = $data['price'];
+            $cart_new['price'] = $cart[0]['p']['price'];
             $cart_new['stock'] = $cart[0]['p']['stock'];
             $cart_new['weight'] = $cart[0]['p']['weight'];
             $cart_new['taxable'] = $cart[0]['p']['taxable'];
             $cart_new['qty'] = $data['qty'];
-            //$cart_new['tot'] = $data['qty']*$cart[0]['p']['price'];
-            $cart_new['tot'] = $data['qty']*$data['price'];
-            $cart_new['features'] = '';
-            foreach ($data['mod'] as $key=>$value) {
-                $cart_new['features'] = $cart_new['features'] . $key . '-' . $value . ',';
-            }
+            $cart_new['tot'] = $data['qty']*$cart[0]['p']['price'];
             return $cart_new;
         }else{
             return false;

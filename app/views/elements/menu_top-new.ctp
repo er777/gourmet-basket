@@ -59,7 +59,7 @@
       <!-- end row --> 
     </div>
   </li>
-  <li class="top-li pageTwo"><a class="top-a" href="#url">VENDORS</a>
+  <li class="top-li pageTwo"><a class="top-a" href="http://test.gourmet-basket.com/vendors">VENDORS</a>
     <div class="dropEverything-page">
       <div class="dropEverything-row">
         <div class="dropEverything-col1 jquery-column">
@@ -87,7 +87,7 @@
         <div class="dropEverything-col1">
           <div class="dropEverything-inner">
             <div class="flyoutMenu"> </div>
-            <img src="dropEverything/pic8.jpg" alt="" class="dropEverything-imageLeft" /> </div>
+          </div>
         </div>
         <!-- end column --> 
       </div>

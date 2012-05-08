@@ -30,7 +30,7 @@ class ProductsController extends AppController {
     }
 		function category() {
 				
-
+				
 				$this->loadModel('Vendor');
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
@@ -121,7 +121,7 @@ class ProductsController extends AppController {
 						//Structure HTML for display on detail.ctp.
 						foreach($options as $label => $values){
 								$product_mods .= '<div class="mod_display"><strong>' . $label . '</strong><br/>';
-								$product_mods .= '<select class="mod_selector" name="data[Product][mod]['.$label.']">';
+								$product_mods .= '<select class="mod_selector" name="mod_'.$label.'">';
 								$product_mods .= join($values);
 								$product_mods .= '</select></div>';
 						}
@@ -233,13 +233,12 @@ class ProductsController extends AppController {
 				'u.image4',
 				'u.image5',
 				'u.image6',
-				'u.short_name',
                 'u.shop_description',
 				'u.shop_quote',
 				'u.shop_name',
                 'REPLACE(LOWER(u.shop_name),\' \',\'\') AS bname'
             ),
-            'conditions' => array('u.short_name' => $vid),
+            'conditions' => array('REPLACE(LOWER(u.business_name),\' \',\'\') = ' => $vid),
             'limit' => 12,
             'order' => array('product_id' => 'desc')
         );
@@ -538,7 +537,6 @@ class ProductsController extends AppController {
                      foreach($this->Session->read('Cart') as $i => $v){
                      //for ($i = 0; $i < count($this->Session->read('Cart')); $i++) {
                          if ($arraycart[$i]['product_id'] == $this->data['Product']['product_id']) {
-                             $this->data['Product']['price'] = $arraycart[$i]['price'];
                              $this->data['Product']['qty'] = $this->data['qty'];
                              $cart = $this->Product->addcart($this->data['Product']);
                              $this->Session->write('Cart.' . $arraycart[$i]['product_id'] , $cart);

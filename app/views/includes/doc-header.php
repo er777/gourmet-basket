@@ -9,7 +9,7 @@
 <meta name="robots" content="noindex, nofollow, noarchive" />
 
 <?php echo $html->css('gb-main'); ?>
-<?php echo $html->css('dropkick'); ?>
+<?php //echo $html->css('dropkick'); ?>
 <link href='http://fonts.googleapis.com/css?family=Devonshire' rel='stylesheet' type='text/css'>
 <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Pompiere|Prosto+One|Telex|Federo|Quattrocento Sans|Bowlby+One+SC|Changa+One|Boogaloo|Tangerine' >
 
@@ -19,8 +19,8 @@ echo $html->script('jquery-1.6.1.min.js');
 echo $html->script('jquery-ui.min.js');
 //echo $html->script('jquery.mCustomScrollbar.js');
 //echo $html->script('hoverIntent.js');
-//echo $html->script('superfish.js');
-echo $html->script('custom.js');
+echo $html->script('superfish.js');
+//echo $html->script('custom.js');
 echo $html->script('jquery.galleryview-3.0-dev.js');
 echo $html->script('jquery.easing.1.3.js');
 echo $html->script('jquery.touchcarousel-1.0.min.js');
@@ -28,17 +28,25 @@ echo $html->script('jquery.touchcarousel-1.0.min.js');
 //echo $html->script('jquery.marquee.js');
 echo $html->script('jquery.columnizer.min.js');
 //echo $html->script('hoverIntent.js');
-echo $html->script('jquery.dropkick-1.0.0.js');
+//echo $html->script('jquery.dropkick-1.0.0.js');
 echo $html->script('jquery.opacityrollover.js');
 echo $html->script('jquery.ae.image.resize.min.js');
 ?>
 
 	<script>
-		jQuery(function(){
+		jQuery(document).ready(function() { 
+		
+		// Columnizer
 			jQuery('.jquery-column').columnize({
 				columns : 3,
 				accuracy : 1,
 				buildOnce : true
 			})
+		
+		// Suckerfish
+
+		 jQuery('ul.dropEverything').superfish({ delay:2500,});	
+			
+			
 		});
 	</script>

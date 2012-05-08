@@ -45,6 +45,7 @@ class CategoriesController extends AppController {
 				'u.image5',
 				'u.image6',
 				'u.shop_description',
+				'u.shop_name',
 				'u.image_feature',
                 'REPLACE(LOWER(u.business_name),\' \',\'\') AS bname'
             ),
