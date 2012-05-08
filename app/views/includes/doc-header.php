@@ -44,8 +44,8 @@ echo $html->script('jquery.ae.image.resize.min.js');
 			})
 		
 		// Suckerfish
+
 		 jQuery('ul.dropEverything').superfish({ delay:2500,});	
-			
 			
 			
 		});

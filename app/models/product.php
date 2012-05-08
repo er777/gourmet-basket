@@ -57,14 +57,15 @@ class Product extends AppModel{
 				return $result[0]['categories'];
 		}
 		function _getAllProductsandUsers(){
-			$sql = "SELECT products.product_id, users.shop_name 
+			$sql = "SELECT products.product_id, users.shop_name, users.short_name 
 			FROM  users
       LEFT JOIN products
       ON products.user_id = users.user_id
 			WHERE users.shop_name != ''; ";
 	 		$result = $this->query($sql);
 			foreach($result as $row){
-				$array[$row['products']['product_id']]= $row['users']['shop_name']	;
+				$current_domain_with_no_subdomain = substr($_SERVER['HTTP_HOST'], strpos($_SERVER['HTTP_HOST'],"."), strlen($_SERVER['HTTP_HOST']));
+				$array[$row['products']['product_id']]= array('shop_name' => $row['users']['shop_name'], 'url' => "//" . $row['users']['short_name'].$current_domain_with_no_subdomain )	;
 			}
 			return $array;
 			
