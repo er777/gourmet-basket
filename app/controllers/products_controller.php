@@ -8,7 +8,7 @@ class ProductsController extends AppController {
     function beforeFilter() {
         parent::beforeFilter();
     }
-    function index($parent_slug = null, $child_slug = null, $grandchild_slug = null) {
+    function index() {
 					
 						
 				$this->loadModel('Vendor');
