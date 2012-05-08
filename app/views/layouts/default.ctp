@@ -30,7 +30,7 @@
         	<div id="left-header">&nbsp;</div>
           
           	<div id="header">
-          		<a href="/"><div id="header-link"></div></a>
+          		<a href="http://test.gourmet-basket.com"><div id="header-link"></div></a>
           	</div>
           
             <div id="account">

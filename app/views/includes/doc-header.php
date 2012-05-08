@@ -9,7 +9,7 @@
 <meta name="robots" content="noindex, nofollow, noarchive" />
 
 <?php echo $html->css('gb-main'); ?>
-<?php echo $html->css('dropkick'); ?>
+<?php //echo $html->css('dropkick'); ?>
 <link href='http://fonts.googleapis.com/css?family=Devonshire' rel='stylesheet' type='text/css'>
 <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Pompiere|Prosto+One|Telex|Federo|Quattrocento Sans|Bowlby+One+SC|Changa+One|Boogaloo|Tangerine' >
 
@@ -44,7 +44,7 @@ echo $html->script('jquery.ae.image.resize.min.js');
 			})
 		
 		// Suckerfish
-		 jQuery('ul.dropEverything').superfish({ delay:800,});	
+		 jQuery('ul.dropEverything').superfish({ delay:2500,});	
 			
 			
 			
