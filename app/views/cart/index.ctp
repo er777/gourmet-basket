@@ -1,5 +1,5 @@
 
-<div class="content_page">
+<div class="content_page" style="width: 900px">
 <h1>Shopping Cart</h1>
 <div style="margin-bottom: 10px; display: inline-block; width: 100%; text-align: center;">
       <table class="cart">
@@ -7,6 +7,7 @@
           <th>Remove</th>
           <th>Vendor</th>
           <th>Product Name</th>
+            <th>Features</th>
           <th>Qty</th>
           <th>Cost</th>
           <th >Total</th>
@@ -28,6 +29,9 @@
               <?php //echo $this->Form->checkbox('remove', array('value' => $arraycart[$i]['product_id'])); ?></td>
           <td><?php echo $arraycart[$i]['business_name'];?></td>
           <td><?php echo $arraycart[$i]['product_name'];?></td>
+          <td>
+              <?php echo $arraycart[$i]['features']; ?>
+          </td>
           <td><form action="/products/updateitemcart" method="post">
               <?php echo $this->Form->text('qty', array('value' => $v['qty'], 'size' => '5')); ?></td>
           <td>$<?php echo $v['price'];?></td>
