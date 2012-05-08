@@ -9,8 +9,6 @@ $var1 .= "         ON c.country_id = u.country_id ";
 $var1 .= "       LEFT JOIN zone AS z ";
 $var1 .= "         ON u.zone_id = z.zone_id ";
 $var1 .= "WHERE  u.`level` = 'vendor' ORDER BY u.shop_name " ;
-$pages = pagin_top(10,$var1);
-$var1 = $var1 . ' ' . $pages->limit;
 DB::query($var1);   
 ?>
 <table border="0" cellpadding="0" cellspacing="0" style="width:800px; text-align:left">
@@ -56,7 +54,6 @@ DB::query($var1);
             <?php endwhile; ?>
             </tbody>
         </table>
-        <?php  pagin_bottom($pages) ?>   
         </td>
     </tr>
 </table>
