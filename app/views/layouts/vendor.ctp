@@ -54,7 +54,7 @@ script('jquery.galleriffic.js'); echo $html->script('gallerifficOptions.js'); ?>
 		</div>
 		<div id="wrapper">
 			<div id="header">
-				<a href="/">
+				<a href="http://test.gourmet-basket.com">
 				<div id="header-link">
 				</div>
 				</a>
