@@ -94,6 +94,7 @@
             <td colspan="2"><strong>Ingredients:</strong><span class="ingredients"><br /><?php echo $products[0]['Product']['ingredients'];?> </span></td>
         </tr>
         <tr><td colspan="2">
+        <?php echo $this->Form->create(null, array('url' => array('controller' => 'products', 'action' => 'addcart'))); ?>
         <?php if(!empty($product_mods)):?>
         <strong>Product Features:</strong><br/>
         <?php print $product_mods;?>
@@ -107,7 +108,7 @@
         <tr>
             <td width="75"><span class="quantity">Qty:</span></td>
             <td><?php
-                echo $this->Form->create(null, array('url' => array('controller' => 'product', 'action' => 'addcart')));
+
                 echo $form->hidden('product_id', array('value' => $products[0]['Product']['product_id']));
                 echo $form->hidden('product_name', array('value' => $products[0]['Product']['product_name']));
                 echo $form->hidden('business_name', array('value' => $products[0][0]['bname']));

@@ -177,7 +177,8 @@ class Payment extends AppModel {
                 product_id, 
                 vendor_id,
                 order_status_id, 
-                name,  
+                name,
+                sku,
                 price, 
                 total, 
                 shipping, 
@@ -190,7 +191,8 @@ class Payment extends AppModel {
                 '".$k."',
                 '".$v['vendor_id']."',
                 '1',
-                '".$v['product_name']."',                
+                '".$v['product_name']."',
+                '".$v['features']."',
                 '".$v['price']."',
                 '".$v['tot']."',
                 '".$carttot['shipping']."',
@@ -288,6 +290,7 @@ class Payment extends AppModel {
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['order_prod_id'] = $row2[$i]['op']["order_product_id"];
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['prod_id'] = $row2[$i]['op']["product_id"];
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['prod_name'] = $row2[$i]['op']["name"];
+                        $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['sku'] = $row2[$i]['op']["sku"];
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['price'] = $row2[$i]['op']["price"];
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['total'] = $row2[$i]['op']["total"];
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['quantity'] = $row2[$i]['op']["quantity"];
@@ -376,6 +379,7 @@ class Payment extends AppModel {
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['order_prod_id'] = $row2[$i]['op']["order_product_id"];
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['prod_id'] = $row2[$i]['op']["product_id"];
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['prod_name'] = $row2[$i]['op']["name"];
+                        $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['sku'] = $row2[$i]['op']["sku"];
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['price'] = $row2[$i]['op']["price"];
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['total'] = $row2[$i]['op']["total"];
                         $order_info['products'][$row2[$i]['op']["vendor_id"]]['reg'][$cont]['quantity'] = $row2[$i]['op']["quantity"];
