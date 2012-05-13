@@ -71,15 +71,19 @@ class Product extends AppModel{
 				$result =  $this->query($sql); // will return false on fail??
 				return $result[0]['categories'];
 		}
+		
 		function _getAllProductsandUsers(){
-			$sql = "SELECT products.product_id, users.shop_name 
+				
+			$sql = "SELECT products.product_id, users.shop_name, users.short_name 
 			FROM  users
       LEFT JOIN products
       ON products.user_id = users.user_id
 			WHERE users.shop_name != ''; ";
 	 		$result = $this->query($sql);
 			foreach($result as $row){
-				$array[$row['products']['product_id']]= $row['users']['shop_name']	;
+				$replaced_url = preg_replace('/^(.*?)\.*(.*?)\.(.*?)$/', $row['users']['short_name']. '.$2.$3', $_SERVER['HTTP_HOST']);
+				$array[$row['products']['product_id']]['shop_name']= $row['users']['shop_name'];
+				$array[$row['products']['product_id']]['url']= "//".$replaced_url;
 			}
 			return $array;
 			
