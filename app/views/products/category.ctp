@@ -51,7 +51,7 @@ foreach ($url_array as $crumb) {
 foreach ($products as $product) :
 			if(isset($AllProductsandUsers[$product['Product']['product_id']])):
 						$product_id = $product['Product']['product_id'];
-						$shop_name = $AllProductsandUsers[$product_id]['shop_name'];
+						$shop_name = $AllProductsandUsers[$product_id];
 						$url = $AllProductsandUsers[$product_id]['url'];
 			endif;
 ?>
