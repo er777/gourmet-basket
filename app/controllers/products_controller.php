@@ -184,6 +184,7 @@ class ProductsController extends AppController {
 					'u.image5',
 					'u.image6',
                     'u.shop_description',
+					'u.short_name',
 					'u.shop_quote',
                     'REPLACE(LOWER(u.business_name),\' \',\'\') AS bname'
                 ),
@@ -236,6 +237,7 @@ class ProductsController extends AppController {
 				'u.short_name',
                 'u.shop_description',
 				'u.shop_quote',
+				'u.short_name',
 				'u.shop_name',
                 'REPLACE(LOWER(u.shop_name),\' \',\'\') AS bname'
             ),

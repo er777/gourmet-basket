@@ -643,7 +643,6 @@ th  {
 	height: 130px;
 	margin-left: 0px;
 	width: 270px;
-	
 	background-image: url(../img/title_vendor_bg.png);
 	background-repeat: no-repeat;
 	
@@ -935,7 +934,7 @@ img.vendor-story-pic {
 	position:relative;
 	z-index:500;
 	float:left;
-	margin-bottom:20px;
+	margin-bottom:35px;
 	
 }
 
@@ -1522,7 +1521,8 @@ table.cart th {
 	border-style: none;
 	border-color: gray;
 	background-color: white;
-    text-align: right;
+    text-align: center;
+    font-weight: bold;
 }
 table.cart td {
 	border-width: 5px;
@@ -2501,7 +2501,7 @@ div.pagination span.ellipsis {
 *
 \******************************************************/
 .touchcarousel.grey-blue .arrow-icon {
-	background-image: url(/test/app/webroot/img/sprite.png);
+	background-image: url(/app/webroot/img/sprite.png);
 	background-repeat: no-repeat;
 	width: 11px;
 	height: 19px;
