@@ -220,7 +220,7 @@ var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, 
    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
  };
  
-    var deviation_model = <?php print $deviation_json;?>;
+    var deviation_model = <?php print (isset($deviation_json) ? $deviation_json : "''"); ?>;
     $('.mod_selector').change(function(){
     var price = <?php echo $products[0]['Product']['selling_price'];?>;
     $('#ProductPrice').val(price.formatMoney(2, '.', ','));
