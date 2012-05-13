@@ -7,7 +7,7 @@
           <th>Remove</th>
           <th>Vendor</th>
           <th>Product Name</th>
-            <th>Features</th>
+          <th>SKU</th>
           <th>Qty</th>
           <th>Cost</th>
           <th >Total</th>

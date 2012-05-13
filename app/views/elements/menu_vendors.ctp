@@ -1,5 +1,5 @@
 <div id="title_vendor">
-<a href="/products/vendor/<?php echo $products[0][0]['bname'] ?>">
+<a href="/<?php //echo $products[0]['u']['short_name'] ?>">
 <?php
 
 echo $html->image('logos/'.$products[0]['u']['logo'], array('border' => '0', 'alt' => 'Vendor', 'title' => 'Vendor' , 'id' => 'title_vendor'));

@@ -62,6 +62,7 @@
             <tr style="background-color: #CCCCCC;">
               <th align="left" style="padding: 0.3em; color: #FFFFFF;">Vendor</th>
               <th align="left" style="width: 15%; padding: 0.3em; color: #FFFFFF;">Product</th>
+                <th align="left" style="width: 15%; padding: 0.3em; color: #FFFFFF;">SKU</th>
               <th align="right" style="width: 15%; padding: 0.3em; color: #FFFFFF;">Quantity</th>
               <th align="right" style="width: 15%; padding: 0.3em; color: #FFFFFF;">Unit Price</th>
               <th align="right" style="width: 20%; padding: 0.3em; color: #FFFFFF;">Total</th>
@@ -82,6 +83,7 @@
               if ($key == 0) {
             ?>                                                           
               <td><?php echo $value['prod_name'];?></td>
+              <td><?php echo $value['sku'];?></td>
               <td><?php echo $value['quantity'];?></td>
               <td align="right">$<?php echo number_format($value['price'], 2);?></td>
               <td align="right">$<?php echo number_format($value['total'], 2);?></td>
@@ -91,6 +93,7 @@
             ?>
             <tr>                                               
               <td><?php echo $value['prod_name'];?></td>
+              <td><?php echo $value['sku'];?></td>
               <td><?php echo $value['quantity'];?></td>
               <td align="right">$<?php echo number_format($value['price'], 2);?></td>
               <td align="right">$<?php echo number_format($value['total'], 2);?></td>
@@ -110,7 +113,7 @@
               <td>$<?php echo number_format($shipping_vendor, 2);?></td>
             </tr>-->
             <tr style="background-color: rgb(244, 244, 248);">        
-              <td colspan="4" align="right">Total:</td>
+              <td colspan="5" align="right">Total:</td>
               <td align="right">$<?php echo number_format($total_vendor, 2);?></td>
             </tr>
         </tbody>
@@ -119,22 +122,22 @@
         ?>
         <tbody id="totals">
             <tr>
-              <td colspan="5"></td>
+              <td colspan="6"></td>
             </tr>
             <tr style="background-color: #CCCCCC;">
-              <td colspan="4" align="right" style="background-color: #EEEEEE; font-weight: bold; padding: 0.3em;">Sub-Total:</td>
+              <td colspan="5" align="right" style="background-color: #EEEEEE; font-weight: bold; padding: 0.3em;">Sub-Total:</td>
               <td align="right" style="background-color: #EEEEEE; padding: 0.3em;">$<?php echo number_format($order_info['subtotal_o'], 2);?></td>
             </tr>
             <tr>
-              <td colspan="4" align="right" style="background-color: #EEEEEE; font-weight: bold; padding: 0.3em;">Tax:</td>
+              <td colspan="5" align="right" style="background-color: #EEEEEE; font-weight: bold; padding: 0.3em;">Tax:</td>
               <td align="right" style="background-color: #EEEEEE; padding: 0.3em;">$<?php echo number_format($order_info['tax_o'], 2);?></td>
             </tr>
             <tr style="background-color: #CCCCCC;">
-              <td colspan="4" align="right" style="background-color: #EEEEEE; font-weight: bold; padding: 0.3em;">Shipping:</td>
+              <td colspan="5" align="right" style="background-color: #EEEEEE; font-weight: bold; padding: 0.3em;">Shipping:</td>
               <td align="right" style="background-color: #EEEEEE; padding: 0.3em;">$<?php echo number_format($order_info['shipping_o'], 2);?></td>
             </tr>
             <tr>        
-              <td colspan="4" align="right" style="background-color: #EEEEEE; font-weight: bold; padding: 0.3em;">Total:</td>
+              <td colspan="5" align="right" style="background-color: #EEEEEE; font-weight: bold; padding: 0.3em;">Total:</td>
               <td align="right" style="background-color: #EEEEEE; padding: 0.3em;">$<?php echo number_format($order_info['total_o'], 2);?></td>
             </tr>
         </tbody>
