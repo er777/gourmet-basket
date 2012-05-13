@@ -112,7 +112,7 @@ include_once '_init.php';
                                 </ul>
                                 </li>
                                 <li>
-                                    <a href="customers.php">Costumers</a>
+                                    <a href="customers.php">Custumers</a>
                                 </li>
                                 <?php if($_SESSION['l_level']!='vendor'){ ?>
                                 <li>

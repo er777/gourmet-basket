@@ -15,10 +15,10 @@ include_once("_header.php");
         <br/>
         <table width="100%" border="0" cellpadding="4" cellspacing="4">
             <tr>
-                <td>List of Costumers:</td>  
+                <td>List of Customers:</td>  
                  <td align="right" width="250">
                  <a href="iuvendor.php" style="text-decoration:none;color:Gray;" title="Gourmet Basket - Vendors Editor">
-                 <img src="images/add.png" width="16"/> Add Costumers</a></td>              
+                 <img src="images/add.png" width="16"/> Add Customers</a></td>              
             </tr>
         </table>
         <input type="hidden" value="row_none" id="prevrowid">        
