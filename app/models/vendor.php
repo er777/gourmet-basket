@@ -21,10 +21,18 @@ class Vendor extends AppModel {
   $var1 .= "WHERE business_name != '' " ;
   $var1 .= "AND level = 'vendor' " ;
   $var1 .= "order by business_name" ;
-$current_domain_with_no_subdomain = substr($_SERVER['HTTP_HOST'], strpos($_SERVER['HTTP_HOST'],"."), strlen($_SERVER['HTTP_HOST']));
+	
+	// Check if we are runnin off of a subdomain, or just "mydomain.com"
+	preg_match("/^(.*?)\.(.*?)\.(.*?)$/",$_SERVER['HTTP_HOST'],$matches);
+	
+	if(!isset($matches[1])){ // mydomain.com
+		$current_domain_with_no_subdomain = $_SERVER['HTTP_HOST'];
+	}else{ //www.mydomain.com
+		$current_domain_with_no_subdomain = $matches[2] . "." . $matches[3];
+	}
 		  
   foreach($this->query($var1) as $k){
-	  $var = "//" . $k['t']['short_name'] . $current_domain_with_no_subdomain ; // vendorShortName.gourmet-basket.[local/com]
+	  $var = "//" . $k['t']['short_name'] . "." . $current_domain_with_no_subdomain ; // vendorShortName.gourmet-basket.[local/com]
 	  $r[$var] = $k['t']['business_name'];
 
   }
