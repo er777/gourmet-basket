@@ -88,6 +88,7 @@ $sql = "
        m.username,
        m.phone,
        m.date_added,
+       ma.address_id,
        ma.address,
        ma.city,
        ma.postcode,
@@ -110,7 +111,7 @@ while($row = DB::fetch_assoc()) {
   $member['member_id'] = $row['member_id'];
   $member['email'] = $row['email'];
   // There may be multiple address'.
-  $member['addr'][] = array(
+  $member['addr'][$row['address_id']] = array(
                             "address" =>  $row['address'],
                             "city" => $row['city'],
                             "postcode" => $row['postcode'],
@@ -122,30 +123,16 @@ while($row = DB::fetch_assoc()) {
 ?>
 <script type="text/javascript">
 jQuery(function($){
-  
-var count =   $('.address_template').size() + 1;
     $('#add_new_address').click(function(e){
       e.preventDefault;
-      var address_tempalte = '<h4>Address '+count+' (new)</h4>'+
-                              '<table class="address_template">'+
-                              '<tr><td>Address Type:</td>'+
-                                '<td>'+
-                                  '<select name="address_array['+count+'][address_type]">'+
-                                  '<option value="xx">Select One</option>'+
-                                  '<option value="billing">Billing</option>'+
-                                  '<option value="shipping">Shipping</option>'+
-                                  '<option value="other">Other</option>'+
-                                  '<option value="delete">Delete This Address</option>'+
-                                  '</select>'+
-                                '</td>'+
-                              '</tr>'+
-                              '<tr><td>Recipient First Name:</td><td><input type="text" name="address_array['+count+'][firstname]" value=""/> </td></tr>'+
-                              '<tr><td>Recipient Last Name:</td><td><input type="text" name="address_array['+count+'][lastname]" value=""/> </td></tr>'+
-                              '<tr><td>Address:</td><td><input type="text" name="address_array['+count+'][address]" value=""/> </td></tr>'+
-                              '<tr><td>City:</td><td><input type="text" name="address_array['+count+'][city]" value=""/></td></tr>'+
-                              '<tr><td>Postal Code:</td><td><input type="text" name="address_array['+count+'][postcode]" value=""/></td></tr>'+
-                            '</table>';
-    $('.address_template').last().after(address_tempalte);
+      var $templates = $('.address_template')
+          , $last = $templates.last()
+          , $template = $last.clone()
+          , count =   ($templates.size() +1);
+      $template.find('.count').html(count);
+      // kill all values for new address, and replace all numbers with new count.
+      var new_template = $template.html().replace(/address_array\[\d]/g, "address_array["+count+"]").replace(/value=".*?"/g,'value=""'); 
+      $('<table class="address_template">' + new_template + '</table>').appendTo('#address_section');
     return false;
   });
 });
@@ -168,9 +155,14 @@ here are FINAL and not recoverable without database restoration.</p>
 </table>
 <h3>List of Address' on-file for <?php echo $member["username"]; ?>:</h3>
 <p><a href="#" id="add_new_address">Add New Address</a></p>
+<div id="address_section">
 <?php $i=1;foreach ($member['addr'] as $address_array):?>
-<h4>Address <?php echo $i;?></h4>
 <table class="address_template">
+<tr>
+  <td colspan="2">
+    <h4>Address <span class="count"><?php echo $i;?></span></h4>
+  </td>
+</tr>
   <tr><td>Address Type:</td>
     <td>
       <select name="address_array[<?php echo $i;?>][address_type]">
@@ -182,14 +174,15 @@ here are FINAL and not recoverable without database restoration.</p>
       </select>
     </td>
   </tr>
-  <tr><td>Recipient First Name:</td><td><input type="text" name="address_array[<?php echo $i;?>][firstname]" value="<?php echo (isset($address_array["firstname"]) ? $address_array["firstname"] : ''); ?>"/> </td></tr>
-  <tr><td>Recipient Last Name:</td><td><input type="text" name="address_array[<?php echo $i;?>][lastname]" value="<?php echo (isset($address_array["lastname"]) ? $address_array["lastname"] : ''); ?>"/> </td></tr>
-  <tr><td>Address:</td><td><input type="text" name="address_array[<?php echo $i;?>][address]" value="<?php echo (isset($address_array["address"]) ? $address_array["address"] : ''); ?>"/> </td></tr>
+  <tr><td>Recipient First Name:</td><td><input type="text" name="address_array[<?php echo $i; ?>][firstname]" value="<?php echo (isset($address_array["firstname"]) ? $address_array["firstname"] : ''); ?>"/> </td></tr>
+  <tr><td>Recipient Last Name:</td><td><input type="text" name="address_array[<?php echo $i; ?>][lastname]" value="<?php echo (isset($address_array["lastname"]) ? $address_array["lastname"] : ''); ?>"/> </td></tr>
+  <tr><td>Address:</td><td><input type="text" name="address_array[<?php echo $i; ?>][address]" value="<?php echo (isset($address_array["address"]) ? $address_array["address"] : ''); ?>"/> </td></tr>
   <tr><td>City:</td><td><input type="text" name="address_array[<?php echo $i;?>][city]" value="<?php echo (isset($address_array["city"]) ? $address_array["city"] : ''); ?>"/></td></tr>
   <tr><td>Postal Code:</td><td><input type="text" name="address_array[<?php echo $i;?>][postcode]" value="<?php echo (isset($address_array["postcode"]) ? $address_array["postcode"] : ''); ?>"/></td></tr>
 </table>
 <?php $i++; endforeach;?>
-<table>
+</div>
+<table style="width:100%;">
   <tr><td colspan="2"><input type="submit" value="Update Member" name="submit"/></td></tr>
 </table>
 <input type="hidden" name="member_id" value="<?php echo $member["member_id"]; ?>"/>
