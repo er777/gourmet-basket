@@ -8,31 +8,22 @@ include_once("_header.php");
  */           
 ?>
 <style type="text/css">
-    #customer_edit_form div {
-        border: 1px solid red;
-        padding: 4px;
-        margin: 2px;
-    }
-    #customer_edit_form div input{
-        margin: 0;
-        padding: 5px;  
-    }
-    .address_template{
-        border: 1px solid #CCC;
-        padding: 5px;
-        margin: 5px;
-        float: left;
-    }
-    .address_template td{
-        text-align: right;
-    }
-    .address_template h4{
-        text-align: left;
-        font: 18px/22px arial;
-        margin: 0 0 10px 0;
-        padding: 0;
-        border-bottom:1px solid #666;
-    }
+.address_template{
+    border: 1px solid #CCC;
+    padding: 5px;
+    margin: 5px;
+    float: left;
+}
+.address_template td{
+    text-align: right;
+}
+.address_template h4{
+    text-align: left;
+    font: 18px/22px arial;
+    margin: 0 0 10px 0;
+    padding: 0;
+    border-bottom:1px solid #666;
+}
 </style>
 <div align="center">
 <table class="overrow" border="0" cellpadding="0" cellspacing="0" style="width:800px; text-align:left">
