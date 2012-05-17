@@ -24,6 +24,14 @@ include_once("_header.php");
     padding: 0;
     border-bottom:1px solid #666;
 }
+.revalidate{
+    border:1px solid red;
+}
+.error{
+    background: pink;
+    border:1px solid red;
+    padding:4px;
+}
 </style>
 <div align="center">
 <table class="overrow" border="0" cellpadding="0" cellspacing="0" style="width:800px; text-align:left">

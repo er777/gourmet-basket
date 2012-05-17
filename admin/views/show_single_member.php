@@ -135,6 +135,55 @@ jQuery(function($){
       $('<table class="address_template">' + new_template + '</table>').appendTo('#address_section');
     return false;
   });
+    
+    function printMessage(classname, message){
+      return '<div class="' + classname + '">' + message + '</div>';
+    }
+    function validate(focus) {
+      focus = typeof focus !== 'undefined' ? focus : true;
+      
+      var $allEmptyInputs = $('.notempty')
+      ,   return_me = true
+      ,   $allSelectBoxes = $('.notfirst');
+      
+      $allSelectBoxes.each(function(i, obj){
+                            $this = $(obj);
+                            if($this.val() !== 'xx'){
+                              $this
+                                .off('change',validate)
+                                .removeClass('revalidate');
+                                
+                              $allSelectBoxes = $allSelectBoxes.not($this);
+                            }else{
+                              $this
+                                .on('change',function(){validate(false);})
+                                .addClass('revalidate');
+                              return_me = false;
+                            }
+                          });
+      $allEmptyInputs.each(function(i, obj){
+                            $this = $(obj);
+                            if($this.val() !== ''){
+                              $this
+                                .off('change',validate)
+                                .removeClass('revalidate');
+                                
+                              $allEmptyInputs = $allEmptyInputs.not($this);
+                            }else{
+                              $this
+                                .on('change',function(){validate(false);})
+                                .addClass('revalidate');
+                              return_me = false;
+                            }
+                          });
+      
+      if(focus) {
+        $('.revalidate').first().focus();
+      }
+      return return_me;
+    }
+    //form validation:
+    $('#customer_edit_form').bind('submit', validate);
 });
 </script>
 <!-- Begin View -->
@@ -147,11 +196,11 @@ here are FINAL and not recoverable without database restoration.</p>
   <tr><td>Member ID:</td><td><?php echo $member["member_id"]; ?></td></tr>
   <tr><td>Username:</td><td><?php echo $member["username"]; ?></td></tr>
   <tr><td>Date Added:</td><td><?php echo $member["date_added"]; ?></td></tr>    
-  <tr><td>First Name:</td><td><input type="text" name="firstname" value="<?php echo $member['firstname'];?>"/></td></tr>
-  <tr><td>Last Name:</td><td><input type="text" name="lastname" value="<?php echo $member['lastname'];?>"/></td></tr>
-  <tr><td class="password_field">Change Password:</td><td><input type="text" name="password" value="<?php echo $member["password"]; ?>"/></td></tr>
-  <tr><td>Phone:</td><td><input type="text" name="phone" value="<?php echo $member["phone"]; ?>"/></td></tr>
-  <tr><td>Email:</td><td><input type="text" name="email" value="<?php echo $member["email"]; ?>"/></td></tr>
+  <tr><td>First Name:</td><td><input type="text" name="firstname" class="notempty" value="<?php echo $member['firstname'];?>"/></td></tr>
+  <tr><td>Last Name:</td><td><input type="text" name="lastname" class="notempty" value="<?php echo $member['lastname'];?>"/></td></tr>
+  <tr><td class="password_field">Change Password:</td><td><input type="text" class="notempty" name="password" value="<?php echo $member["password"]; ?>"/></td></tr>
+  <tr><td>Phone:</td><td><input type="text" name="phone" class="notempty" value="<?php echo $member["phone"]; ?>"/></td></tr>
+  <tr><td>Email:</td><td><input type="text" name="email" class="notempty email" value="<?php echo $member["email"]; ?>"/></td></tr>
 </table>
 <h3>List of Address' on-file for <?php echo $member["username"]; ?>:</h3>
 <p><a href="#" id="add_new_address">Add New Address</a></p>
@@ -165,7 +214,7 @@ here are FINAL and not recoverable without database restoration.</p>
 </tr>
   <tr><td>Address Type:</td>
     <td>
-      <select name="address_array[<?php echo $i;?>][address_type]">
+      <select name="address_array[<?php echo $i;?>][address_type]" class="notfirst">
       <option value="xx">Select One</option>
       <option value="billing" <?php echo ($address_array["address_type"]=="billing" ? 'selected' : ''); ?>>Billing</option>
       <option value="shipping" <?php echo ($address_array["address_type"]=="shipping" ? 'selected' : ''); ?>>Shipping</option>
@@ -174,11 +223,11 @@ here are FINAL and not recoverable without database restoration.</p>
       </select>
     </td>
   </tr>
-  <tr><td>Recipient First Name:</td><td><input type="text" name="address_array[<?php echo $i; ?>][firstname]" value="<?php echo (isset($address_array["firstname"]) ? $address_array["firstname"] : ''); ?>"/> </td></tr>
-  <tr><td>Recipient Last Name:</td><td><input type="text" name="address_array[<?php echo $i; ?>][lastname]" value="<?php echo (isset($address_array["lastname"]) ? $address_array["lastname"] : ''); ?>"/> </td></tr>
-  <tr><td>Address:</td><td><input type="text" name="address_array[<?php echo $i; ?>][address]" value="<?php echo (isset($address_array["address"]) ? $address_array["address"] : ''); ?>"/> </td></tr>
-  <tr><td>City:</td><td><input type="text" name="address_array[<?php echo $i;?>][city]" value="<?php echo (isset($address_array["city"]) ? $address_array["city"] : ''); ?>"/></td></tr>
-  <tr><td>Postal Code:</td><td><input type="text" name="address_array[<?php echo $i;?>][postcode]" value="<?php echo (isset($address_array["postcode"]) ? $address_array["postcode"] : ''); ?>"/></td></tr>
+  <tr><td>Recipient First Name:</td><td><input type="text" name="address_array[<?php echo $i; ?>][firstname]" value="<?php echo (isset($address_array["firstname"]) ? $address_array["firstname"] : ''); ?>" class="notempty"/> </td></tr>
+  <tr><td>Recipient Last Name:</td><td><input type="text" name="address_array[<?php echo $i; ?>][lastname]" value="<?php echo (isset($address_array["lastname"]) ? $address_array["lastname"] : ''); ?>" class="notempty"/> </td></tr>
+  <tr><td>Address:</td><td><input type="text" name="address_array[<?php echo $i; ?>][address]" value="<?php echo (isset($address_array["address"]) ? $address_array["address"] : ''); ?>" class="notempty"/> </td></tr>
+  <tr><td>City:</td><td><input type="text" name="address_array[<?php echo $i;?>][city]" value="<?php echo (isset($address_array["city"]) ? $address_array["city"] : ''); ?>" class="notempty"/></td></tr>
+  <tr><td>Postal Code:</td><td><input type="text" name="address_array[<?php echo $i;?>][postcode]" value="<?php echo (isset($address_array["postcode"]) ? $address_array["postcode"] : ''); ?>" class="notempty"/></td></tr>
 </table>
 <?php $i++; endforeach;?>
 </div>
