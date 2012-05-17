@@ -84,8 +84,8 @@ h4 {
 body {
 	font-family: 'Quattrocento Sans', sans-serif;
 	/*font-family: Asul, sans-serif;*/
-	font-size:14px;
-	line-height:normal;
+	font-size:12px;
+	line-height:15px;
 	color:#00134D;
 	
 	background-image: url(../img/blue-gradient-bg.png);
@@ -1327,7 +1327,7 @@ body#products .vendor-content-product-wrapper {
 .content-product .price{
     padding-top:4px;
 	padding-right:4px;
-	font-size:70%;
+	font-size:80%;
     display: block;
     text-align: right;
 }
@@ -1664,7 +1664,7 @@ table.cart td {
 
 td div {
 	margin-top: 10px;
-	color:#8b181b;	
+	
 }
 
 /** PRODUCTS **/
@@ -1718,8 +1718,9 @@ td div {
 }
 
 
-.long-description  {
-	line-height: 18px;
+td>span.long-description p  {
+	text-align:justify;
+	line-height: 15px;
 	
 	
 }
@@ -1734,7 +1735,7 @@ table.product-info-table>tbody>tr>td>strong {
 }
 
 .ingredients {
-	
+	margin-top:15px;
 }
 
 /** SHIPPING **/
