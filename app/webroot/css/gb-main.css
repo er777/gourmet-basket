@@ -85,7 +85,7 @@ body {
 	font-family: 'Quattrocento Sans', sans-serif;
 	/*font-family: Asul, sans-serif;*/
 	font-size:12px;
-	line-height:15px;
+	line-height:normal;
 	color:#00134D;
 	
 	background-image: url(../img/blue-gradient-bg.png);
