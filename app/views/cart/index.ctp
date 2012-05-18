@@ -48,7 +48,7 @@
         }else{
         ?>
         <tr>
-          <td colspan="6" align="center"><b>Shopping Cart is empty</b></td>
+          <td colspan="6" align="center"><b>Your Shopping Cart is empty</b></td>
         </tr> 
         <?php   
         }
