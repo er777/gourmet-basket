@@ -6,7 +6,7 @@
 </pre>
 <br />
 -->
-<h1>TRACK PURCHASES FROM CLIENT #: <?php echo $this->Session->read('Member.member_id'); ?></h1>
+<h1>TRACK PURCHASES FROM CLIENT #: <?php echo $this->Session->read('Member.firstname'.' '.'lastname'); ?></h1>
 <div id="content_vendor" style="float: none;">
 <table class="cart">
 <tr style="color: blue">
