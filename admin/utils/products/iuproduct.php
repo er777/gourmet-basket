@@ -655,7 +655,7 @@ margin-right: 5px;
 														<?php foreach ($attributes as $attribute) :?>														
                             <tr>
                               <td><?php echo ucwords(str_replace("_"," ",$attribute)); ?></td>
-                              <td><input type="checkbox" value="1" name="<?php echo $attribute; ?>" id="<?php echo $attribute; ?>" <?php echo (isset($p[$attribute]) ? "checked" : ''); ?>/></td>
+                              <td><input type="checkbox" value="1" name="<?php echo $attribute; ?>" id="<?php echo $attribute; ?>" <?php echo (isset($p[$attribute]) ? "unchecked" : ''); ?>/></td>
 														</tr>
 														<?php endforeach;?>
                           </table></td>

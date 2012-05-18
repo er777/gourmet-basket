@@ -16,7 +16,7 @@ if ($_SESSION['l_level'] != 'admin'){ ?>
         
         <div class="bullet-box">   
 			<div style="float:left">1) Click on :</div>
-            	 <div class="vendor-bullets"><a href="http://welcome.gourmet-basket.com/">Home Page</a> to view the developing Home Page of the site. Once there click "Vendor" on the Menu bar to see a sample of a Vendor Shoppe and click on any product to see a sample of a product page.
+            	 <div class="vendor-bullets"><a href="http://test.gourmet-basket.com/">Home Page</a> to view the developing Home Page of the site. Once there click "Vendor" on the Menu bar to see a sample of a Vendor Shoppe and click on any product to see a sample of a product page.
             	</div>
        	</div>
         <div class="clear"></div>  
