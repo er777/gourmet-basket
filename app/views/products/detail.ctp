@@ -133,21 +133,22 @@
 
 <div style="clear:both"></div>
 
-<?php $attributes = array("allergen",
-                          "gluten",
+<?php $attributes = array("allergen_free",
+                          "gluten_free",
                           "vegan",
                           "fat_free",
-                          "sugar",
-                          "msg",
-                          "lactose",
+                          "sugar_free",
+                          "no_msg",
+                          "lactose_free",
                           "low_carb",
-                          "nut",
-                          "heart",
+                          "nut_free",
+                          "heart_smart",
                           "no_preservatives",
                           "organic",
                           "kosher",
                           "halal",
-                          "fair_traded"
+                          "fair_traded",
+						  "give_back"
                           );
 ?>
 <div>

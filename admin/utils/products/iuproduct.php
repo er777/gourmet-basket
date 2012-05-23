@@ -5,21 +5,22 @@
 // places where the structure and markup needs to be improved.
 session_start();
 include_once '../../_init.php';
-$attributes = array("allergen",
-										"gluten",
+$attributes = array("allergen_free",
+										"gluten_free",
 										"vegan",
 										"fat_free",
-										"sugar",
-										"msg",
-										"lactose",
+										"sugar_free",
+										"no_msg",
+										"lactose_free",
 										"low_carb",
-										"nut",
-										"heart",
+										"nut_free",
+										"heart_smart",
 										"no_preservatives",
 										"organic",
 										"kosher",
 										"halal",
-										"fair_traded"
+										"fair_traded",
+										"give_back"
 										);
 if (isset($_GET["cmd"]) && $_GET["cmd"] == "delete") {
 $pid =	filter_var($_GET['pid'],FILTER_SANITIZE_NUMBER_INT);
