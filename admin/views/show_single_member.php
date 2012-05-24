@@ -142,17 +142,15 @@ jQuery(function($){
     function validate(focus) {
       focus = typeof focus !== 'undefined' ? focus : true;
       
-      var $allEmptyInputs = $('.notempty')
-      ,   return_me = true
+      var return_me = true
+      ,   $allEmptyInputs = $('.notempty')
       ,   $allSelectBoxes = $('.notfirst');
-      
       $allSelectBoxes.each(function(i, obj){
                             $this = $(obj);
                             if($this.val() !== 'xx'){
                               $this
                                 .off('change',validate)
                                 .removeClass('revalidate');
-                                
                               $allSelectBoxes = $allSelectBoxes.not($this);
                             }else{
                               $this
@@ -167,7 +165,6 @@ jQuery(function($){
                               $this
                                 .off('change',validate)
                                 .removeClass('revalidate');
-                                
                               $allEmptyInputs = $allEmptyInputs.not($this);
                             }else{
                               $this
@@ -177,6 +174,7 @@ jQuery(function($){
                             }
                           });
       
+      console.log($allSelectBoxes.size());
       if(focus) {
         $('.revalidate').first().focus();
       }
