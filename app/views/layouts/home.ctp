@@ -9,22 +9,22 @@
     <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
   <![endif]-->
 
-	<link href="http://gourmet-basket.com/test/app/webroot/css/magazine.css" rel="stylesheet" type="text/css" />
-	<link href="http://gourmet-basket.com/test/app/webroot/supersized/css/supersized.css" rel="stylesheet" type="text/css" />
-	<link href="http://gourmet-basket.com/test/app/webroot/supersized/theme/supersized.shutter.css" rel="stylesheet" type="text/css" />
+	<link href="/app/webroot/css/magazine.css" rel="stylesheet" type="text/css" />
+	<link href="/app/webroot/supersized/css/supersized.css" rel="stylesheet" type="text/css" />
+	<link href="/app/webroot/supersized/theme/supersized.shutter.css" rel="stylesheet" type="text/css" />
 	<link href='http://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-	<script type="text/javascript" src="http://gourmet-basket.com/test/app/webroot/js/modernizr-2.0.6.js"></script>
-	<script type="text/javascript" src="http://gourmet-basket.com/test/app/webroot/supersized/jquery.easing.min.js"></script>
-	<script type="text/javascript" src="http://gourmet-basket.com/test/app/webroot/supersized/js/supersized.3.2.5.js"></script>
-	<script type="text/javascript" src="http://gourmet-basket.com/test/app/webroot/supersized/theme/supersized.shutter.js"></script>
-	<script type="text/javascript" src="http://gourmet-basket.com/test/app/webroot/js/jcarousellite_1.0.1.js"></script>
-	<script type="text/javascript" src="http://gourmet-basket.com/test/app/webroot/js/slideshow.js"></script>
-	<script type="text/javascript" src="http://gourmet-basket.com/test/app/webroot/js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="/app/webroot/js/modernizr-2.0.6.js"></script>
+	<script type="text/javascript" src="/app/webroot/supersized/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="/app/webroot/supersized/js/supersized.3.2.5.js"></script>
+	<script type="text/javascript" src="/app/webroot/supersized/theme/supersized.shutter.js"></script>
+	<script type="text/javascript" src="/app/webroot/js/jcarousellite_1.0.1.js"></script>
+	<script type="text/javascript" src="/app/webroot/js/slideshow.js"></script>
+	<script type="text/javascript" src="/app/webroot/js/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.cycle/2.88/jquery.cycle.all.js"></script>
-	<script type="text/javascript" src="http://gourmet-basket.com/test/app/webroot/js/jquery.li-scroller.1.0.js"></script>
-	<script type="text/javascript" src="http://gourmet-basket.com/test/app/webroot/js/jquery.marquee.js"></script>
-	<script type="text/javascript" src="http://gourmet-basket.com/test/app/webroot/js/jquery.columnizer.min.js"></script>
+	<script type="text/javascript" src="/app/webroot/js/jquery.li-scroller.1.0.js"></script>
+	<script type="text/javascript" src="/app/webroot/js/jquery.marquee.js"></script>
+	<script type="text/javascript" src="/app/webroot/js/jquery.columnizer.min.js"></script>
 	<?php echo $html->script('jquery.hoverIntent.minified.js'); ?>
 
 	<!--<script type="text/javascript">
@@ -53,12 +53,12 @@
           <!-- <marquee loop="3" behavior="slide" direction="left" width="1400"><h2>START Lorem ipsum dolor sit amet END</h2></marquee> -->
           
           <ul id="ticker01">
-             <li><img src="img/international.png" width="1366" height="52" alt=""/></li>
-             <li><img src="img/regional.png"  width="1543" height="52" alt=""/></li>
-             <li><img src="img/chefs-tips.png"  width="1021" height="52" alt=""/></li>
-             <li><img src="img/recipes.png"  width="909" height="52" alt=""/></li>
-             <li><img src="img/articles.png"  width="1021" height="52" alt=""/></li>
-             <li><img src="img/pairings.png"  width="975" height="52" alt=""/></li>
+             <li><img src="/app/webroot/img/international.png" width="1366" height="52" alt=""/></li>
+             <li><img src="/app/webroot/img/regional.png"  width="1543" height="52" alt=""/></li>
+             <li><img src="/app/webroot/img/chefs-tips.png"  width="1021" height="52" alt=""/></li>
+             <li><img src="/app/webroot/img/recipes.png"  width="909" height="52" alt=""/></li>
+             <li><img src="/app/webroot/img/articles.png"  width="1021" height="52" alt=""/></li>
+             <li><img src="/app/webroot/img/pairings.png"  width="975" height="52" alt=""/></li>
           </ul>
        </div>
        <div id="upper-wrapper">
@@ -77,7 +77,7 @@
           <!--<div id="logo"></div>-->
           
           <div id="nav" style="margin-left:30px"> <?php echo $this->element('menu_top-new');?> </div>
-          <div id="gb-title"> <img src="img/gb-title.png" width="1000" height="160" alt="gourmet-basket" /> </div>
+          <div id="gb-title"> <img src="/app/webroot/img/gb-title.png" width="1000" height="160" alt="gourmet-basket" /> </div>
           <div id="upper-content">
              <div id="headlines">
                 <div class="headline-1">
@@ -104,9 +104,9 @@
                    </div>
                    <div></div>
                 </div>
-                <div class="front-page-pic-link"> <img src="img/lil-star.png" width="36" height= "23" style="float:left" />
+                <div class="front-page-pic-link"> <img src="/app/webroot/img/lil-star.png" width="36" height= "23" style="float:left" />
                    <div class="pic-link-title"><a href="<?php echo $headline_home['full_page_pic_link'];?>"><?php echo $headline_home['full_page_text'];?></a></div>
-                   <img src="img/lil-star.png" width="36" height="23" style="float:left" />
+                   <img src="/app/webroot/img/lil-star.png" width="36" height="23" style="float:left" />
                    <div class="shop-now submit_button" ><a href="<?php echo $headline_home['full_page_pic_link'];?>">SHOP NOW</a></div>
                 </div>
              </div>
@@ -227,7 +227,7 @@
         }	
         ?>
           </div>
-          <div id="footer-home"> <img src="img/lower-narrow.jpg" width="1000" height="153" alt=""/> </div>
+          <div id="footer-home"> <img src="/app/webroot/img/lower-narrow.jpg" width="1000" height="153" alt=""/> </div>
        </div>
     </div>
     <!--end lower--> 
@@ -258,9 +258,9 @@
 // url : ''},														 
 													 
 														 
-{image : 'img/supersize/<?php echo $headline_home['full_page_pic'];?>', 
+{image : '/app/webroot/img/supersize/<?php echo $headline_home['full_page_pic'];?>', 
  title : 'Gourmet-Basket', 
- thumb : 'img/supersize/thumbs/chocolates-t.jpg',
+ thumb : '/app/webroot/img/supersize/thumbs/chocolates-t.jpg',
  url : ''}
    
 //{image : 'img/supersize/chilies.jpg', 

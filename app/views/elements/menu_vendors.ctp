@@ -9,6 +9,10 @@ echo $html->image('logos/'.$products[0]['u']['logo'], array('border' => '0', 'al
 
 </div>
 <ul>
+
+<!-- Dean start here -->
+
+
     <li class="blades"><a href="#summary">OUR STORY</a></li>
     <!--<li><?php //echo $html->image('vendor_menu2.png', array('border' => '0', "alt"=>"About", "title"=>"About", "url"=> array('controller' => 'pages', 'action' => 'about'))); ?></li>-->
     <li class="blades"><a href="/policies" title="" alt="">POLICIES</a></li>

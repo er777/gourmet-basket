@@ -1,26 +1,25 @@
-<?php //insert update product
+[<?php //insert update product
 // DS - I do not approve of this.
 // There is so much wrong with how this site is structured.
 // I am not in a position to repair all of this, but there are many
 // places where the structure and markup needs to be improved.
 session_start();
 include_once '../../_init.php';
-$attributes = array("allergen_free",
-										"gluten_free",
+$attributes = array("allergen",
+										"gluten",
 										"vegan",
 										"fat_free",
-										"sugar_free",
-										"no_msg",
-										"lactose_free",
+										"sugar",
+										"msg",
+										"lactose",
 										"low_carb",
-										"nut_free",
-										"heart_smart",
+										"nut",
+										"heart",
 										"no_preservatives",
 										"organic",
 										"kosher",
 										"halal",
-										"fair_traded",
-										"give_back"
+										"fair_traded"
 										);
 if (isset($_GET["cmd"]) && $_GET["cmd"] == "delete") {
 $pid =	filter_var($_GET['pid'],FILTER_SANITIZE_NUMBER_INT);
@@ -305,12 +304,17 @@ margin-right: 5px;
                       <?php echo DB::db_options("SELECT `user_id`, `user_name` FROM `users` Where level='vendor' order by `user_id`", $user_id) ?>
                     </select></td>
                   <?php } ?>
-                  <td valign="top"><label>Your Item No.: (*)</label>
+                  <td valign="top"><label>GB ID: (*)</label>
                     <input type="text" name="item" id="item" size="16" maxlength="16" value="<?php echo (isset($p['item']) ? $p['item'] : '') ; ?>"/></td>
                 </tr>
+              
+                
                 <tr>
                   <td><label>Product Name: (*)</label>
                     <input type="text" name="product_name" id="product_name" size="32" maxlength="50" value="<?php echo (isset($p['product_name']) ? $p['product_name'] : ''); ?>"/></td>
+                    <td valign="top"><label>Vendor ID: (*)</label>
+                    <input type="text" name="item" id="item" size="16" maxlength="16" value="<?php echo (isset($p['sku']) ? $p['sku'] : '') ; ?>"/></td>
+                    
                   <td><label>Tags (each separated by a comma):</label>
                     <textarea id="tags" class="tags" wrap="ON" style="width: 200px; height: 45px;" name="tags"><?php echo (isset($p['tags']) ? $p['tags'] : '') ?></textarea></td>
                 </tr>
@@ -656,7 +660,7 @@ margin-right: 5px;
 														<?php foreach ($attributes as $attribute) :?>														
                             <tr>
                               <td><?php echo ucwords(str_replace("_"," ",$attribute)); ?></td>
-                              <td><input type="checkbox" value="1" name="<?php echo $attribute; ?>" id="<?php echo $attribute; ?>" <?php echo (isset($p[$attribute]) ? "unchecked" : ''); ?>/></td>
+                              <td><input type="checkbox" value="1" name="<?php echo $attribute; ?>" id="<?php echo $attribute; ?>" <?php echo (isset($p[$attribute]) ? "checked" : ''); ?>/></td>
 														</tr>
 														<?php endforeach;?>
                           </table></td>
