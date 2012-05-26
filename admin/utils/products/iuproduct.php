@@ -1,7 +1,5 @@
 <?php //insert update product
-// DS - I do not approve of this.
-// There is so much wrong with how this site is structured.
-// I am not in a position to repair all of this, but there are many
+// DS There are many
 // places where the structure and markup needs to be improved.
 session_start();
 include_once '../../_init.php';
@@ -606,7 +604,7 @@ margin-right: 5px;
                     <div id="tradition<?php echo $i_trad; ?>" class="more">
                       <select name="tradition_id[]" id="tradition_id[]" class="left" >
                         <option value="">Select</option>
-                        <?php echo DB::db_options("SELECT `tradition_id`, `name` FROM `culinary_tradition` order by `sort_by`", $traditions[$i_trad]) ?>
+                        <?php echo DB::db_options("SELECT `tradition_id`, `name` FROM `culinary_tradition` order by `tradition_id`", $traditions[$i_trad]) ?>
                       </select>
                       <a onclick="less('tradition<?php echo $i_trad; ?>')"          id="mor2" class="mor" href="javascript:void(0)">-</a> <a onclick="exeAjax('i_trad=<?php echo $i_trad; ?>&action=4', 'traditions<?php echo $i_trad; ?>', true)" id="mor1" class="mor" href="javascript:void(0)">+</a> </div>
                     <div id="traditions<?php echo $i_trad; ?>"></div>
