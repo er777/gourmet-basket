@@ -38,6 +38,65 @@ class Product extends AppModel{
         }
         
     }
+		function getOwnedProductsByCategory($vid){
+				$sql = "SELECT DISTINCT categories.`category_name`, subcategories.subcategory, `sub_subcategories`.`sub_subcategory`,
+				REPLACE(LOWER(REPLACE(REPLACE(TRIM(categories.category_name), ' & ', '-'), '/', '-')), ' ', '-') as parent_slug,
+				REPLACE(LOWER(REPLACE(REPLACE(TRIM(subcategories.subcategory), ' & ', '-'), '/', '-')), ' ', '-') as child_slug,
+				REPLACE(LOWER(REPLACE(REPLACE(TRIM(sub_subcategories.sub_subcategory), ' & ', '-'), '/', '-')), ' ', '-') as grandchild_slug
+				FROM products
+				RIGHT JOIN users ON users.user_id = products.user_id
+				LEFT JOIN categories ON products.category_id = categories.category_id
+				LEFT JOIN subcategories ON products.subcategory_id = subcategories.subcategory_id
+				LEFT JOIN sub_subcategories ON products.sub_subcat_id = sub_subcategories.sub_subcat_id
+				WHERE users.short_name = '".$vid."'
+				ORDER BY categories.`category_name`, subcategories.`subcategory`, `sub_subcategories`.`sub_subcategory`, products.product_name;";
+				
+				// $result = $this->query($sql); // <-- Results return structured by table! That is just way harder to reorgonize.... forget that!
+				$result = mysql_query($sql); // way easyier.
+						$restructureForList = array();
+				while($arr = mysql_fetch_assoc($result)){
+						$parent = '<a href="/products/category/' . $arr['parent_slug'] .'">'.$arr['category_name'].'</a>';
+						$child = '<a href="/products/category/' .$arr['parent_slug'] .'/'.$arr['child_slug'].'">'.$arr['subcategory'].'</a>';
+						$grandchild = '<a href="/products/category/' .$arr['parent_slug'] .'/'.$arr['child_slug'].'/'.$arr['grandchild_slug'].'">'.$arr['sub_subcategory'].'</a>';
+						if(!isset($restructureForList[$parent])){
+								$restructureForList[$parent] = array();
+						}
+						if(isset($child)){
+								if(!isset($restructureForList[$parent][$child])){
+									$restructureForList[$parent][$child] = array();
+								}
+						}
+						if(isset($grandchild)){
+								if(!isset($child)){
+										//$child = "__orphen__";
+										$restructureForList[$parent][$grandchild] = array();
+								}else{
+										$restructureForList[$parent][$child][$grandchild] = array();
+										
+								}
+						}
+				}
+				$output ='<ul class="parents subMenu" style="display:none;">';
+				foreach ($restructureForList as $parent=>$child) {
+						$output .= '<li>'.$parent;
+						if(count($child) > 0){
+								$output .= '<ul class="children subMenu">';
+								foreach ($child as $child_name=>$grandchildren){
+										$output .= '<li>'.$child_name;
+										if(count($grandchildren) > 0){
+												$output.='<ul class="grandchildren subMenu">';
+												foreach ($grandchildren as $grandchild_name=>$throwaway) {
+														$output .= '<li>' . $grandchild_name.'</li>';
+												}
+												$output .= '</ul>'; // end grandkids.
+										}
+								}
+								$output .= '</li></ul>'; // end children.
+						}
+				}
+				$output .= '</li></ul>'; // end parents.
+				return $output;
+		}
 
     function getProdCreation(){
         $var1 = "";

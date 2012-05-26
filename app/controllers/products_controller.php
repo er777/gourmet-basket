@@ -16,7 +16,6 @@ class ProductsController extends AppController {
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
         $this->set('creations', $this->Product->getProdCreation());
-				
         $this->set('all_categories', $this->Product->getAllProductCategories());
 				
         $this->layout = 'site';
@@ -206,6 +205,7 @@ class ProductsController extends AppController {
         $this->set('countries', $this->Vendor->getCountries());
         $this->set('creations', $this->Product->getProdCreation());
         $this->set('all_categories', $this->Product->getAllProductCategories());
+        $this->set('ownedProductsByCategory', $this->Product->getOwnedProductsByCategory($vid));
         $this->layout = 'vendor';
         $this->paginate = array(
             'joins' => array(
