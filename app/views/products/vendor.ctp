@@ -24,7 +24,7 @@ $i = count($products);
           <a href="/product/<?php echo $val['product_id'];?>-<?php echo str_replace(array("&","/","'",'"'," "), array("-and-","-","","","-"),$val['product_name']);?>">
               <div class="name-price">
                 <div class="p-name"> <?php echo strlen($val['product_name'])>40?substr($val['product_name'],0,40)."...":$val['product_name'];?> </div>
-                <div class="price"> $<?php echo $val['selling_price'];?> </div>
+                <div class="price"> $<?php echo $val['price'];?> </div>
                
               </div>
           </a> 
