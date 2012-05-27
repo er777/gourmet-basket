@@ -193,12 +193,23 @@ class ProductsController extends AppController {
         $this->set('products', array($data));
     }
 
-    function vendor($vid = null) {
-
+    function vendor($vid = null, $category=NULL, $subcategory=NULL, $sub_subcategory=NULL) {
         if($vid==null){
             $this->redirect('/vendors');
             exit();
         }
+				$conditions['u.short_name'] = $vid;
+				
+				if(isset($category)){
+				 $conditions['Product.category_id'] = $category;
+				}
+				if(isset($subcategory)){
+						$conditions['Product.subcategory_id'] = $subcategory;
+				}
+				if(isset($sub_subcategory)){
+						$conditions['Product.sub_subcat_id'] = $sub_subcategory;
+				}
+				
         $this->loadModel('Vendor');
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
@@ -222,6 +233,7 @@ class ProductsController extends AppController {
                 'Product.description',
                 'Product.price',
                 'Product.image',
+                'Product.category_id',
                 'Product.image_1',
                 'Product.image_2',
                 'Product.image_3',
@@ -242,7 +254,7 @@ class ProductsController extends AppController {
 				'u.shop_name',
                 'REPLACE(LOWER(u.shop_name),\' \',\'\') AS bname'
             ),
-            'conditions' => array('u.short_name' => $vid),
+            'conditions' => $conditions,
             'limit' => 12,
             'order' => array('product_id' => 'desc')
         );

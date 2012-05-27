@@ -39,7 +39,7 @@ class Product extends AppModel{
         
     }
 		function getOwnedProductsByCategory($vid){
-				$sql = "SELECT DISTINCT categories.`category_name`, subcategories.subcategory, `sub_subcategories`.`sub_subcategory`,
+				$sql = "SELECT DISTINCT categories.`category_name`, categories.`category_id`,subcategories.`subcategory_id`,sub_subcategories.`sub_subcat_id`, subcategories.subcategory, `sub_subcategories`.`sub_subcategory`,
 				REPLACE(LOWER(REPLACE(REPLACE(TRIM(categories.category_name), ' & ', '-'), '/', '-')), ' ', '-') as parent_slug,
 				REPLACE(LOWER(REPLACE(REPLACE(TRIM(subcategories.subcategory), ' & ', '-'), '/', '-')), ' ', '-') as child_slug,
 				REPLACE(LOWER(REPLACE(REPLACE(TRIM(sub_subcategories.sub_subcategory), ' & ', '-'), '/', '-')), ' ', '-') as grandchild_slug
@@ -55,9 +55,9 @@ class Product extends AppModel{
 				$result = mysql_query($sql); // way easyier.
 						$restructureForList = array();
 				while($arr = mysql_fetch_assoc($result)){
-						$parent = '<a href="/products/category/' . $arr['parent_slug'] .'">'.$arr['category_name'].'</a>';
-						$child = '<a href="/products/category/' .$arr['parent_slug'] .'/'.$arr['child_slug'].'">'.$arr['subcategory'].'</a>';
-						$grandchild = '<a href="/products/category/' .$arr['parent_slug'] .'/'.$arr['child_slug'].'/'.$arr['grandchild_slug'].'">'.$arr['sub_subcategory'].'</a>';
+						$parent = '<a href="/products/vendor/' .$vid.'/' . $arr['category_id'] .'">'.$arr['category_name'].'</a>';
+						$child = '<a href="/products/vendor/' .$vid.'/' .$arr['category_id'] .'/'.$arr['subcategory_id'].'">'.$arr['subcategory'].'</a>';
+						$grandchild = '<a href="/products/vendor/' .$vid.'/' .$arr['category_id'] .'/'.$arr['subcategory_id'].'/'.$arr['sub_subcat_id'].'">'.$arr['sub_subcategory'].'</a>';
 						if(!isset($restructureForList[$parent])){
 								$restructureForList[$parent] = array();
 						}
