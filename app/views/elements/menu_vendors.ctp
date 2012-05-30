@@ -28,8 +28,12 @@ padding: 10px 0!important;
 </style>
 </div>
 <ul>
+<?php if(isset($ownedProductsByCategory)): ?>
 <li class="blades"><a href="#" class="ourCategoriesTrigger">OUR CATEGORIES</a>
-<?php echo ($ownedProductsByCategory);?></li>
+<?php echo $ownedProductsByCategory; ?></li>
+<?php else:?>
+<li class="blades"><a href="/" class="">ALL PRODUCTS</a></li>
+<?php endif;?>
     <li class="blades"><a href="#summary">OUR STORY</a></li>
     <!--<li><?php //echo $html->image('vendor_menu2.png', array('border' => '0', "alt"=>"About", "title"=>"About", "url"=> array('controller' => 'pages', 'action' => 'about'))); ?></li>-->
     <li class="blades"><a href="/policies" title="" alt="">POLICIES</a></li>

@@ -201,15 +201,14 @@ class ProductsController extends AppController {
 				$conditions['u.short_name'] = $vid;
 				
 				if(isset($category)){
-				 $conditions['Product.category_id'] = $category;
+				 $conditions['categories.slug'] = $category;
 				}
 				if(isset($subcategory)){
-						$conditions['Product.subcategory_id'] = $subcategory;
+						$conditions['subcategories.slug'] = $subcategory;
 				}
 				if(isset($sub_subcategory)){
-						$conditions['Product.sub_subcat_id'] = $sub_subcategory;
+						$conditions['sub_subcategories.slug'] = $sub_subcategory;
 				}
-				
         $this->loadModel('Vendor');
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
@@ -225,7 +224,25 @@ class ProductsController extends AppController {
                     'type' => 'RIGHT',
                     'alias' => 'u',
                     'conditions' => array('u.user_id = Product.user_id')
-                )
+                ),
+								array(
+										'table' => 'categories',
+										'type' => 'RIGHT',
+										'alias' => 'categories',
+										'conditions' => array('categories.category_id = Product.category_id')
+								),
+								array(
+										'table' => 'subcategories',
+										'type' => 'RIGHT',
+										'alias' => 'subcategories',
+										'conditions' => array('subcategories.subcategory_id = Product.subcategory_id')
+								),
+								array(
+										'table' => 'sub_subcategories',
+										'type' => 'RIGHT',
+										'alias' => 'sub_subcategories',
+										'conditions' => array('sub_subcategories.sub_subcat_id = Product.sub_subcat_id')
+								)
             ),
             'fields' => array(
                 'Product.product_id',
