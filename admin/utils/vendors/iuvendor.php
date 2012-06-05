@@ -140,7 +140,7 @@ $c = DB::get_single('customer_service', 'user_id', $user_id);
 		</div>
         
 		<div id="tabs-4">
-			<?php require_once('sections/shipping.php'); ?> 
+			<?php //require_once('sections/shipping.php'); ?> 
                  <div class="clear"></div>
 		</div>
         
