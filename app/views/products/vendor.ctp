@@ -1,6 +1,29 @@
+<?php
+preg_match("/^\/(.*?)[\/]{0,1}$/",$this->here,$matches);
+$clean_url = explode("/", $matches[1]);
+$unsafe_slug = array_pop($clean_url);
+$safe_slug = filter_var($unsafe_slug, FILTER_SANITIZE_STRING);
+switch (count($clean_url)){
+	case 3:
+		$sql = "SELECT category_name as name from categories WHERE slug = '".$safe_slug."'";
+		break;
+	case 4:
+		$sql = "SELECT subcategory as name from subcategories WHERE slug = '".$safe_slug."'";
+		break;
+	case 5:
+		$sql = "SELECT sub_subcategory as name from sub_subcategories WHERE slug = '".$safe_slug."'";
+		break;
+}
+if(isset($sql)){
+	$result = mysql_query($sql);
+	while($row = mysql_fetch_array($result)){
+		$name = $row['name'];
+	}
+}
+?>
 <div id="tea_shoppe">
 	<?php echo $html->image('awning-cont.png', array('border' => '0', 'alt' => 'awning', 'width' => '670','title' => 'awning')); ?>
-    <div id="shop-info"><?php echo $products[0]['u']['shop_name'] ?></div>
+    <div id="shop-info"><?php echo $products[0]['u']['shop_name'] . (isset($name) ? ": ".$name : '') ?></div>
 </div>
 
 <div class="vendor-content-product-wrapper">

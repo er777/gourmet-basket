@@ -16,7 +16,6 @@ class ProductsController extends AppController {
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
         $this->set('creations', $this->Product->getProdCreation());
-				
         $this->set('all_categories', $this->Product->getAllProductCategories());
 				
         $this->layout = 'site';
@@ -156,21 +155,22 @@ class ProductsController extends AppController {
                     'Product.image_3',
                     'Product.image_4',
                     'Product.image_5',
-                    'Product.allergen',
-                    'Product.gluten',
+                    'Product.allergen_free',
+                    'Product.gluten_free',
                     'Product.vegan',
                     'Product.fat_free',
-                    'Product.sugar',
-                    'Product.msg',
-                    'Product.lactose',
+                    'Product.sugar_free',
+                    'Product.no_msg',
+                    'Product.lactose_free',
                     'Product.low_carb',
-                    'Product.nut',
-                    'Product.heart',
+                    'Product.nut_free',
+                    'Product.heart_smart',
                     'Product.no_preservatives',
                     'Product.organic',
                     'Product.kosher',
                     'Product.halal',
                     'Product.fair_traded',
+					'Product.give_back',
                     'Product.heat_sensitivity',
                     'Product.all_natural',
                     'Product.related_products',
@@ -184,6 +184,7 @@ class ProductsController extends AppController {
 					'u.image5',
 					'u.image6',
                     'u.shop_description',
+					'u.short_name',
 					'u.shop_quote',
                     'REPLACE(LOWER(u.business_name),\' \',\'\') AS bname'
                 ),
@@ -192,18 +193,29 @@ class ProductsController extends AppController {
         $this->set('products', array($data));
     }
 
-    function vendor($vid = null) {
-
+    function vendor($vid = null, $category=NULL, $subcategory=NULL, $sub_subcategory=NULL) {
         if($vid==null){
             $this->redirect('/vendors');
             exit();
         }
+				$conditions['u.short_name'] = $vid;
+				
+				if(isset($category)){
+				 $conditions['categories.slug'] = $category;
+				}
+				if(isset($subcategory)){
+						$conditions['subcategories.slug'] = $subcategory;
+				}
+				if(isset($sub_subcategory)){
+						$conditions['sub_subcategories.slug'] = $sub_subcategory;
+				}
         $this->loadModel('Vendor');
         $this->set('users', $this->Vendor->getVendors());
         $this->set('list_tradition', $this->Vendor->getCulinaryTraditions());
         $this->set('countries', $this->Vendor->getCountries());
         $this->set('creations', $this->Product->getProdCreation());
         $this->set('all_categories', $this->Product->getAllProductCategories());
+        $this->set('ownedProductsByCategory', $this->Product->getOwnedProductsByCategory($vid));
         $this->layout = 'vendor';
         $this->paginate = array(
             'joins' => array(
@@ -212,7 +224,25 @@ class ProductsController extends AppController {
                     'type' => 'RIGHT',
                     'alias' => 'u',
                     'conditions' => array('u.user_id = Product.user_id')
-                )
+                ),
+								array(
+										'table' => 'categories',
+										'type' => 'RIGHT',
+										'alias' => 'categories',
+										'conditions' => array('categories.category_id = Product.category_id')
+								),
+								array(
+										'table' => 'subcategories',
+										'type' => 'RIGHT',
+										'alias' => 'subcategories',
+										'conditions' => array('subcategories.subcategory_id = Product.subcategory_id')
+								),
+								array(
+										'table' => 'sub_subcategories',
+										'type' => 'RIGHT',
+										'alias' => 'sub_subcategories',
+										'conditions' => array('sub_subcategories.sub_subcat_id = Product.sub_subcat_id')
+								)
             ),
             'fields' => array(
                 'Product.product_id',
@@ -220,6 +250,7 @@ class ProductsController extends AppController {
                 'Product.description',
                 'Product.price',
                 'Product.image',
+                'Product.category_id',
                 'Product.image_1',
                 'Product.image_2',
                 'Product.image_3',
@@ -236,10 +267,11 @@ class ProductsController extends AppController {
 				'u.short_name',
                 'u.shop_description',
 				'u.shop_quote',
+				'u.short_name',
 				'u.shop_name',
                 'REPLACE(LOWER(u.shop_name),\' \',\'\') AS bname'
             ),
-            'conditions' => array('u.short_name' => $vid),
+            'conditions' => $conditions,
             'limit' => 12,
             'order' => array('product_id' => 'desc')
         );

@@ -52,6 +52,7 @@ foreach ($products as $product) :
 			if(isset($AllProductsandUsers[$product['Product']['product_id']])):
 						$product_id = $product['Product']['product_id'];
 						$shop_name = $AllProductsandUsers[$product_id]['shop_name'];
+						
 						$url = $AllProductsandUsers[$product_id]['url'];
 			endif;
 ?>
@@ -80,3 +81,13 @@ foreach ($products as $product) :
 <!--content-product-wrapper-->
 
 <div class="clear-both"></div>
+<div class="view_pagin">
+  <?php if($paginator->numbers()){ ?>
+  <?php echo $paginator->numbers(); ?> 
+  &nbsp;&nbsp;&nbsp; 
+  <?php echo  $paginator->prev('Prev', array(), null,  array('class'=>'disabled'));?> 
+  &nbsp;|&nbsp; 
+  <?php echo  $paginator->next('Next', array(), null,  array('class'=>'disabled'));
+  }
+  ?>
+</div>

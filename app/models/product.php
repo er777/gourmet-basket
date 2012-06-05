@@ -38,6 +38,65 @@ class Product extends AppModel{
         }
         
     }
+		function getOwnedProductsByCategory($vid){
+				$sql = "SELECT DISTINCT categories.`category_name`, categories.`category_id`,subcategories.`subcategory_id`,sub_subcategories.`sub_subcat_id`, subcategories.subcategory, `sub_subcategories`.`sub_subcategory`,
+				categories.slug as parent_slug,
+				subcategories.slug as child_slug,
+				sub_subcategories.slug as grandchild_slug
+				FROM products
+				RIGHT JOIN users ON users.user_id = products.user_id
+				LEFT JOIN categories ON products.category_id = categories.category_id
+				LEFT JOIN subcategories ON products.subcategory_id = subcategories.subcategory_id
+				LEFT JOIN sub_subcategories ON products.sub_subcat_id = sub_subcategories.sub_subcat_id
+				WHERE users.short_name = '".$vid."'
+				ORDER BY categories.`category_name`, subcategories.`subcategory`, `sub_subcategories`.`sub_subcategory`, products.product_name;";
+				
+				// $result = $this->query($sql); // <-- Results return structured by table! That is just way harder to reorgonize.... forget that!
+				$result = mysql_query($sql); // way easyier.
+						$restructureForList = array();
+				while($arr = mysql_fetch_assoc($result)){
+						$parent = '<a href="/products/vendor/' .$vid.'/' . $arr['parent_slug'] .'">'.$arr['category_name'].'</a>';
+						$child = '<a href="/products/vendor/' .$vid.'/' .$arr['parent_slug'] .'/'.$arr['child_slug'].'">'.$arr['subcategory'].'</a>';
+						$grandchild = '<a href="/products/vendor/' .$vid.'/' .$arr['parent_slug'] .'/'.$arr['child_slug'].'/'.$arr['grandchild_slug'].'">'.$arr['sub_subcategory'].'</a>';
+						if(!isset($restructureForList[$parent])){
+								$restructureForList[$parent] = array();
+						}
+						if(isset($child)){
+								if(!isset($restructureForList[$parent][$child])){
+									$restructureForList[$parent][$child] = array();
+								}
+						}
+						if(isset($grandchild)){
+								if(!isset($child)){
+										//$child = "__orphen__";
+										$restructureForList[$parent][$grandchild] = array();
+								}else{
+										$restructureForList[$parent][$child][$grandchild] = array();
+										
+								}
+						}
+				}
+				$output ='<ul class="parents subMenu" style="display:none;">';
+				foreach ($restructureForList as $parent=>$child) {
+						$output .= '<li>'.$parent;
+						if(count($child) > 0){
+								$output .= '<ul class="children subMenu">';
+								foreach ($child as $child_name=>$grandchildren){
+										$output .= '<li>'.$child_name;
+										if(count($grandchildren) > 0){
+												$output.='<ul class="grandchildren subMenu">';
+												foreach ($grandchildren as $grandchild_name=>$throwaway) {
+														$output .= '<li>' . $grandchild_name.'</li>';
+												}
+												$output .= '</ul>'; // end grandkids.
+										}
+								}
+								$output .= '</li></ul>'; // end children.
+						}
+				}
+				$output .= '</li></ul>'; // end parents.
+				return $output;
+		}
 
     function getProdCreation(){
         $var1 = "";
@@ -71,15 +130,19 @@ class Product extends AppModel{
 				$result =  $this->query($sql); // will return false on fail??
 				return $result[0]['categories'];
 		}
+		
 		function _getAllProductsandUsers(){
-			$sql = "SELECT products.product_id, users.shop_name 
+				
+			$sql = "SELECT products.product_id, users.shop_name, users.short_name 
 			FROM  users
       LEFT JOIN products
       ON products.user_id = users.user_id
 			WHERE users.shop_name != ''; ";
 	 		$result = $this->query($sql);
 			foreach($result as $row){
-				$array[$row['products']['product_id']]= $row['users']['shop_name']	;
+				$replaced_url = preg_replace('/^(.*?)\.*(.*?)\.(.*?)$/', $row['users']['short_name']. '.$2.$3', $_SERVER['HTTP_HOST']);
+				$array[$row['products']['product_id']]['shop_name']= $row['users']['shop_name'];
+				$array[$row['products']['product_id']]['url']= "//".$replaced_url;
 			}
 			return $array;
 			
@@ -97,8 +160,8 @@ class Product extends AppModel{
 							subcategories.subcategory,
 							categories.category_image,
 							categories.category_article,
-							REPLACE(LOWER(REPLACE(REPLACE(TRIM(categories.category_name), ' & ', '-'), '/', '-')), ' ', '-') as parent_slug,
-							REPLACE(LOWER(REPLACE(REPLACE(TRIM(subcategories.subcategory), ' & ', '-'), '/', '-')), ' ', '-') as child_slug
+							categories.slug as parent_slug,
+							subcategories.slug as child_slug
 						FROM categories  
 						LEFT JOIN subcategories 
 						ON subcategories.category_id = categories.category_id
@@ -110,8 +173,8 @@ class Product extends AppModel{
 						subcategories.subcategory_id,
 						subcategories.subcategory,
 						sub_subcategories.sub_subcategory,
-							REPLACE(LOWER(REPLACE(REPLACE(TRIM(sub_subcategories.sub_subcategory), ' & ', '-'), '/', '-')), ' ', '-') as grandchild_slug,
-							REPLACE(LOWER(REPLACE(REPLACE(TRIM(subcategories.subcategory), ' & ', '-'), '/', '-')), ' ', '-') as child_slug
+							sub_subcategories.slug as grandchild_slug,
+							subcategories.slug as child_slug
 					FROM subcategories  
 					INNER JOIN sub_subcategories 
 					ON subcategories.subcategory_id = sub_subcategories.subcategory_id
@@ -125,8 +188,8 @@ class Product extends AppModel{
 			foreach ($grandchildrenResults as $row) {
 				
 				$subcat_id = $row['sub_subcategories']['sub_subcat_id'];
-				$child_slug = $row[0]['child_slug'];
-				$grandchild_slug = $row[0]['grandchild_slug'];
+				$child_slug = $row['subcategories']['child_slug'];
+				$grandchild_slug = $row['sub_subcategories']['grandchild_slug'];
 				$grandchild_name = $row['sub_subcategories']['sub_subcategory'];
 				
 				$AllGrandchildren[$child_slug][$grandchild_slug]['id'] = $subcat_id;
@@ -141,8 +204,8 @@ class Product extends AppModel{
 				$parent_category_id = $row['categories']['category_id'];
 				$parent_category_image = $row['categories']['category_image'];
 				$parent_category_article = $row['categories']['category_article'];
-				$parent_slug = $row[0]['parent_slug'];
-				$child_slug = $row[0]['child_slug'];
+				$parent_slug = $row['categories']['parent_slug'];
+				$child_slug = $row['subcategories']['child_slug'];
 				$child_category_id = $row['subcategories']['subcategory_id'];
 				$child_category_name = $row['subcategories']['subcategory'];
 				

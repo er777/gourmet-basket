@@ -84,7 +84,7 @@ h4 {
 body {
 	font-family: 'Quattrocento Sans', sans-serif;
 	/*font-family: Asul, sans-serif;*/
-	font-size:14px;
+	font-size:12px;
 	line-height:normal;
 	color:#00134D;
 	
@@ -100,6 +100,8 @@ body {
 h1, h2, h3  {
     font-family: 'Federo', sans-serif;
  color:#7f131f;
+ text-transform: lowercase;
+ font-size:170%;
 
 }
 
@@ -622,11 +624,10 @@ th  {
 	margin-left: auto;
 	padding-top: 20px;/*	background-color: #F9F9F9;*/
 	padding-bottom: 30px;
-	background-color:#fefef9;    /*rgba(255, 227, 160, 0.2); */
+	background-color:#fffbe5;    /*rgba(255, 227, 160, 0.2); */
 	padding-right: 0px;
 	padding-left: 0px;
-	background-image: url(../img/bg-1.png);
-	background-repeat: repeat;
+	
 }
 #menu_vendor, .content-product-wrapper #menu_vendor {
 	float: left;
@@ -643,7 +644,6 @@ th  {
 	height: 130px;
 	margin-left: 0px;
 	width: 270px;
-	
 	background-image: url(../img/title_vendor_bg.png);
 	background-repeat: no-repeat;
 	
@@ -847,7 +847,8 @@ th  {
 #vendor-article {
 	width:620px;
 	float:left;
-	
+	position:relative;
+	z-index:600;
 }
 
 .vendor-group-pics {
@@ -912,7 +913,7 @@ img.vendor-story-pic {
 }
 .vendor-article-pic1-wrapper {
 	position:absolute;
-	z-index:100;	
+	z-index:1;	
 	top:20px;
 	left:20px;
 	width:500px;
@@ -935,7 +936,7 @@ img.vendor-story-pic {
 	position:relative;
 	z-index:500;
 	float:left;
-	margin-bottom:20px;
+	margin-bottom:35px;
 	
 }
 
@@ -1135,7 +1136,7 @@ a.hand-drawn {
 .category-name  {
 	/*background-color:#FCFCF2;*/
 	color:#fff;
-	font-weight:bold;
+	font-size:10px;
 	
 	/*moz-box-shadow: 3px 3px 3px #000;
 	-webkit-box-shadow: 3px 3px 3px #000;
@@ -1328,7 +1329,7 @@ body#products .vendor-content-product-wrapper {
 .content-product .price{
     padding-top:4px;
 	padding-right:4px;
-	font-size:70%;
+	font-size:80%;
     display: block;
     text-align: right;
 }
@@ -1389,7 +1390,7 @@ body#products .content-product  .name-price {
 	display: block;
 	text-align:center;
 	float: left;
-	width: 120px;
+	width: 98px;
 	margin-right: 22px;
 	margin-bottom:0px;
 	background-image: url(../img/pantry-item-bg.png);
@@ -1403,7 +1404,9 @@ body#products .content-product  .name-price {
 }
 
 .cat img {
-	margin-bottom: 2px;	
+	margin-bottom: 2px;
+	width:85px;
+	height:85px;
 }
 
 
@@ -1522,7 +1525,8 @@ table.cart th {
 	border-style: none;
 	border-color: gray;
 	background-color: white;
-    text-align: right;
+    text-align: center;
+    font-weight: bold;
 }
 table.cart td {
 	border-width: 5px;
@@ -1664,7 +1668,7 @@ table.cart td {
 
 td div {
 	margin-top: 10px;
-	color:#8b181b;	
+	
 }
 
 /** PRODUCTS **/
@@ -1718,8 +1722,9 @@ td div {
 }
 
 
-.long-description  {
-	line-height: 18px;
+td>span.long-description p  {
+	text-align:justify;
+	line-height: 15px;
 	
 	
 }
@@ -1734,7 +1739,7 @@ table.product-info-table>tbody>tr>td>strong {
 }
 
 .ingredients {
-	
+	margin-top:15px;
 }
 
 /** SHIPPING **/
@@ -1924,7 +1929,7 @@ html {-webkit-animation: safariSelectorFix infinite 1s;}
 
 .dropEverything {padding:0; margin:0 auto; list-style:none; position:relative; height:36px; z-index:50000;}
 .dropEverything li.top-li {float:left; margin-right:1px; border-bottom:1px solid transparent;}
-.dropEverything a.top-a {display:block; padding:0 15px; font-size:13px; font-family: Tahoma, Geneva, sans-serif;line-height:35px;font-weight:bold; color:#fff; text-decoration:none;
+.dropEverything a.top-a {display:block; padding:0 15px; font-size:13px; line-height:35px;font-weight:bold; color:#fff; text-decoration:none;
 -moz-border-radius: 8px 8px 0 0;
 -webkit-border-radius: 8px 8px 0 0;
 -ms-border-radius: 8px 8px 0 0;
@@ -2501,7 +2506,7 @@ div.pagination span.ellipsis {
 *
 \******************************************************/
 .touchcarousel.grey-blue .arrow-icon {
-	background-image: url(/test/app/webroot/img/sprite.png);
+	background-image: url(/app/webroot/img/sprite.png);
 	background-repeat: no-repeat;
 	width: 11px;
 	height: 19px;

@@ -11,7 +11,6 @@ $five = 5;
   <h2 style="text-align:center">RECIPES</h2>
        
       
-      
   <!-- Nested Tabs! -->
   <ul>
     <li><a href="#nested-1"><span>One</span></a></li>
@@ -96,20 +95,20 @@ $five = 5;
 	
 </div>
       
-     <!-- <div id="nested-2">
-        Nest tab 2 content: Tworem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy..
+     <div id="nested-2">
+       COMING SOON..
       </div>
       <div id="nested-3">
-        Nest tab 3 content: Threm ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy..
+        COMING SOON..
       </div>
       
        <div id="nested-4">
-        Nest tab 4 content: Threm ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy..
+       COMING SOON..
       </div>
       
        <div id="nested-5">
-        Nest tab 5 content: Threm ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy..
-      </div>-->
+       COMING SOON..
+      </div>
     <!-- End Nested Tabs -->
     
         <script type="text/javascript">

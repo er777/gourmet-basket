@@ -14,8 +14,15 @@ if ($_SESSION['l_level'] != 'admin'){ ?>
         
         Follow this sequence to learn about Gourmet Basket and to enroll as a Vendor.<br /><br />
         
+        <div class="bullet-box">   
+			<div style="float:left">1) Click on :</div>
+            	 <div class="vendor-bullets"><a href="http://test.gourmet-basket.com/">Home Page</a> to view the developing Home Page of the site. Once there click "Vendor" on the Menu bar to see a sample of a Vendor Shoppe and click on any product to see a sample of a product page.
+            	</div>
+       	</div>
+        <div class="clear"></div>  
+        
        <div class="bullet-box"> 
-			<div style="float:left">1) Click on : </div>
+			<div style="float:left">2) Click on : </div>
             	<div class="vendor-bullets"><a href="vendor-package/WelcomeVendor.pdf">Vendor Welcome Letter</a> for an overview of Gourmet Basket.
                 </div>
        </div>
@@ -23,30 +30,25 @@ if ($_SESSION['l_level'] != 'admin'){ ?>
          <div class="clear"></div>  
          
         <div class="bullet-box"> 
-			<div style="float:left">2) Click on : </div>
+			<div style="float:left">3) Click on : </div>
             	<div class="vendor-bullets"><a href="vendor-package/VendorRegistrationInstructions.pdf">Vendor Registration Instructions</a> to guide you in completing your Vendor Registration.
             	</div>
         </div>
         <div class="clear"></div> 
         
         <div class="bullet-box"> 
-			<div style="float:left">3) Click on :</div>
+			<div style="float:left">4) Click on :</div>
             	<div class="vendor-bullets"><a href="http://test.gourmet-basket.com/admin/vendors.php">Vendor Registration</a> to enroll become a Gourmet Basket Vendor.
             	</div>
         </div>
          <div class="clear"></div> 
                       
-        <div class="bullet-box">   
-			<div style="float:left">4) Click on :</div>
-            	 <div class="vendor-bullets"><a href="http://welcome.gourmet-basket.com/">Home Page</a> to view the developing Home Page of the site. Once there click "Vendor" on the Menu bar to see a sample of a Vendor Shoppe and click on any product to see a sample of a product page.
-            	</div>
-       	</div>
-        <div class="clear"></div>  
+        
           
               
 		<div class="bullet-box">   
 			<div style="float:left">5) Click on :</div>
-            	<div class="vendor-bullets" style="margin-bottom:10px"><a href="vendor-package/LegalWholesaleVendor.pdf">Vendor Participation Agreement</a>&nbsp;to view and print out the legal contract between Gourmet Basket and its Vendors for your files.
+            	<div class="vendor-bullets" style="margin-bottom:10px"><a href="vendor-package/LegalWholesaleVendor.pdf">Vendor Participation Agreement ( in pdf format )</a>&nbsp;to view and print out the legal contract between Gourmet Basket and its Vendors for your files. An agreement is available in document form upon request: <a href="mailto:info@gourmet-basket.com">Contact Us</a>.
             	</div>
         </div>
            
@@ -55,6 +57,19 @@ if ($_SESSION['l_level'] != 'admin'){ ?>
           	4066 West 7th St.<br />
           	Los Angeles, CA  90005
         </div>
+        
+        
+        <div class="bullet-box"> 
+			<div style="float:left">6) Click on : </div>
+            	<div class="vendor-bullets"><a href="vendor-package/GourmetBasketPrivacyPolicy.pdf">Gourmet Basket Privacy Policy</a> to review our privacy policy.
+                </div>
+       </div>
+         
+         <div class="clear"></div>  
+        
+        
+        
+        
         </td>
     </tr>
     
@@ -67,8 +82,8 @@ if ($_SESSION['l_level'] != 'admin'){ ?>
         When your Shoppe is active you can use the following links to control information about your Shoppe in the Gourmet Basket database: <br>
         <br>
         <ul>
-        	<li>View / Edit /<a href="vendors.php" style="text-decoration:underline;color:gray;font-weight:bold;">Registration/Administration Database</a> </li>  
-            <li>View / Edit / Delete <a href="products.php" style="text-decoration:underline;color:gray;font-weigth:bold;">Products</a> </li>  
+        	<!--<li>View / Edit /<a href="vendors.php" style="text-decoration:underline;color:gray;font-weight:bold;">Registration/Administration Database</a> </li>  
+            <li>View / Edit / Delete <a href="products.php" style="text-decoration:underline;color:gray;font-weigth:bold;">Products</a> </li>  -->
             <li>Change status of <a href="orders_vendor.php" style="text-decoration:underline;color:gray;font-weigth:bold;">Orders</a></li>
         </ul>   
         </th>
@@ -90,7 +105,7 @@ if ($_SESSION['l_level'] != 'admin'){ ?>
     </tr>
     <tr>
         <td>
-        This section allows you to contrdiv the records in the database: <br>
+        This section allows you to control the records in the database: <br>
         <br>
         <ul>
             <li><a href="administrators.php" style="text-decoration:underline;cdivor:gray;font-weigth:bdivd;">Manage administrators</a> of this section</li>

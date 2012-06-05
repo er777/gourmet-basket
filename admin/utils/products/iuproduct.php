@@ -1,25 +1,24 @@
 <?php //insert update product
-// DS - I do not approve of this.
-// There is so much wrong with how this site is structured.
-// I am not in a position to repair all of this, but there are many
+// DS There are many
 // places where the structure and markup needs to be improved.
 session_start();
 include_once '../../_init.php';
-$attributes = array("allergen",
-										"gluten",
+$attributes = array("allergen_free",
+										"gluten_free",
 										"vegan",
 										"fat_free",
-										"sugar",
-										"msg",
-										"lactose",
+										"sugar_free",
+										"no_msg",
+										"lactose_free",
 										"low_carb",
-										"nut",
-										"heart",
+										"nut_free",
+										"heart_smart",
 										"no_preservatives",
 										"organic",
 										"kosher",
 										"halal",
-										"fair_traded"
+										"fair_traded",
+										"give_back"
 										);
 if (isset($_GET["cmd"]) && $_GET["cmd"] == "delete") {
 $pid =	filter_var($_GET['pid'],FILTER_SANITIZE_NUMBER_INT);
@@ -605,7 +604,7 @@ margin-right: 5px;
                     <div id="tradition<?php echo $i_trad; ?>" class="more">
                       <select name="tradition_id[]" id="tradition_id[]" class="left" >
                         <option value="">Select</option>
-                        <?php echo DB::db_options("SELECT `tradition_id`, `name` FROM `culinary_tradition` order by `sort_by`", $traditions[$i_trad]) ?>
+                        <?php echo DB::db_options("SELECT `tradition_id`, `name` FROM `culinary_tradition` order by `tradition_id`", $traditions[$i_trad]) ?>
                       </select>
                       <a onclick="less('tradition<?php echo $i_trad; ?>')"          id="mor2" class="mor" href="javascript:void(0)">-</a> <a onclick="exeAjax('i_trad=<?php echo $i_trad; ?>&action=4', 'traditions<?php echo $i_trad; ?>', true)" id="mor1" class="mor" href="javascript:void(0)">+</a> </div>
                     <div id="traditions<?php echo $i_trad; ?>"></div>
@@ -655,7 +654,7 @@ margin-right: 5px;
 														<?php foreach ($attributes as $attribute) :?>														
                             <tr>
                               <td><?php echo ucwords(str_replace("_"," ",$attribute)); ?></td>
-                              <td><input type="checkbox" value="1" name="<?php echo $attribute; ?>" id="<?php echo $attribute; ?>" <?php echo (isset($p[$attribute]) ? "checked" : ''); ?>/></td>
+                              <td><input type="checkbox" value="1" name="<?php echo $attribute; ?>" id="<?php echo $attribute; ?>" <?php echo (isset($p[$attribute]) ? "unchecked" : ''); ?>/></td>
 														</tr>
 														<?php endforeach;?>
                           </table></td>

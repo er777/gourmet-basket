@@ -116,6 +116,13 @@ span.radio-label {
         </div>  
     </div>
     
+     <div class="row">
+        <div class="cell one">Sub Domain Name</div>
+        
+        <div class="cell two">
+    <input type="text" class="will-be-required" name="short_name" value="<?php echo $v['short_name'] ?>" size="30"/>
+        </div>  
+    </div>
     
     <div class="row">
         <div class="cell one">Street Address</div>
