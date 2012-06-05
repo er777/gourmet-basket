@@ -112,5 +112,18 @@ class Cart extends AppModel{
             return false;
         }
     }
+
+    function shipping_details($vendor_id){
+        $i = $this->query("SELECT u.flat_shipping, u.flat_price FROM users as u
+                            WHERE u.user_id = '". $vendor_id ."' limit 1 ");
+        if(empty($i) == false){
+            $shipping['flat_shipping']  = $i[0]['u']['flat_shipping'];
+            $shipping['flat_price']         = $i[0]['u']['flat_price'];
+            return $shipping;
+        }else{
+            return false;
+        }
+    }
+
 }
 ?>
