@@ -173,6 +173,6 @@
       <!-- end row --> 
     </div>
   </li>
-  <li class="top-li top-only"><a class="top-a" href="#url">Top Level</a></li>
-  <li class="close"><a class="top-a" href="#url">Close <b>X</b></a></li>
+  <!--<li class="top-li top-only"><a class="top-a" href="#url">Top Level</a></li>
+  <li class="close"><a class="top-a" href="#url">Close <b>X</b></a></li>-->
 </ul>

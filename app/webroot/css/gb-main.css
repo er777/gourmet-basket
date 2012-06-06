@@ -624,10 +624,11 @@ th  {
 	margin-left: auto;
 	padding-top: 20px;/*	background-color: #F9F9F9;*/
 	padding-bottom: 30px;
-	background-color:#fffbe5;    /*rgba(255, 227, 160, 0.2); */
+	background-color:#fefef9;    /*rgba(255, 227, 160, 0.2); */
 	padding-right: 0px;
 	padding-left: 0px;
-	
+	background-image: url(../img/bg-1.png);
+	background-repeat: repeat;
 }
 #menu_vendor, .content-product-wrapper #menu_vendor {
 	float: left;
@@ -840,8 +841,8 @@ th  {
 	
 }
 
-#vendor-group {
-
+#vendor-group p {
+	font-size:14px;
 }
 
 #vendor-article {
