@@ -2,9 +2,9 @@
 
 <?php //pr($all_categories);?>
 <ul class="dropEverything">
-  <li class="top-li pageOne"><a class="top-a" href="http://gourmet-basket.com/products/categories">CATEGORIES</a>
+  <li class="top-li pageOne"><a class="top-a" href="http://test.gourmet-basket.com/products/categories">CATEGORIES</a>
     <div class="dropEverything-page">
-      <h2>Full Page OF EVERYTHING -----><a href="http://gourmet-basket.com/pages/catalog" style="color:#fff" >*** HERE ***</a></h2>
+      <h2>Full Page OF EVERYTHING -----><a href="http://test.gourmet-basket.com/pages/catalog" style="color:#fff" >*** HERE ***</a></h2>
       <div class="dropEverything-row">
         <h3>CATEGORIES</h3>
         <div class="dropEverything-col1 jquery-column">
