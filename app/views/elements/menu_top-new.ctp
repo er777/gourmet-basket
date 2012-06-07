@@ -2,24 +2,24 @@
 
 <?php //pr($all_categories);?>
 <ul class="dropEverything">
-  <li class="top-li pageOne"><a class="top-a" href="/products/categories">CATEGORIES</a>
+  <li class="top-li pageOne"><a class="top-a" href="http://gourmet-basket.com/products/categories">CATEGORIES</a>
     <div class="dropEverything-page">
-      <h2>Full Page OF EVERYTHING -----><a href="/pages/catalog" style="color:#fff" >*** HERE ***</a></h2>
+      <h2>Full Page OF EVERYTHING -----><a href="http://gourmet-basket.com/pages/catalog" style="color:#fff" >*** HERE ***</a></h2>
       <div class="dropEverything-row">
         <h3>CATEGORIES</h3>
         <div class="dropEverything-col1 jquery-column">
           <div class="dropEverything-inner">
             <ul class="category-parents">
               <?php foreach ($all_categories as $parent) :?>
-              <li> <a class="hand-drawn" href="/products/category/<?php print $parent['slug'];?>"><?php print $parent['name']; ?></a>
+              <li> <a class="hand-drawn" href="http://test.gourmet-basket.com/products/category/<?php print $parent['slug'];?>"><?php print $parent['name']; ?></a>
                 <?php if(isset($parent['children'])): ?>
                 <ul class="category-children" style="margin-left:10px;">
                   <?php foreach ($parent['children'] as $child) :?>
-                  <li><a class="hand-drawn" href="/products/category/<?php print $parent['slug'].'/'.$child['slug']; ?>"><?php print $child['name'];?></a>
+                  <li><a class="hand-drawn" href="http://test.gourmet-basket.com/products/category/<?php print $parent['slug'].'/'.$child['slug']; ?>"><?php print $child['name'];?></a>
 								<?php if ($child['children']): ?>
 								<ul class="category-grandchildren" style="font-size:11px; margin-left:20px;font-style:italic;">
 								<?php foreach ($child['children'] as $grandchild): ?>
-								<li><a href ="/products/category/<?php print $parent['slug'].'/'.$child['slug'].'/'.$grandchild['slug']; ?>" style="color:#5864E8"><?php print $grandchild['name']; ?></a></li>
+								<li><a href ="http://test.gourmet-basket.com/products/category/<?php print $parent['slug'].'/'.$child['slug'].'/'.$grandchild['slug']; ?>" style="color:#5864E8"><?php print $grandchild['name']; ?></a></li>
 								<?php endforeach; ?>
 								</ul> <!-- End Grandchild-->
 								<?php endif; ?>
