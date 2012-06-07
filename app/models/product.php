@@ -140,7 +140,7 @@ class Product extends AppModel{
 			WHERE users.shop_name != ''; ";
 	 		$result = $this->query($sql);
 			foreach($result as $row){
-				$replaced_url = preg_replace('/^(.*?)\.*(.*?)\.(.*?)$/', $row['users']['short_name']. '.$2.$3', $_SERVER['HTTP_HOST']);
+				$replaced_url = preg_replace('/^(.*?)\.(.*?)\.(.*?)$/', $row['users']['short_name']. '.$2.$3', $_SERVER['HTTP_HOST']);
 				$array[$row['products']['product_id']]['shop_name']= $row['users']['shop_name'];
 				$array[$row['products']['product_id']]['url']= "//".$replaced_url;
 			}
