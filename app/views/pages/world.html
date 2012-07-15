@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<title>Clickable Map of the World Countries | clickablemaps.com</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--<script type='text/javascript' src='http://www.clickablemaps.com/wp-includes/js/jquery/jquery.js?ver=1.7.2'></script>-->
+
+
+<script language="javascript" type="text/javascript" src="http://www.clickablemaps.com/js/jquery-1.2.3.pack.js"></script>
+<script language="javascript" type="text/javascript" src="http://www.clickablemaps.com/js/jquery.metadata.min.js"></script>
+<script language="javascript" type="text/javascript" src="http://www.clickablemaps.com/js/jquery.maphilight.js"></script>
+
+<!--<script language="javascript" type="text/javascript" src="http://www.clickablemaps.com/js/easyTooltip2.js"></script>-->
+
+
+<script language="javascript" type="text/javascript" src="http://www.clickablemaps.com/js/easyTooltip.js"></script>
+<script type="text/javascript" src="http://www.clickablemaps.com/js/java.js"></script>
+
+<script>
+
+	jQuery(function() {
+
+		jQuery("area").easyTooltip();
+
+	});
+
+</script>
+<style type="text/css">
+<!--
+#easyTooltip {
+	padding: 5px 10px;
+	border: 1px solid #fff;
+	background: #195fa4 url(http://test.gourmet-basket.com/app/webroot/img/map-bg.gif) repeat-x;
+	color: #fff;
+}
+-->
+</style>
+
+</head>
+
+<body>
+      <map id="head" name="head">
+         
+         <!--All coordinates are neatly coded into an external javascript file --> 
+         
+         <script style="text/javascript" src="http://test.gourmet-basket.com/app/webroot/js/headworld.js"></script>
+      </map> 
+      
+<div id="middle-out-top"> <img id="worldmap" class="map" style="border-style: none;" src="http://test.gourmet-basket.com/app/webroot/img/world-map-2.png" alt="" width="900" height="460" usemap="#worldmap" />
+
+      <map name="worldmap">
+         <!--All coordinates are neatly coded into an external javascript file --> 
+         
+         <script type="text/javascript" src="http://test.gourmet-basket.com/app/webroot/js/worldmap.js"></script> 
+        
+      </map>
+</div>
+</body>
+</html>
