@@ -6,6 +6,7 @@ include_once '../_init.php';
 $msg = "";
 $post_type = "add";
 $subcategory_id = "";
+$categorid = "";
 $subcategory_name = "";
 if(isset($_POST["post_type"])) {    
     switch($_POST["post_type"]){
@@ -47,7 +48,7 @@ if(isset($_GET["cmd"]) && $_GET["cmd"]=="edit") {
     DB::query($qry);
     while($row = DB::fetch_row()){
          $subcategory_name = $row["subcategory"];
-         $categori = $row["category_id"]; 
+         $categorid = $row["category_id"]; 
     }
     $post_type = "update";
     DB::close();
@@ -87,7 +88,7 @@ if(isset($_GET["cmd"]) && $_GET["cmd"]=="delete") {
                 DB::query($qry);
                 while($row=DB::fetch_row()){
                     $selected = "";
-                    if($row["category_id"] == $categori) $selected = "selected";
+                    if($row["category_id"] == $categorid) $selected = "selected";
                     ?>
                     <option value="<?php echo $row["category_id"]; ?>" <?php echo $selected;?>><?php echo $row["category_name"]; ?></option>
                     <?php
