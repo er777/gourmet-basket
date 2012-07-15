@@ -28,16 +28,21 @@
       </div>
    </div>
 </div>
+
 <div class="clear"></div>
+
 <!--<div style="width:400px">
    <p class="left" style="text-align:left; text-align:justify;">CHECK IF YOU WOULD LIKE TO SHIP USING GOURMET BASKET'S UPS OR FEDEX ACCOUNTS, <strong>WHICH DO NOT REQUIRE YOU TO OUTLAY FUNDS FOR SHIPPING:</strong></p>
    <div class="left">
       <input type="checkbox" name="data[shipping][check_gb_shipping]" value="1" class="required" id="shippingCheckGbShipping" <?//=$s["check_gb_shipping"]?"checked":""?> />
       ( YES ) </div>-->
-   <div class="clear"></div>
-</div>
+
+
+
 <div class="clear"></div>
+
 <h2 style="text-align:center"> Gourmet - Basket Shipping</h2>
+
 <div class="shipping-box">
    <div> </span></div>
    <div>Please enter your <strong>Shipping Policy</strong> as you would like it displayed in your Shoppe.<br />
@@ -52,7 +57,7 @@
                     
                                     //]]>
              </script> 
-  <!-- Please read Gourmet Basket's<a style="color:#C00;text-decoration:underline" href="/pages/faq"> Shipping Policy </a>--> <!--<input type="checkbox" name="data[shipping][standard_policy_check]" value="1" class="required" id="shippingStandardPolicyCheck" <//?=$s["standard_policy_check"]?"checked":""?> />
+   <!-- Please read Gourmet Basket's<a style="color:#C00;text-decoration:underline" href="/pages/faq"> Shipping Policy </a>--> <!--<input type="checkbox" name="data[shipping][standard_policy_check]" value="1" class="required" id="shippingStandardPolicyCheck" <//?=$s["standard_policy_check"]?"checked":""?> />
               --> 
    
    <br />
@@ -63,9 +68,7 @@
    <br />
    <div>Do you ship perishable items?<strong>YES</strong><span>
       <input type="radio" name="data[shipping][perishable_check]" value="1" id="shippingPerishableCheck" <?=$s["perishable_check"]?"checked":""?> />
-      </span>
-      <span style="margin-left:10px;"><strong>NO</strong>
-      <input type="radio" name="data[shipping][perishable_check]" value="0" id="shippingPerishableCheck" <?=$s["perishable_check"]?"checked":""?>
+      </span> <span style="margin-left:10px;"><strong>NO</strong> <input type="radio" name="data[shipping][perishable_check]" value="0" id="shippingPerishableCheck" <?=$s["perishable_check"]?"checked":""?>
     
     </span> </div>
    <div>Please enter your <strong>Perishable Items Shipping Policy</strong> as you would like it displayed in your Shoppe. <br />
