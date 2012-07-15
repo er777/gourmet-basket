@@ -6,10 +6,10 @@
         <li>|</li>
         <li><?php echo $html->link('About Us', array('controller' => 'pages', 'action' => 'about')); ?></li>
         <li>|</li>
-        <li><?php echo $html->link('Shipping Policy', array('controller' => 'pages', 'action' => 'shipping')); ?></li>
+        <li><?php echo $html->link('FAQs', array('controller' => 'pages', 'action' => 'shipping')); ?></li>
         <li>|</li>
-        <li><?php echo $html->link('Return Policy', array('controller' => 'pages', 'action' => 'return')); ?></li>
-        <li>|</li>
+        <!--<li><?php //echo $html->link('Return Policy', array('controller' => 'pages', 'action' => 'return')); ?></li>
+        <li>|</li>-->
         <li><?php echo $html->link('Vendor Sign Up', '/'); ?></li>
         <li>|</li>
         <li><?php echo $html->link('Member Sign Up', '/'); ?></li>
