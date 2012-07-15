@@ -1,0 +1,57 @@
+/*
+
+	Stylesheet for jQuery/JSON "Tooltip" Tutorial
+	---------------------------------------------
+	Written for Webappers (www.webappers.com)
+	By Zach Dunn (www.buildinternet.com)
+
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: georgia;
+	background: #191919;
+}
+p {
+	padding: 0px 30px;
+	font-size: 13px;
+	margin-bottom: 15px;
+	line-height: 1.6em;
+}
+a {
+	padding: 3px 6px;
+	background: #333;
+	color: #FFF;
+	margin: 0px 3px;
+	text-decoration: none;
+}
+a:hover {
+	color: #FFC125;
+}
+#wrapper {
+	margin: 10px auto;
+	width: 960px;
+	padding-bottom: 30px;
+	background: #FFF;
+	border: 1px solid ##F7F7F7;
+}
+#banner {
+	background: #DDD url('purple-bg.jpg') no-repeat top left;
+	height: 300px;
+	text-align: center;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #CCC;
+}
+#banner h1 {
+	padding: 55px 0px 15px 0px;
+	font-size: 60px;
+	font-family: Arial, sans-serif;
+	letter-spacing: -3px
+}
+#banner p {
+	color: #333;
+	font-size: 16px;
+}
