@@ -141,32 +141,6 @@ span.radio-label {
         </div>  
     </div>
     
-    
-  <!--  <div class="row">
-        <div class="cell one">Country</div>
-        
-        <div class="cell two">
-            <select name="country_id" id="country_id" class="left" onchange="exeAjax('id='+this.value+'&action=11', 'zone_span', false)" style="width: 198px;">
-            <option value="" id="co-country_id">Select</option><?php //echo DB::db_options("SELECT `country_id`, `name` FROM `countries` order by `country_id`", $v['country_id']) ?>
-            </select> 
-        </div>  
-    </div>-->
-    
-    
-    
-   <!-- <div class="row">
-        <div class="cell one">State</div>
-        
-        <div class="cell two">
-            <span id="zone_span" style="padding: 0px;">
-            <select name="zone_id" id="zone_id" class="left" style="width: 198px;">
-            <option value="" id="zo-country_id">Select</option><?php //echo DB::db_options("SELECT `zone_id`, `name` FROM `zone` where `country_id` = '" . $v['country_id'] . "' order by `zone_id`", $v['zone_id']) ?>
-            </select> 
-            </span>
-        </div>  
-    </div>-->
-    
-    
     <div class="row">
         <div class="cell one">City</div>
         
@@ -174,6 +148,33 @@ span.radio-label {
             <input type="text" class="will-be-required" name="city" value="<?php echo $v['city'] ?>" size="30" />
         </div>  
     </div>
+    
+    <div class="row">
+        <div class="cell one">Country</div>
+        
+        <div class="cell two">
+            <select name="country_id" id="country_id" class="left" onchange="exeAjax('id='+this.value+'&action=11', 'zone_span', false)" style="width: 198px;">
+            <option value="" id="co-country_id">Select</option><?php echo DB::db_options("SELECT `country_id`, `name` FROM `countries_gb` order by `country_id`", $v['country_id']) ?>
+            </select> 
+        </div>  
+    </div>
+    
+    
+    
+    <div class="row">
+        <div class="cell one">State</div>
+        
+        <div class="cell two">
+            <span id="zone_span" style="padding: 0px;">
+            <select name="zone_id" id="zone_id" class="left" style="width: 198px;">
+            <option value="" id="zo-country_id">Select</option><?php echo DB::db_options("SELECT `zone_id`, `name` FROM `zone_gb` where `country_id` = '" . $v['country_id'] . "' order by `zone_id`", $v['zone_id']) ?>
+            </select> 
+            </span>
+        </div>  
+    </div>
+    
+    
+    
     
     
     <div class="row">
