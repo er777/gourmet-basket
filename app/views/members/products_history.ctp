@@ -21,7 +21,7 @@ $(document).ready(function() {
 </script>
 <div class="detaill-account">
         <b>Order No.: </b><?php  echo $order_id ?>
-        <span><a href="/members/orders">Back to the orders</a></span>
+        <span><a href="/members/orders">BACK TO ORDERS</a></span>
 </div>
 <div style="clear: both;"></div>
 
