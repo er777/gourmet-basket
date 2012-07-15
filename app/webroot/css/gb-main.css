@@ -43,7 +43,7 @@ strong{
 }
 
 li {
-	list-style-type: none;	
+	/*list-style-type: none;	*/
 }
 
 /******* GENERAL RESET *******/
@@ -70,13 +70,13 @@ h2  {
 }
 
 h3  {
-    font-size: 18px;
+    font-size: 16px;
     font-weight:bold;
     margin-bottom: 10px;
 }
 
 h4 {
- 	font-size: 14px;
+ 	font-size: 13px;
     font-weight:bold;
     margin-bottom: 10px;
 }
@@ -84,7 +84,7 @@ h4 {
 body {
 	font-family: 'Quattrocento Sans', sans-serif;
 	/*font-family: Asul, sans-serif;*/
-	font-size:12px;
+	font-size:14px;
 	line-height:normal;
 	color:#00134D;
 	
@@ -101,9 +101,24 @@ h1, h2, h3  {
     font-family: 'Federo', sans-serif;
  color:#7f131f;
  text-transform: lowercase;
- font-size:170%;
+ 
 
 }
+
+h1 {
+	font-size:170%;
+	
+}
+
+h2  {
+	font-size:140%;
+}
+
+h3  {
+	font-size:110%;
+}
+
+
 
 .pad {
 	padding-top: 0px;
@@ -750,6 +765,9 @@ th  {
     margin-left: \0px;
 	margin-right: 20px;
 	background-color:#eae7e2;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
 	
 }
 
@@ -846,10 +864,23 @@ th  {
 }
 
 #vendor-article {
-	width:620px;
+	width:555px;
 	float:left;
-	position:relative;
 	z-index:600;
+	border: thin solid #f5f6ff;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-color: #FFF;
+	padding:30px;
+	margin-bottom: 20px;
+	opacity:1;
+	
+
+}
+
+#vendor-article h3  {
+	font-size:140%;
 }
 
 .vendor-group-pics {
@@ -993,31 +1024,34 @@ img.vendor-story-pic {
 #category-article-name {
 	
 	height:30px;
-	width:150px;
     font-family: 'Federo', sans-serif;
 	color:#032177;
 	font-size: 26px;
 	font-weight: bold;
 	margin-top:10px;
+	margin-left:15px;
+}
+
+.category-article-wrapper {
+	padding:20px;
 }
 
 .category-article-wrapper p {
-	margin-bottom: 5px;
+	margin-bottom: 14px;
 }
 
-.category-article {
+#category-article {
 	float:left;
 	border: thin solid #CCC;
-	width: 565px;
-	height:300px;
+	width: 590px;
 	padding: 10px;
-	margin-top: 0px;
-	margin-right: auto;
 	margin-bottom: 20px;
-	margin-left: 0px;
-	overflow-y:scroll;
 	background-color: #FFF;
 	line-height: 18px;
+}
+
+.category-article-wrapper h3 {
+	font-size: 135%;
 }
 
 .category-article .pad {
@@ -1043,6 +1077,56 @@ img.vendor-story-pic {
 	text-align: left;
 	
 }
+
+.category-special {
+	font-family: 'Federo', sans-serif;
+	letter-spacing:1px;
+	font-size:90%;
+	width:385px;
+	margin-bottom:30px;
+	margin-left:362px;
+	color:#032177;
+	text-align:left;
+	background-color: #fee79b;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-position: 200px 0px;
+	background-image: url(../img/blockquote-bkgnd.jpg);
+	background-repeat: repeat;
+	
+	padding-left:25px;
+	padding-top:20px;
+	padding-right:20px;
+	padding-bottom: 20px;
+}
+
+.fun-facts {
+	font-family: 'Federo', sans-serif;
+	letter-spacing:1px;
+	font-size:90%;
+	
+	margin-bottom:30px;
+	
+	color:#032177;
+	text-align:left;
+	background-color: #b5ffcd;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-position: 200px 0px;
+	
+	padding-left:25px;
+	padding-top:20px;
+	padding-right:20px;
+	padding-bottom: 20px;
+}
+
+.read-more {
+	font-size:130%;
+}
+
+
 
 .signup {
 	background-color: #eae7e2;
@@ -1189,7 +1273,7 @@ a.hand-drawn .cat-list a {
 	margin-bottom:10px;
 	float:left;
 	text-align:left;
-	margin-left:411px;
+	margin-left:10px;
 }
 	
 
@@ -1417,6 +1501,7 @@ body#products .content-product  .name-price {
     display: block;
     width: 610px;
     text-align: right;
+	margin-bottom:20px;
 }
 
 
@@ -1714,6 +1799,9 @@ td div {
  
 
 
+
+
+
 .desc-price-wrapper {
 	margin:auto;
 	width:110px;
@@ -1742,6 +1830,13 @@ table.product-info-table>tbody>tr>td>strong {
 .ingredients {
 	margin-top:15px;
 }
+
+/** Category LISTINGS **/
+
+.small  {
+	font-size:70%;
+}
+
 
 /** SHIPPING **/
 
@@ -2291,7 +2386,7 @@ div.nav-controls {
 div.slideshow-container {
 	/*position: relative;*/
 	clear: both;
-	height: 320px; /* This should be set to be at least the height of the largest image in the slideshow */
+	height: 370px; /* This should be set to be at least the height of the largest image in the slideshow */
 }
 div.loader {
 	position: absolute;
@@ -2359,19 +2454,22 @@ div.navigation {
 	/* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
 }
 #thumbs {
-	height:70px;
+	
+	padding-top:380px;
 }
 ul.thumbs {
-	float: left;
+	
 	margin: 0;
 	padding: 0;
+	
 }
 ul.thumbs li {
 	float: left;
 	padding: 0;
 	margin: 5px 10px 5px 0;
 	list-style: none;
-	display:inline;
+	display:!important inline;
+	
 }
 a.thumb {
 	padding: 2px;
@@ -2735,8 +2833,8 @@ div.pagination span.ellipsis {
 /** US MARKETS **/
 
 #america {
-	height: 360px;
-	width: 468px;
+	height: 420px;
+	width: 650px;
 	margin-right: auto;
 	margin-left: auto;	
 }
@@ -2746,6 +2844,10 @@ div.pagination span.ellipsis {
 #mod_section .description {
 	display:none;
 }
+
+/**Category Ls
+
+
 
 
 /**CUSTOM SCROLER **/
