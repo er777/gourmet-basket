@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>World:: GB</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="Description" content="food" />
+<meta name="Keywords" content="food" />
+<meta name="robots" content="noindex, nofollow, noarchive" />
+
+<link rel="stylesheet" type="text/css" href="/app/webroot/css/gb-main.css" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+<script type="text/javascript" src="/app/webroot/js/jquery.metadata.min.js"></script>
+<script type="text/javascript" src="/app/webroot/js/jquery.maphilight.js"></script>
+<script type="text/javascript" src="/app/webroot/js/easyTooltip.js"></script>
+<script type="text/javascript" src="/app/webroot/js/java.js"></script>
+<script>
+
+	jQuery(function() {
+
+		jQuery("area").easyTooltip();
+
+	});
+
+</script>
+<style type="text/css">
+<!--
+#easyTooltip {
+	padding: 20px 30px;
+	border: 2px solid #fff;
+	background: #195fa4 url(http://www.clickablemaps.com/js/world/bg.gif) repeat-x;
+	color: #fff;
+	font-size:130%;
+	max-width:300px;
+	
+}
+-->
+</style>
+
+</head>
+
+<body>
+      <map id="head" name="head">
+         
+         <!--All coordinates are neatly coded into an external javascript file --> 
+         
+        <script style="text/javascript" src="/app/webroot/js/headworld.js"></script>
+      </map>
+      
+<div id="middle-out-top"> <img id="worldmap" class="map" style="border-style: none;" src="http://www.clickablemaps.com/js/worldmap/demo_worldmap.png" alt="" width="900" height="460" usemap="#worldmap" />
+
+      <map name="worldmap">
+         <!--All coordinates are neatly coded into an external javascript file --> 
+         
+        <script type="text/javascript" src="/app/webroot/js/worldmap.js"></script>
+        
+      </map>
+</div>
+</body>
+</html>
