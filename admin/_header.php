@@ -122,15 +122,23 @@ include_once '_init.php';
                                         <li><a href="sub-subcategories.php">Sub subcategories</a></li>
                                     </ul>
                                 </li>
+                               
+                                <?php } ?>
+                                <?php if($_SESSION['l_level']!='vendor'){ ?>
+                                <li>
+                                    <a href="regions.php">Regions</a>
+                                    
+                                </li>
                                 <li>
                                     <a href="settings.php">Settings</a>
                                 </li>
                                 <?php } ?>
 
+
                                 <?php if($_SESSION['l_level']!='vendor'){ ?>
                                 <ul>
                                     <li>
-                                        <a href="home_editor.php">Editor Home Page</a>
+                                        <a href="home_editor.php">Edit Home Page</a>
                                     </li>
                                     <li>
                                         <a href="taxes.php">Taxes</a>
