@@ -15,20 +15,14 @@ foreach ($url_array as $crumb) {
 }
 ?>
 <br/>
+
+<div style="margin-bottom:15px">
 <?php echo $this->Html->getCrumbs(' > ','Home'); ?>
-<div id="category-article">
-   <div id="category-article-name"><?php print $category['name'];?></div>
-   <?php if (isset($parent_category['article'])):?>
-   <div class="category-article-wrapper">
-      <div style="float:left"> <img src="/app/webroot/img/pantry/<?php print $parent_category['image'];?>" width="140" height="120" /> </div>
-      <?php echo $parent_category["article"]; ?> </div>
-   <?php endif;?>
 </div>
-</div>
-<div id="category-display">
-   <div id="subcat-menu">
-      <h2><?php echo $parent_category["name"];?></h2>
-      <h3>Products:</h3>
+
+<div id="subcat-menu">
+      <h3><?php echo $parent_category["name"];?></h3>
+      <!--<h3>Products:</h3>-->
       <?php
 					if(isset($category['children']) && !empty($category['children'])):
 					foreach ($category['children'] as $child) :
@@ -42,9 +36,32 @@ foreach ($url_array as $crumb) {
       <?php
 					endforeach;
 					else:?>
-      <p>There are no categories within &quot;<?php echo $category['name'];?>&quot;</p>
+      <p class="small">There are no sub categories within &quot;<?php echo $category['name'];?>&quot;</p>
       <?php endif; ?>
    </div>
+
+
+
+
+
+<?php if (isset($parent_category["summary"])):?>
+
+<div id="category-summary" class="category-special">
+	<?php echo $parent_category["summary"];?>
+    <?php endif;?>
+    <div class="read-more"><a href="#category-article" >read more...</a></div>
+    </div>
+
+
+
+
+</div>
+</div>
+
+
+
+<div id="category-display">
+   
    <h1>All Products in <?php echo $category["name"];?></h1>
    <?php
 
@@ -91,3 +108,7 @@ foreach ($products as $product) :
   }
   ?>
 </div>
+
+
+
+

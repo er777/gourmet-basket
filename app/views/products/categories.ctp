@@ -1,4 +1,4 @@
-<h4 style="text-align:center;font-family:'Federo',sans-serif;">Welcome to the Well Stocked Pantry filled with the finest food products anywhere! Click on any item to start your journey.</h4>
+<h4 style="text-align:center;font-family:'Federo',sans-serif;">Welcome to our Well Stocked Pantry, filled with the finest culinary treasures from far and wide (or across the globe) . Click any time to start exploring.</h4>
 <div class="page-title"><h1>The Well Stocked Pantry</h1></div>
 
 
