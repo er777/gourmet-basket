@@ -5,8 +5,10 @@ include_once '../_init.php';
 
 $msg = "";
 $post_type = "add";
+$category_name = "";
 $sub_subcat_id = "";
 $sub_subcategory_name = "";
+$subcategorid ="";
 if(isset($_POST["post_type"])) {    
     switch($_POST["post_type"]){
         case "add":
@@ -47,7 +49,7 @@ if(isset($_GET["cmd"]) && $_GET["cmd"]=="edit") {
     DB::query($qry);
     while($row = DB::fetch_row()){
          $sub_subcategory_name = $row["sub_subcategory"];
-         $subcategori = $row["subcategory_id"]; 
+         $subcategorid = $row["subcategory_id"]; 
     }
     $post_type = "update";
     DB::close();
@@ -87,7 +89,7 @@ if(isset($_GET["cmd"]) && $_GET["cmd"]=="delete") {
                 DB::query($qry);
                 while($row=DB::fetch_row()){
                     $selected = "";
-                    if($row["subcategory_id"] == $subcategori) $selected = "selected";
+                    if($row["subcategory_id"] == $subcategorid) $selected = "selected";
                     ?>
                     <option value="<?php echo $row["subcategory_id"]; ?>" <?php echo $selected;?>><?php echo $row["subcategory"]; ?></option>
                     <?php
