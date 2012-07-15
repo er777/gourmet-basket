@@ -8,7 +8,7 @@ class MembersController extends AppController {
 
     function login() {
         $this->top_menu();
-        $this->layout = 'site';
+        $this->layout = 'member';
         if($this->Session->read('Member')==NULL){
             if(empty($this->data) == false)
             {
@@ -29,7 +29,7 @@ class MembersController extends AppController {
     
     function track(){
         $this->top_menu();
-        $this->layout = 'site';
+        $this->layout = 'member';
         if($this->Session->read('Member')!=NULL){
            $trackPurchases = $this->Member->getHistory($this->Session->read('Member.member_id'));
            $this->set('trackPurchases', $trackPurchases); 
@@ -41,7 +41,7 @@ class MembersController extends AppController {
     
     function account(){
         $this->top_menu();
-        $this->layout = 'site';
+        $this->layout = 'member';
         if(!is_null($this->Session->read('Member'))){                                    
         }else{
             $this->redirect('/members/login');
@@ -49,7 +49,7 @@ class MembersController extends AppController {
         }
     } 
     function edit(){
-        $this->layout = 'site';
+        $this->layout = 'member';
         $error_field = 0;
         $error_text = "Please complete the following fields:<br/>";
         if(!is_null($this->Session->read('Member'))){
@@ -85,7 +85,7 @@ class MembersController extends AppController {
         }
     }
     function password(){
-        $this->layout = 'site';
+        $this->layout = 'member';
         $error_field = 0;      
         if(!is_null($this->Session->read('Member'))){
             if(empty($this->data) == false){
@@ -110,7 +110,7 @@ class MembersController extends AppController {
         }
     }
     function address($aid = NULL){
-        $this->layout = 'site';
+        $this->layout = 'member';
         if(!is_null($this->Session->read('Member'))){
             if(!is_null($aid)){
                 if($aid == "new"){
@@ -138,7 +138,7 @@ class MembersController extends AppController {
         }
     }
     function newaddress(){
-        $this->layout = 'site';
+        $this->layout = 'member';
         if(empty($this->data) === false){
             $this->Member->saveAddress($this->data['Member']);
             $this->redirect('/members/address');
@@ -149,7 +149,7 @@ class MembersController extends AppController {
         }                                
     }
     function editaddress(){
-        $this->layout = 'site';
+        $this->layout = 'member';
         if(!is_null($aid)){
             $this->Member->editAddress($aid);
             $this->redirect('/members/address');
@@ -160,7 +160,7 @@ class MembersController extends AppController {
         }                                
     }
     function deladdress($aid = NULL){
-        $this->layout = 'site';
+        $this->layout = 'member';
         if(!is_null($aid)){
             $this->Member->deleteAddress($aid);
             $this->redirect('/members/address');
@@ -171,7 +171,7 @@ class MembersController extends AppController {
         }                                
     }
     function orders(){
-        $this->layout = 'site';
+        $this->layout = 'member';
         if(!is_null($this->Session->read('Member'))){
             
            $member_id = $this->Session->read('Member.member_id');
@@ -192,7 +192,7 @@ class MembersController extends AppController {
 	}
     
     function register() {
-        $this->layout = 'site';
+        $this->layout = 'member';
         if (!empty($this->data)){  
             if($this->Member->validateRegister($this->data['Member']) == true){
                 $member = $this->Member->savemember($this->data['Member']);
@@ -212,7 +212,7 @@ class MembersController extends AppController {
 	}
     
     function addaddress() {
-        $this->layout = 'site';
+        $this->layout = 'member';
         if (!empty($this->data)){
             $memberaddress = $this->Member->saveAddress($this->data['Member'], $this->data['state']);
             $this->Session->write('Memberaddress.'.$this->data['Member']['typeaddress'], $memberaddress);
@@ -222,7 +222,7 @@ class MembersController extends AppController {
 	}
     
     function products_history($order_id = null){
-        
+        $this->layout = 'member';
         if(!is_null($order_id)){
             //Products belonging to this order
             $products = $this->Member->getProductByOrder($order_id);
@@ -236,7 +236,7 @@ class MembersController extends AppController {
     }
 
     function forgot() {
-        $this->layout = 'site';
+        $this->layout = 'member';
         if (!empty($this->data)){  
             if(($member = $this->Member->validateForgot($this->data['Member'])) == true){
                 $this->_sendForgotMemberMail($member);
