@@ -105,11 +105,14 @@
     display: inline-block;
 }
 
-.tabledata {
+table.tabledata {
     cursor:pointer; 
     font-size:8pt; 
     color:black;
+	vertical-align:text-top;
 }
+
+
 #imgAPPROVAL,.er_pass{
     display: block;
     float: right;
@@ -176,7 +179,7 @@ a.add{
     display: block;
     font-size: 13px;
     margin: 0;
-    padding: 5px 10px;
+    padding: 5px 7px;
     text-decoration: none;
 }
 #subnav li a:hover, #subnav li a:active {
