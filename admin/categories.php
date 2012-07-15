@@ -35,8 +35,9 @@ include_once("_header.php");
                 <td>
                     <table class="tabledata" style="width:800px;" border="0" cellpadding="2" cellspacing="2">
                         <tr style="background:lightblue;">
-                            <th width="99">Category ID</th>
-                            <th width="135">Category Name</th>
+                            <th width="20">ID</th>
+                            <th width="140">Name</th>
+                            <th width="200">Category Summary</th>
                             <th width="546">Article</th> 
                         </tr>
                     <?php
@@ -56,9 +57,10 @@ include_once("_header.php");
                         onclick="location.href='category_editor.php?cmd=edit&cid=<?php echo $row["category_id"]; ?>'">
 
                         <!--    onclick="Modalbox.show('utils/category_editor.php?cmd=edit&cid=<?php echo $row["category_id"]; ?>', {title: 'Gourmet Basket - Category Editor', width:800, height: 600, aspnet: false}); return false;"> -->
-                             <td style="width:100px;"><?php echo $row["category_id"]; ?></td>
-                             <td style="width:100px;"><?php echo $row["category_name"]; ?></td>
-                             <td><?php echo $row["category_article"]; ?></td>
+                             <td valign="top"><?php echo $row["category_id"]; ?></td>
+                             <td valign="top"><?php echo $row["category_name"]; ?></td>
+                             <td valign="top"><div style="height:100px;overflow-y:scroll"><?php echo $row["category_summary"]; ?></div></td>
+                             <td valign="top"><div style="height:100px;overflow-y:scroll"><?php echo $row["category_article"]; ?></div></td>
                         </tr>
                     <?php
                         $b++;
