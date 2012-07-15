@@ -32,7 +32,7 @@ class CartController extends AppController {
 
         $this->top_menu();
         //$this->Session->delete('CartTotal');
-        $this->layout = 'site';
+        $this->layout = 'cart';
         //$this->Session->write('Member.member_id', 1);
         if($this->Session->read('Member')==NULL){
             $this->redirect('/members/login');
@@ -87,7 +87,6 @@ class CartController extends AppController {
             foreach($this->Session->read('Cart') as $i => $v){
                  $weight_new = $arraycart[$i]['weight'] * 0.0625;
                  $ship = $this->Cart->getAddressbyVendor($arraycart[$i]['vendor_id']);
-                 $vendor_id = $arraycart[$i]['vendor_id'];
                  //echo '---'.$ship[0]['zone_id'].'<----->'.$datashipping['zone_id'].'<br>';
                     // ===================================================
                     // tax by vendor and member state
@@ -137,10 +136,7 @@ class CartController extends AppController {
                     }
                                         
                     //$this->Session->write('Cart.' .'1'.".tax", ($totals['tax_rate'] * $v['price']) );
-                    $flat_shipping  = $this->Cart->shipping_details($vendor_id);
-                    if ($flat_shipping['flat_shipping']) {
-                         $shipping = $flat_shipping['flat_price'];
-                    }
+                    
                     //$this->Session->write('Cart.' .'1'
                     //    .".shipping", $shipping);
                     
@@ -155,7 +151,7 @@ class CartController extends AppController {
             //$totals['tax'] = "2.95";
 
             $totals['total'] = $totals['subtotal']+$totals['tax']+$totals['shipping'];
-
+            
             $this->Session->write('CartTotal', $totals);
             
             if($this->Session->read('Cart') != NULL && $this->Session->read('Cart') == "true"){
