@@ -3,61 +3,61 @@
 <?php //pr($all_categories);?>
 <ul class="dropEverything">
   <li class="top-li pageOne"><a class="top-a" href="http://test.gourmet-basket.com/products/categories">CATEGORIES</a>
-    <div class="dropEverything-page">
-      <h2>Full Page OF EVERYTHING -----><a href="http://test.gourmet-basket.com/pages/catalog" style="color:#fff" >*** HERE ***</a></h2>
+    <!--<div class="dropEverything-page">
+      <h2>Full Page OF EVERYTHING <a href="http://test.gourmet-basket.com/pages/catalog" style="color:#fff" >*** HERE ***</a></h2>
       <div class="dropEverything-row">
         <h3>CATEGORIES</h3>
         <div class="dropEverything-col1 jquery-column">
           <div class="dropEverything-inner">
             <ul class="category-parents">
-              <?php foreach ($all_categories as $parent) :?>
-              <li> <a class="hand-drawn" href="http://test.gourmet-basket.com/products/category/<?php print $parent['slug'];?>"><?php print $parent['name']; ?></a>
-                <?php if(isset($parent['children'])): ?>
+              <?php //foreach ($all_categories as $parent) :?>
+              <li> <a class="hand-drawn" href="http://test.gourmet-basket.com/products/category/<?php //print $parent['slug'];?>"><?php //print $parent['name']; ?></a>
+                <?php //if(isset($parent['children'])): ?>
                 <ul class="category-children" style="margin-left:10px;">
-                  <?php foreach ($parent['children'] as $child) :?>
-                  <li><a class="hand-drawn" href="http://test.gourmet-basket.com/products/category/<?php print $parent['slug'].'/'.$child['slug']; ?>"><?php print $child['name'];?></a>
-								<?php if ($child['children']): ?>
+                  <?php //foreach ($parent['children'] as $child) :?>
+                  <li><a class="hand-drawn" href="http://test.gourmet-basket.com/products/category/<?php //print $parent['slug'].'/'.$child['slug']; ?>"><?php //print $child['name'];?></a>
+								<?php //if ($child['children']): ?>
 								<ul class="category-grandchildren" style="font-size:11px; margin-left:20px;font-style:italic;">
-								<?php foreach ($child['children'] as $grandchild): ?>
-								<li><a href ="http://test.gourmet-basket.com/products/category/<?php print $parent['slug'].'/'.$child['slug'].'/'.$grandchild['slug']; ?>" style="color:#5864E8"><?php print $grandchild['name']; ?></a></li>
-								<?php endforeach; ?>
-								</ul> <!-- End Grandchild-->
-								<?php endif; ?>
+								<?php //foreach ($child['children'] as $grandchild): ?>
+								<li><a href ="http://test.gourmet-basket.com/products/category/<?php //print $parent['slug'].'/'.$child['slug'].'/'.$grandchild['slug']; ?>" style="color:#5864E8"><?php //print $grandchild['name']; ?></a></li>
+								<?php //endforeach; ?>
+								</ul> <!-- End Grandchild
+								<?php //endif; ?>
 								</li>
-                  <?php	endforeach; ?>
-                </ul><!-- End Child-->
-                <?php endif; ?>
+                  <?php	//endforeach; ?>
+                </ul><!-- End Child
+                <?php //endif; ?>
               </li>
-              <?php endforeach; ?>
-            </ul><!-- End Parents -->
+              <?php //endforeach; ?>
+            </ul><!-- End Parents
 						
 						
           </div>
         </div>
-        <!-- end column --> 
+        <!-- end column 
       </div>
       <!-- end row -->
-      <div class="dropEverything-row">
+     <!-- <div class="dropEverything-row">
         <div class="dropEverything-col4">
           <div class="dropEverything-inner"> </div>
         </div>
-        <!-- end column -->
+        <!-- end column 
         <div class="dropEverything-col4">
           <div class="dropEverything-inner"> </div>
         </div>
-        <!-- end column -->
+        <!-- end column 
         <div class="dropEverything-col4">
           <div class="dropEverything-inner"> </div>
         </div>
-        <!-- end column -->
+        <!-- end column 
         <div class="dropEverything-col4">
           <div class="dropEverything-inner"> </div>
         </div>
-        <!-- end column --> 
+        <!-- end column 
         <br class="clear" />
       </div>
-      <!-- end row --> 
-    </div>
+      <!-- end row 
+    </div>-->
   </li>
   <li class="top-li pageTwo"><a class="top-a" href="http://test.gourmet-basket.com/vendors">VENDORS</a>
     <div class="dropEverything-page">
@@ -80,32 +80,32 @@
       <!-- end row --> 
     </div>
   </li>
-  <li class="top-li pageThree"><a class="top-a" href="http://test.gourmet-basket.com/us-markets">US MARKETS</a>
-    <div class="dropEverything-page">
+  <li class="top-li pageThree"><a class="top-a" href="http://test.gourmet-basket.com/pages/us-markets">US MARKETS</a>
+    <!--<div class="dropEverything-page">
       <h2>CSS Drop Everything</h2>
       <div class="dropEverything-row">
         <div class="dropEverything-col1">
           <div class="dropEverything-inner">
             <div class="flyoutMenu"> </div>
           </div>
-        </div>
+        </div>-->
         <!-- end column --> 
-      </div>
+     <!-- </div>-->
       <!-- end row --> 
-    </div>
+    <!--</div>-->
   </li>
-  <li class="top-li pageFour"><a class="top-a" href="http://test.gourmet-basket.com/pages/us-markets">INT'L MARKETS</a>
-    <div class="dropEverything-page">
+  <li class="top-li pageFour"><a class="top-a" href="http://test.gourmet-basket.com/pages/world">INT'L MARKETS</a>
+   <!-- <div class="dropEverything-page">
       <h1>CSS play - Drop Everything</h1>
       <div class="dropEverything-row">
         <div class="dropEverything-col1">
           <div class="dropEverything-gallery"> </div>
-        </div>
+        </div>-->
         <!-- end column --> 
-        <br class="clear" />
-      </div>
+       <!-- <br class="clear" />
+      </div>-->
       <!-- end row --> 
-    </div>
+    <!--</div>-->
   </li>
   <li class="top-li pageFive"><a class="top-a" href="#url">Contact Form</a>
     <div class="dropEverything-page">
