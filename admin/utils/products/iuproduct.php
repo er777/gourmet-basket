@@ -39,9 +39,7 @@ if (isset($_POST['product_id'])) {
         $_POST['image'] = uploadFiles('image');
     }
     for($i=1;$i<=5;$i++)
-    	$_FILES["image_$i"]["name"]and$_POST["image_$i"]=uploadFiles("image_$i"); 
-		
-		
+    	$_FILES["image_$i"]["name"]and$_POST["image_$i"]=uploadFiles("image_$i");
 		
     if (isset($_POST["tradition_id"])) {
         $comm = "";
@@ -565,6 +563,52 @@ margin-right: 5px;
                     </span></td>
                 </tr>
                 <tr>
+                <td><label>Auxiliary Categories (max of 3):</label>
+                </td>
+                </tr>
+                
+                <tr>
+                <?php //var_dump($aux_category_1);?>
+                <td><?php echo (isset($p['aux_category_name']) ? $p['aux_category_name'] : ''); ?>
+                </td>
+                </tr>
+                
+                <tr>
+                <td>
+                	<select name="aux_category_1" id="aux_category_1" class="left">
+                    <option value="">Select</option>
+                    		<?php echo DB::db_options("SELECT `aux_category_id`, `aux_category_name` FROM `product_aux_categories` order by `aux_category_name`", (isset($p['aux_category_1']) ? $p['aux_category_1'] : '')) ?>
+                      
+                    </select>
+                </td>
+                </tr>
+                <tr> 
+                <td>
+                <select name="aux_category_2" id="aux_category_2" class="left">
+                	<option value="">Select</option>
+                    		<?php echo DB::db_options("SELECT `aux_category_id`, `aux_category_name` FROM `product_aux_categories` order by `aux_category_name`", (isset($p['aux_category_2']) ? $p['aux_category_2'] : '')) ?>
+                      
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <select name="aux_category_3" id="aux_category_3" class="left">
+                      <option value="">Select</option>
+                    		<?php echo DB::db_options("SELECT `aux_category_id`, `aux_category_name` FROM `product_aux_categories` order by `aux_category_name`", (isset($p['aux_category_3']) ? $p['aux_category_3'] : '')) ?>
+                      
+                  </select>
+                </td>
+                </tr>
+                
+                <tr>
+                  <td><label>Creation Type:</label>
+                    <select name="creation_id" id="creation_id" class="left">
+                      <option value="">Select</option>
+                      		<?php echo DB::db_options("SELECT `creation_id`, `type` FROM `product_creation` order by `creation_id`", (isset($p['creation_id']) ? $p['creation_id'] : '')) ?>
+                    </select></td>
+                </tr>
+                
                   <td><label>Country of manufacture:</label>
                     <select name="country_id" id="country_id" class="left">
                       <option value="">Select</option>
@@ -575,7 +619,7 @@ margin-right: 5px;
                     <select name="culinary_country_id" id="culinary_country" class="left">
                       <option value=""selected="selected" >Select</option>
                       <option value="223" >United States</option>
-                      <?php echo DB::db_options("SELECT `culinary_country_id`, `culinary_country` FROM `culinary_countries` order by `culinary_country`", $c['culinary_country_id']) ?>
+                      <?php echo DB::db_options("SELECT `culinary_country_id`, `culinary_country` FROM `culinary_countries` order by `culinary_country`", (isset($p['culinary_country_id']) ? $p['culinary_country_id'] : '')) ?>
                     </select></td>
                 </tr>
                 <tr>
@@ -583,14 +627,7 @@ margin-right: 5px;
                   <td><label>Domestic Areas where used</label>
                     <select name="ethnicity_id" id="ethnicity_id" class="left">
                       <option value="">Select</option>
-                      <?php echo DB::db_options("SELECT `us_category_id`, `us_category` FROM `us_categories` order by `us_category`", $c['us_category_id']) ?>
-                    </select></td>
-                </tr>
-                
-                  <td><label>Creation Type:</label>
-                    <select name="creation_id" id="creation_id" class="left">
-                      <option value="">Select</option>
-                      <?php echo DB::db_options("SELECT `creation_id`, `type` FROM `product_creation` order by `creation_id`", (isset($p['creation_id']) ? $p['creation_id'] : '')) ?>
+                      <?php echo DB::db_options("SELECT `us_category_id`, `us_category` FROM `us_categories` order by `us_category`", (isset($p['ethnicity_id']) ? $p['ethnicity_id'] : '')) ?>
                     </select></td>
                 </tr>
                 <tr>
@@ -616,10 +653,10 @@ margin-right: 5px;
                   <td valign="top"><br />
                     <br />
                     <label><b>Featured product</b>:
-                      <input type="checkbox" value="1" name="featured_product" <?php if ((isset($p['featured_product']) ? $p['featured_product'] : '') != '0') //{echo 'checked';} ?> />
+                      <input type="checkbox" value="1" name="featured_product" <?php if ((isset($p['featured_product']) ? $p['featured_product'] : '0') != '0') {echo 'checked';} ?> />
                     </label>
                     <label><b>Available as Gift Packaged</b>:
-                      <input type="checkbox" value="1" name="gift_product" <?php if ((isset($p['gift_product']) ? $p['gift_product'] : '') != '0') //{echo 'checked';} ?>/>
+                      <input type="checkbox" value="1" name="gift_product" <?php if ((isset($p['gift_product']) ? $p['gift_product'] : '0') != '0') {echo 'checked';} ?>/>
                     </label></td>
                 </tr>
               </table>
@@ -741,7 +778,7 @@ margin-right: 5px;
               </table>
             </div>
             <div id="tab_6" style=" display: none;">
-						<h2>Other Products From This Vendor</h2>
+						<h2>Related Products</h2>
 						<table class="related_products">
 						<thead>
 						<th width="70">Prod ID</th>
