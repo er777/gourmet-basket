@@ -14,7 +14,7 @@
 	<link href="/app/webroot/supersized/theme/supersized.shutter.css" rel="stylesheet" type="text/css" />
 	<link href='http://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-	<script type="text/javascript" src="/app/webroot/js/modernizr-2.0.6.js"></script>
+	<!--<script type="text/javascript" src="/app/webroot/js/modernizr-2.0.6.js"></script>-->
 	<script type="text/javascript" src="/app/webroot/supersized/jquery.easing.min.js"></script>
 	<script type="text/javascript" src="/app/webroot/supersized/js/supersized.3.2.5.js"></script>
 	<script type="text/javascript" src="/app/webroot/supersized/theme/supersized.shutter.js"></script>
@@ -44,6 +44,8 @@
 			})
 		});
 	</script>
+    
+    
 	</head>
 
 	<body id="home">
@@ -78,7 +80,15 @@
           
           <div id="nav" style="margin-left:30px"> <?php echo $this->element('menu_top-new');?> </div>
           <div id="gb-title"> <img src="/app/webroot/img/gb-title.png" width="1000" height="160" alt="gourmet-basket" /> </div>
+          
+           <?php 	$today = date("F j, Y");
+		   			$time = date("g:i a");
+		   ?>
+           
+          <div style="float:right"><span style="color:#fff">Hi there! Today is <?php echo  ($today);?> and it's: <?php echo  ($time);?> in Los Angeles.</span> </div>
+          
           <div id="upper-content">
+          
              <div id="headlines">
                 <div class="headline-1">
                    <div> <a href="<?php echo $headline_home['headline_link1'];?>"> <?php echo $headline_home['headline_1'];?> </a>
