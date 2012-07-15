@@ -6,7 +6,7 @@
 #orders{
     float: left;
     padding: 10px;
-    width: 975px; 
+    width: 910px; 
 }
 .cart-heading{
     border-collapse: collapse;
@@ -181,7 +181,7 @@
     border: 1px solid #E5E5E5;
     float: left;
     padding: 5px;
-    width: 974px;
+    width: 920px;
 }
 .detaill-account a{
     color: #D64C32;
@@ -190,3 +190,4 @@
     text-decoration: underline;
     vertical-align: middle;
 }
+
