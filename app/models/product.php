@@ -159,6 +159,7 @@ class Product extends AppModel{
 							categories.category_name,
 							subcategories.subcategory,
 							categories.category_image,
+							categories.category_summary,
 							categories.category_article,
 							categories.slug as parent_slug,
 							subcategories.slug as child_slug
@@ -203,6 +204,7 @@ class Product extends AppModel{
 				$parent_category_name = $row['categories']['category_name'];
 				$parent_category_id = $row['categories']['category_id'];
 				$parent_category_image = $row['categories']['category_image'];
+				$parent_category_summary = $row['categories']['category_summary'];
 				$parent_category_article = $row['categories']['category_article'];
 				$parent_slug = $row['categories']['parent_slug'];
 				$child_slug = $row['subcategories']['child_slug'];
@@ -223,6 +225,7 @@ class Product extends AppModel{
 				$structuredArrayOfAllCategories[$parent_slug]['name'] = $parent_category_name;
 				$structuredArrayOfAllCategories[$parent_slug]['slug'] = $parent_slug;
 				$structuredArrayOfAllCategories[$parent_slug]['image'] = $parent_category_image;
+				$structuredArrayOfAllCategories[$parent_slug]['summary'] = $parent_category_summary;
 				$structuredArrayOfAllCategories[$parent_slug]['article'] = $parent_category_article;
 		}	
     return $structuredArrayOfAllCategories;
