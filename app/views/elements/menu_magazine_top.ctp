@@ -72,8 +72,8 @@
           </dl>
         </div>
       </li>
-      <li class="navItem_3"><a href="" title="Computers">INT'L MARKETS</a>
-        <div class="navRollover">
+      <!--<li class="navItem_3">--><li><a href="" title="Computers">INT'L MARKETS</a>
+        <!--<div class="navRollover">
           <dl class="innerWrap">
             <dd class="col">
               <h5><a href="/sectors/category/computers.asp" title="Computers">THE MARKET</a></h5>
@@ -92,7 +92,7 @@
  <a href="" title=" ">Coming</a> 
  <a href="" title=" ">Coming</a> </dd>
           </dl>
-        </div>
+        </div>-->
       </li>
       
       
